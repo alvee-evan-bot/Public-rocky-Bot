@@ -1,96 +1,69 @@
-const axios = require('axios');
-const fs = require('fs-extra');
+const axios = require("axios");
+const { getStreamFromURL } = global.utils;
+
+const LANG_CODES = ["en", "vi", "ja", "ko", "zh-CN", "fr", "de", "es", "pt", "ru", "th", "id", "hi", "ar"];
 
 module.exports = {
-  config: {
-    name: "say",
-    version: "1.7",
-    author: "Samir Œ",
-    countDown: 5,
-    role: 0,
-    category: "tts",
-    description: "bot will make your text into voice.",
-    guide: {
-      en: "{pn} your text (default will be 'en') | {pn} your text | [use two words ISO 639-1 code, ex: English-en, Bangla-bn, Hindi-hi or more, search Google for your language code]"
-    }
-  },
+	config: {
+		name: "say",
+		aliases: ["tts", "speak"],
+		version: "1.0",
+		author: "Neoaz 🐊",
+		countDown: 5,
+		role: 0,
+		description: {
+			en: "convert text to speech and send it as a voice message"
+		},
+		category: "fun",
+		guide: {
+			en: "{pn} <text>"
+				+ "\n   {pn} -<lang> <text> (lang: %1)"
+		}
+	},
 
-  onStart: async function ({ api, args, message, event }) {
-    const { getPrefix } = global.utils;
-    const p = getPrefix(event.threadID);
+	langs: {
+		en: {
+			noText: "❌ Please enter the text you want me to say.",
+			tooLong: "❌ Text is too long (max %1 characters).",
+			loading: "🐊 Generating voice...",
+			error: "❌ Could not generate the voice message:\n%1"
+		}
+	},
 
-    let text;
-    let number = 'en';
+	onStart: async function ({ args, message, event, getLang, api }) {
+		if (!args.length)
+			return message.reply(getLang("noText"));
 
-    if (event.type === "message_reply") {
-      text = event.messageReply.body;
-    } else {
-      if (args && args.length > 0) {
-        if (args.includes("|")) {
-          const splitArgs = args.join(" ").split("|").map(arg => arg.trim());
-          text = splitArgs[0];
-          number = splitArgs[1] || 'en';
-        } else {
-          text = args.join(" ");
-        }
-      } else {
-        text = '';
-      }
-    }
+		let lang = "en";
+		if (args[0].startsWith("-")) {
+			const code = args.shift().slice(1);
+			if (LANG_CODES.some(c => c.toLowerCase() === code.toLowerCase()))
+				lang = LANG_CODES.find(c => c.toLowerCase() === code.toLowerCase());
+		}
 
-    if (!text) {
-      return message.reply(`Please provide some text. Example:\n${p}say hi there`);
-    }
+		let text = args.join(" ").trim();
+		if (!text)
+			return message.reply(getLang("noText"));
+		if (text.length > 200)
+			return message.reply(getLang("tooLong", 200));
 
-    const path = `${__dirname}/tmp/tts.mp3`;
-
-    try {
-      if (text.length <= 150) {
-        const response = await axios({
-          method: "get",
-          url: `https://translate.google.com/translate_tts?ie=UTF-8&tl=${number}&client=tw-ob&q=${encodeURIComponent(text)}`,
-          responseType: "stream"
-        });
-
-        const writer = fs.createWriteStream(path);
-        response.data.pipe(writer);
-        writer.on("finish", () => {
-          message.reply({
-            body: text,
-            attachment: fs.createReadStream(path)
-          }, () => {
-            fs.remove(path);
-          });
-        });
-      } else {
-        const chunkSize = 150;
-        const chunks = text.match(new RegExp(`.{1,${chunkSize}}`, 'g'));
-
-        for (let i = 0; i < chunks.length; i++) {
-          const response = await axios({
-            method: "get",
-            url: `https://translate.google.com/translate_tts?ie=UTF-8&tl=${number}&client=tw-ob&q=${encodeURIComponent(chunks[i])}`,
-            responseType: "stream"
-          });
-
-          const writer = fs.createWriteStream(path, { flags: i === 0 ? 'w' : 'a' });
-          response.data.pipe(writer);
-
-          if (i === chunks.length - 1) {
-            writer.on("finish", () => {
-              message.reply({
-                body: text,
-                attachment: fs.createReadStream(path)
-              }, () => {
-                fs.remove(path);
-              });
-            });
-          }
-        }
-      }
-    } catch (err) {
-      console.error(err);
-      message.reply("An error occurred while trying to convert your text to speech or send it as an attachment. Please try again later.");
-    }
-  }
+		const msg = await message.reply(getLang("loading"));
+		try {
+			const url = "https://translate.google.com/translate_tts"
+				+ `?ie=UTF-8&q=${encodeURIComponent(text)}&tl=${encodeURIComponent(lang)}&client=tw-ob`;
+			const stream = await getStreamFromURL(url, { headers: { "User-Agent": "Mozilla/5.0" } });
+			const body = `🔊 "${text}"`;
+			if (msg && msg.messageID && typeof api.editMessage == "function") {
+				await api.editMessage(body, msg.messageID);
+				return message.send({ attachment: stream });
+			}
+			return message.send({ body, attachment: stream });
+		}
+		catch (err) {
+			if (msg && msg.messageID && typeof api.editMessage == "function")
+				await api.editMessage(getLang("error", err.message), msg.messageID);
+			else
+				return message.reply(getLang("error", err.message));
+		}
+	}
 };

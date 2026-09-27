@@ -252,7 +252,7 @@ module.exports = {
 						});
 					}
 				}
-				api.unsendMessage((await msgSend).messageID);
+				api.unsendMessage((await msgSend).messageID, event.threadID);
 				let msg = "";
 				if (success.length)
 					msg += `${getLang('success', success.length, groupName)}\n`;

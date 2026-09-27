@@ -1,81 +1,64 @@
 const { exec } = require("child_process");
-const util = require("util");
-const execPromise = util.promisify(exec);
+const { removeHomeDir } = global.utils;
+
+const MAX_OUTPUT = 3500;
 
 module.exports = {
-        config: {
-                name: "shell",
-                aliases: ["sh", "cmd", "exec"],
-                version: "1.0",
-                author: "NeoKEX",
-                countDown: 5,
-                role: 4,
-                description: {
-                        vi: "Thực thi lệnh shell",
-                        en: "Execute shell commands"
-                },
-                category: "owner",
-                guide: {
-                        vi: '   {pn} <command>: Thực thi lệnh shell'
-                                + '\n   Ví dụ: {pn} ls -la'
-                                + '\n   {pn} node -v',
-                        en: '   {pn} <command>: Execute shell command'
-                                + '\n   Example: {pn} ls -la'
-                                + '\n   {pn} node -v'
-                }
-        },
+	config: {
+		name: "shell",
+		aliases: ["sh", "exec", "run"],
+		version: "1.0",
+		author: "Neoaz 🐊",
+		countDown: 5,
+		role: 2,
+		description: {
+			en: "run a shell command on the bot server"
+		},
+		category: "owner",
+		guide: {
+			en: "{pn} <command>"
+		}
+	},
 
-        langs: {
-                vi: {
-                        missingCommand: "⚠ | Vui lòng nhập lệnh shell cần thực thi",
-                        executing: "⚙ | Đang thực thi lệnh...",
-                        output: "✓ | Kết quả:\n\n%1",
-                        error: "✗ | Lỗi:\n\n%1",
-                        timeout: "⚠ | Lệnh thực thi quá lâu (timeout 30s)"
-                },
-                en: {
-                        missingCommand: "⚠ | Please enter shell command to execute",
-                        executing: "⚙ | Executing command...",
-                        output: "✓ | Output:\n\n%1",
-                        error: "✗ | Error:\n\n%1",
-                        timeout: "⚠ | Command execution timeout (30s)"
-                }
-        },
+	langs: {
+		en: {
+			noCommand: "Please enter a shell command to run.",
+			running: "Running...",
+			empty: "(no output)",
+			truncated: "\n... (output truncated)"
+		}
+	},
 
-        onStart: async function ({ message, args, event, getLang, api }) {
-                const command = args.join(" ");
-                if (!command)
-                        return message.reply(getLang("missingCommand"));
+	onStart: async function ({ args, message, api, getLang }) {
+		const command = args.join(" ").trim();
+		if (!command)
+			return message.SyntaxError ? message.SyntaxError() : message.reply(getLang("noCommand"));
 
-                await message.reply(getLang("executing"));
+		const msg = await message.reply(getLang("running"));
 
-                try {
-                        const { stdout, stderr } = await execPromise(command, {
-                                timeout: 30000,
-                                maxBuffer: 1024 * 1024 * 10
-                        });
+		const result = await new Promise((resolve) => {
+			exec(command, { cwd: process.cwd(), maxBuffer: 1024 * 1024 * 8 }, (err, stdout, stderr) => {
+				resolve({
+					err,
+					stdout: stdout ? String(stdout) : "",
+					stderr: stderr ? String(stderr) : ""
+				});
+			});
+		});
 
-                        let output = "";
-                        if (stdout) output += stdout;
-                        if (stderr) output += stderr;
+		let output = (result.stdout + "\n" + result.stderr).trim();
+		output = removeHomeDir(output);
+		if (!output && result.err)
+			output = removeHomeDir(String(result.err.message || result.err));
+		if (!output)
+			output = getLang("empty");
 
-                        if (!output) output = "Command executed successfully (no output)";
+		let body = output;
+		if (body.length > MAX_OUTPUT)
+			body = body.slice(0, MAX_OUTPUT) + getLang("truncated");
 
-                        if (output.length > 2000) {
-                                output = output.substring(0, 1997) + "...";
-                        }
-
-                        return message.reply(getLang("output", output));
-                } catch (error) {
-                        let errorMsg = error.message;
-                        if (errorMsg.includes("ETIMEDOUT") || errorMsg.includes("timeout"))
-                                return message.reply(getLang("timeout"));
-
-                        if (errorMsg.length > 2000) {
-                                errorMsg = errorMsg.substring(0, 1997) + "...";
-                        }
-
-                        return message.reply(getLang("error", errorMsg));
-                }
-        }
+		if (msg && msg.messageID && typeof api.editMessage == "function")
+			return await api.editMessage(body, msg.messageID);
+		return message.reply(body);
+	}
 };
