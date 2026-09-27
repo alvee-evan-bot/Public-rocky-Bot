@@ -45,7 +45,8 @@ module.exports = {
 		const startTime = (global.GoatBot && global.GoatBot.startTime) || (Date.now() - process.uptime() * 1000);
 		const msg = await message.reply(getLang("loading"));
 
-		const frames = ["▱▱▱▱▱▱▱▱▱▱", "▰▱▱▱▱▱▱▱▱▱", "▰▰▱▱▱▱▱▱▱▱", "▰▰▰▱▱▱▱▱▱▱", "▰▰▰▰▱▱▱▱▱▱", "▰▰▰▰▰▱▱▱▱▱", "▰▰▰▰▰▰▱▱▱▱", "▰▰▰▰▰▰▰▱▱▱", "▰▰▰▰▰▰▰▰▱▱", "▰▰▰▰▰▰▰▰▰▱", "▰▰▰▰▰▰▰▰▰▰"];
+		const frames = ["▰▱▱▱▱▱▱▱▱▱", "▰▰▰▱▱▱▱▱▱▱", "▰▰▰▰▰▰▱▱▱▱", "▰▰▰▰▰▰▰▰▱▱", "▰▰▰▰▰▰▰▰▰▰"];
+		const EDIT_INTERVAL = 700;
 		let stopped = false;
 		const canEdit = msg && msg.messageID && typeof api.editMessage == "function";
 		const editSafely = async (text, messageID) => {
@@ -65,10 +66,12 @@ module.exports = {
 				for (const frame of frames) {
 					if (stopped)
 						return;
-					await editSafely(`${getLang("loading")}\n${frame}`, msg.messageID);
+					await new Promise(resolve => setTimeout(resolve, EDIT_INTERVAL));
 					if (stopped)
 						return;
-					await new Promise(resolve => setTimeout(resolve, 160));
+					const ok = await editSafely(`${getLang("loading")}\n${frame}`, msg.messageID);
+					if (!ok)
+						return;
 				}
 			})()
 			: Promise.resolve();
@@ -117,8 +120,8 @@ module.exports = {
 		);
 
 		if (canEdit) {
+			await Promise.race([animating, new Promise(resolve => setTimeout(resolve, frames.length * EDIT_INTERVAL + 3000))]);
 			stopped = true;
-			await Promise.race([animating, new Promise(resolve => setTimeout(resolve, 2000))]);
 			const edited = await editSafely(body, msg.messageID);
 			if (edited)
 				return;
