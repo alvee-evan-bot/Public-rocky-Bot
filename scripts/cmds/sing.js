@@ -1,149 +1,265 @@
-const axios = require("axios");
-const fs = require("fs-extra");
-const path = require("path");
+const { getStreamFromURL } = global.utils;
 
-const BASE_URL = "https://play.nkx.lol";
-const MAX_ATTACHMENT_BYTES = 26214400;
-const BROWSER_UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36";
-const REQUEST_HEADERS = { "User-Agent": BROWSER_UA };
-
-function resolveUrl(uri, baseUrl) {
-  try {
-    return new URL(uri, baseUrl).href;
-  } catch (e) {
-    return uri;
-  }
+function norm(text) {
+	return String(text || "")
+		.toLowerCase()
+		.normalize("NFKD")
+		.replace(/[\u0300-\u036f]/g, "")
+		.replace(/[^a-z0-9]+/g, " ")
+		.trim();
 }
 
-function parseMediaPlaylist(text, baseUrl) {
-  let initUrl = null;
-  const segments = [];
+function scoreTrack(track, query) {
+	const q = norm(query);
+	if (!q)
+		return 0;
+	const title = norm(track.title);
+	const artist = norm(track.artist);
+	const album = norm(track.album);
+	const combined = `${title} ${artist}`.trim();
 
-  for (const rawLine of text.split(/\r?\n/)) {
-    const line = rawLine.trim();
-    if (!line) continue;
+	let score = 0;
+	if (title === q) score += 120;
+	else if (combined === q) score += 110;
+	else if (title.startsWith(q)) score += 80;
+	else if (combined.startsWith(q)) score += 70;
+	else if (title.includes(q)) score += 50;
+	else if (combined.includes(q)) score += 45;
+	else if (album.includes(q)) score += 20;
 
-    if (line.startsWith("#EXT-X-MAP:")) {
-      const m = line.match(/URI="([^"]+)"/);
-      if (m) initUrl = resolveUrl(m[1], baseUrl);
-    } else if (!line.startsWith("#")) {
-      segments.push(resolveUrl(line, baseUrl));
-    }
-  }
+	const words = q.split(" ").filter(Boolean);
+	if (words.length) {
+		let hit = 0;
+		for (const word of words) {
+			if (title.includes(word)) hit += 2;
+			else if (artist.includes(word)) hit += 2;
+			else if (combined.includes(word)) hit += 1;
+		}
+		score += hit;
+	}
 
-  return { initUrl, segments };
+	if (artist && q.includes(artist)) score += 25;
+	if (title && track.durationMs) score += 1;
+	return score;
 }
-async function fetchAndParsePlaylist(url) {
-  const res = await axios.get(url, { headers: REQUEST_HEADERS, timeout: 20000, responseType: "text" });
-  const text = typeof res.data === "string" ? res.data : String(res.data);
 
-  if (text.includes("#EXT-X-STREAM-INF")) {
-    const variantLine = text
-      .split(/\r?\n/)
-      .map((l) => l.trim())
-      .find((l) => l && !l.startsWith("#"));
-    if (!variantLine) throw new Error("Master playlist had no variant stream.");
-    return fetchAndParsePlaylist(resolveUrl(variantLine, url));
-  }
-
-  return parseMediaPlaylist(text, url);
+function rankTracks(tracks, query) {
+	return tracks
+		.map((track, index) => ({ track, index, score: scoreTrack(track, query) }))
+		.sort((a, b) => b.score - a.score || a.index - b.index)
+		.map(entry => entry.track);
 }
 
-async function downloadHlsAudio(streamUrl) {
-  const { initUrl, segments } = await fetchAndParsePlaylist(streamUrl);
-  if (segments.length === 0) throw new Error("No segments were found in the HLS playlist.");
+function safeName(title) {
+	return (title || "song").replace(/[^\w.-]+/g, "_").slice(0, 40) || "song";
+}
 
-  const buffers = [];
-  let totalBytes = 0;
+function extFromMime(mime) {
+	if (!mime)
+		return null;
+	if (mime.includes("mpeg") || mime.includes("mp3"))
+		return "mp3";
+	if (mime.includes("mp4") || mime.includes("m4a"))
+		return "m4a";
+	if (mime.includes("ogg"))
+		return "ogg";
+	if (mime.includes("wav"))
+		return "wav";
+	if (mime.includes("jpeg") || mime.includes("jpg"))
+		return "jpg";
+	if (mime.includes("png"))
+		return "png";
+	return null;
+}
 
-  if (initUrl) {
-    const initRes = await axios.get(initUrl, { headers: REQUEST_HEADERS, responseType: "arraybuffer", timeout: 20000 });
-    buffers.push(Buffer.from(initRes.data));
-    totalBytes += initRes.data.byteLength;
-  }
+async function sendTrack({ api, message, track, caption, editId, editText }) {
+	let attachment = null;
+	const name = safeName(track.title);
 
-  for (const segUrl of segments) {
-    const segRes = await axios.get(segUrl, { headers: REQUEST_HEADERS, responseType: "arraybuffer", timeout: 20000 });
-    totalBytes += segRes.data.byteLength;
-    if (totalBytes > MAX_ATTACHMENT_BYTES) {
-      throw new Error("Audio stream exceeds Messenger's 25MB limit.");
-    }
-    buffers.push(Buffer.from(segRes.data));
-  }
+	if (editId && editText && typeof api.editMessage == "function") {
+		try {
+			await api.editMessage(editText, editId);
+		}
+		catch (e) { /* edit is best-effort */ }
+	}
 
-  return { buffer: Buffer.concat(buffers), isFragmentedMp4: !!initUrl };
+	if (track.audioUrl) {
+		try {
+			attachment = await getStreamFromURL(track.audioUrl, `${name}.mp3`);
+		}
+		catch (e) {
+			attachment = null;
+		}
+	}
+
+	if (attachment)
+		return message.send({ body: caption, attachment });
+
+	if (track.coverArtwork) {
+		try {
+			attachment = await getStreamFromURL(track.coverArtwork, `${name}.jpg`);
+			return message.send({ body: caption, attachment });
+		}
+		catch (e) { /* fall through to text */ }
+	}
+
+	return message.send({ body: caption });
 }
 
 module.exports = {
-  config: {
-    name: "sing",
-    aliases: ["song", "music"],
-    version: "1.1",
-    author: "Neoaz 🐊",
-    countDown: 5,
-    role: 0,
-    shortDescription: { en: "Search and download a song" },
-    longDescription: { en: "Search and download the top matching song automatically." },
-    category: "media",
-    guide: { en: "{pn} <song name>" }
-  },
+	config: {
+		name: "sing",
+		aliases: ["music", "song", "searchmusic"],
+		version: "1.2",
+		author: "Neoaz 🐊",
+		countDown: 5,
+		role: 0,
+		description: {
+			en: "search for a song and send it into the chat"
+		},
+		category: "media",
+		guide: {
+			en: "{pn} <song name or artist>"
+				+ "\n   {pn} <song> -c <number> (show that many results, then reply with a number to send one)"
+				+ "\n   {pn} <song> -n <number> (send a ranked result directly)"
+		}
+	},
 
-  onStart: async function ({ message, args, event, api }) {
-    const query = args.join(" ");
-    if (!query) return message.reply("Please provide a song name.");
+	langs: {
+		en: {
+			noQuery: "Please enter a song name or artist to search for.",
+			searching: "Searching...",
+			sending: "Sending the song...",
+			notFound: "No song found for \"%1\". Try a different keyword.",
+			error: "Could not search for music:\n%1",
+			resultsHeader: "Top %1 result(s) for \"%2\"",
+			resultsItem: "%1. %2 — %3",
+			resultsFooter: "Reply to this message with a number (1-%1) to send that song.",
+			invalidChoice: "Please reply with a number between 1 and %1.",
+			title: "%1 — %2",
+			caption: "%1 — %2"
+		}
+	},
 
-    api.setMessageReaction("⏳", event.messageID);
+	onStart: async function ({ api, args, message, event, prefix, commandName, getLang }) {
+		let listCount = 0;
+		let pick = 1;
+		const filtered = [];
 
-    try {
-      const searchRes = await axios.get(`${BASE_URL}/search`, {
-        params: { q: query, limit: 1 },
-        timeout: 25000,
-        validateStatus: () => true
-      });
+		for (let i = 0; i < args.length; i++) {
+			const arg = args[i];
+			if (arg === "-c" || arg === "--count") {
+				const value = parseInt(args[i + 1]);
+				if (!isNaN(value) && value > 0)
+					listCount = Math.min(value, 20);
+				i++;
+				continue;
+			}
+			if (arg === "-n" || arg === "--number") {
+				const value = parseInt(args[i + 1]);
+				if (!isNaN(value) && value > 0)
+					pick = value;
+				i++;
+				continue;
+			}
+			filtered.push(arg);
+		}
 
-      if (searchRes.status >= 400) {
-        api.setMessageReaction("❌", event.messageID);
-        return message.reply(`Search failed (status ${searchRes.status}).`);
-      }
+		const query = filtered.join(" ").trim();
+		if (!query)
+			return message.SyntaxError ? message.SyntaxError() : message.reply(getLang("noQuery"));
 
-      const results = searchRes.data?.results;
-      if (!Array.isArray(results) || results.length === 0) {
-        api.setMessageReaction("❌", event.messageID);
-        return message.reply("No songs found for your query.");
-      }
+		const msg = await message.reply(getLang("searching"));
 
-      const selected = results[0];
-      const streamUrl = selected.audio_cdn_url;
-      const title = selected.title || query;
+		const edit = async (body) => {
+			if (msg?.messageID && typeof api.editMessage == "function")
+				return api.editMessage(body, msg.messageID);
+			return message.reply(body);
+		};
 
-      if (!streamUrl) {
-        api.setMessageReaction("❌", event.messageID);
-        return message.reply("No playable stream was found for that result.");
-      }
+		let result;
+		try {
+			result = await api.searchMusic(query, { count: 30 });
+		}
+		catch (err) {
+			const detail = err.response?.error || err.error || err.message || String(err);
+			return edit(getLang("error", detail));
+		}
 
-      const { buffer, isFragmentedMp4 } = await downloadHlsAudio(streamUrl);
-      if (buffer.length === 0) {
-        api.setMessageReaction("❌", event.messageID);
-        return message.reply("The downloaded audio was empty.");
-      }
+		if (!result || !result.tracks || result.tracks.length === 0)
+			return edit(getLang("notFound", query));
 
-      const cacheDir = path.join(__dirname, "cache");
-      await fs.ensureDir(cacheDir);
-      const ext = isFragmentedMp4 ? "m4a" : "aac";
-      const filePath = path.join(cacheDir, `${Date.now()}.${ext}`);
-      await fs.writeFile(filePath, buffer);
+		const ranked = rankTracks(result.tracks, query);
 
-      await message.reply({
-        body: title,
-        attachment: fs.createReadStream(filePath)
-      });
+		if (listCount > 0) {
+			const shown = ranked.slice(0, listCount);
+			const items = shown
+				.map((track, index) => getLang("resultsItem", index + 1, track.title, track.artist))
+				.join("\n");
+			const body = `${getLang("resultsHeader", shown.length, query)}\n${items}\n${getLang("resultsFooter", shown.length)}`;
 
-      api.setMessageReaction("✅", event.messageID);
-      fs.remove(filePath).catch(() => {});
-    } catch (e) {
-      console.error("[SING COMMAND ERROR]:", e?.response?.data || e.message || e);
-      api.setMessageReaction("❌", event.messageID);
-      message.reply("An error occurred while processing the download.");
-    }
-  }
+			if (msg?.messageID && typeof api.editMessage == "function") {
+				await edit(body);
+				global.GoatBot.onReply.set(msg.messageID, {
+					commandName,
+					messageID: msg.messageID,
+					author: event.senderID,
+					tracks: shown
+				});
+			}
+			else {
+				const info = await message.reply(body);
+				if (info?.messageID) {
+					global.GoatBot.onReply.set(info.messageID, {
+						commandName,
+						messageID: info.messageID,
+						author: event.senderID,
+						tracks: shown
+					});
+				}
+			}
+			return;
+		}
+
+		const track = ranked[Math.min(pick - 1, ranked.length - 1)];
+		const caption = getLang("caption", track.title, track.artist);
+
+		try {
+			return await sendTrack({
+				api, message, track, caption,
+				editId: msg?.messageID,
+				editText: getLang("title", track.title, track.artist)
+			});
+		}
+		catch (err) {
+			return edit(getLang("error", err.message || err.error || String(err)));
+		}
+	},
+
+	onReply: async function ({ api, event, message, Reply, getLang }) {
+		global.GoatBot.onReply.delete(Reply.messageID);
+		const { tracks, author } = Reply;
+		if (event.senderID !== author)
+			return;
+		const choice = parseInt((event.body || "").trim());
+		if (isNaN(choice) || choice < 1 || choice > tracks.length)
+			return message.reply(getLang("invalidChoice", tracks.length));
+
+		const track = tracks[choice - 1];
+		const caption = getLang("caption", track.title, track.artist);
+		const msg = await message.reply(getLang("sending"));
+		try {
+			return await sendTrack({
+				api, message, track, caption,
+				editId: msg?.messageID,
+				editText: getLang("title", track.title, track.artist)
+			});
+		}
+		catch (err) {
+			const detail = err.message || err.error || String(err);
+			if (msg?.messageID && typeof api.editMessage == "function")
+				return api.editMessage(getLang("error", detail), msg.messageID);
+			return message.reply(getLang("error", detail));
+		}
+	}
 };

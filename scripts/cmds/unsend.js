@@ -1,7 +1,6 @@
 module.exports = {
 	config: {
 		name: "unsend",
-		aliases: ["u","r","uns"],
 		version: "1.2",
 		author: "NTKhang",
 		countDown: 5,
@@ -27,8 +26,8 @@ module.exports = {
 	},
 
 	onStart: async function ({ message, event, api, getLang }) {
-		if (!event.messageReply || event.messageReply.senderID != api.getCurrentUserID())
+		if (!event.messageReply || String(event.messageReply.senderID) !== String(api.getCurrentUserID()))
 			return message.reply(getLang("syntaxError"));
-		message.unsend(event.messageReply.messageID);
+		message.unsend(event.messageReply.messageID, event.threadID);
 	}
 };
