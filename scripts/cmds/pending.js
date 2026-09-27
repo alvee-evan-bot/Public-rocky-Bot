@@ -1,151 +1,191 @@
-const axios = require("axios");
-const fs = require("fs");
+const { getStreamFromURL } = global.utils;
+
+const PAGE_SIZE = 20;
+const REACT_WORKING = "⏳";
+const REACT_DONE = "✅";
+const REACT_FAIL = "❌";
+
+function react(api, emoji, messageID, threadID) {
+	try {
+		const result = api.setMessageReaction(emoji, messageID, threadID);
+		if (result && typeof result.catch === "function")
+			result.catch(() => null);
+		return result;
+	}
+	catch (e) {
+		return null;
+	}
+}
+
+function displayName(thread) {
+	if (thread.name)
+		return thread.name;
+	if (thread.threadName)
+		return thread.threadName;
+	if (thread.isGroup)
+		return "(unnamed group)";
+	return "(unnamed user)";
+}
+
+function snippetOf(thread) {
+	const text = thread.snippet || thread.snippetMessage || "";
+	return String(text).replace(/\s+/g, " ").trim().slice(0, 60);
+}
+
+async function loadPending(api) {
+	const threads = await api.getThreadList(PAGE_SIZE, null, ["PENDING"]);
+	return (threads || []).filter(thread => thread && thread.threadID);
+}
+
+function explainError(err) {
+	const raw = String((err && (err.error || err.message)) || err || "");
+	const text = raw.toLowerCase();
+	if (text.includes("malformed") || text.includes("successful_results") || text.includes("error_results"))
+		return { key: "loadFailed", values: [] };
+	if (text.includes("checkpoint") || text.includes("not logged") || text.includes("login")
+		|| /^13\d{5}$/.test(raw.trim()) || raw.includes("1367036") || raw.includes("1357004"))
+		return { key: "sessionFailed", values: [] };
+	return { key: "error", values: [raw] };
+}
+
+async function buildList({ api, message, threads, prefix, commandName, event, getLang }) {
+	const lines = [getLang("header", threads.length)];
+
+	for (let i = 0; i < threads.length; i++) {
+		const thread = threads[i];
+		const kind = thread.isGroup ? getLang("group") : getLang("user");
+		const snippet = snippetOf(thread);
+		lines.push(getLang("item", i + 1, kind, displayName(thread), snippet || getLang("noMessage")));
+	}
+
+	lines.push(getLang("footer", prefix, commandName));
+
+	const thumbnails = [];
+	for (const thread of threads) {
+		if (!thread.imageSrc)
+			continue;
+		try {
+			thumbnails.push(await getStreamFromURL(thread.imageSrc, `${thread.threadID}.jpg`));
+		}
+		catch (e) {
+			// skip images that fail to load
+		}
+	}
+
+	const body = lines.join("\n");
+	const info = thumbnails.length
+		? await message.reply({ body, attachment: thumbnails })
+		: await message.reply(body);
+
+	global.GoatBot.onReply.set(info.messageID, {
+		commandName,
+		messageID: info.messageID,
+		author: event.senderID,
+		threads
+	});
+}
 
 module.exports = {
-  config: {
-    name: "pending",
-    aliases: ["pen", "pend", "pe"],
-    version: "4.0.0",
-    author: "Toshiro Editz",
-    countDown: 5,
-    role: 1,
-    shortDescription: "Show new pending groups & auto clean dead threads",
-    longDescription: "Approve pending groups/users with auto-remove invalid threads and auto-refresh",
-    category: "utility",
-  },
+	config: {
+		name: "pending",
+		aliases: ["pendings", "requests", "msgrequest"],
+		version: "1.0",
+		author: "Neoaz 🐊",
+		countDown: 5,
+		role: 2,
+		description: {
+			en: "list and approve or decline pending message requests (users and groups in spam)"
+		},
+		category: "admin",
+		guide: {
+			en: "{pn}: list pending message requests"
+				+ "\n   reply with a number to accept that request"
+				+ "\n   reply with d<number> to decline that request (example: d2)"
+				+ "\n   {pn} all: accept every pending request"
+				+ "\n   {pn} clear: decline every pending request"
+		}
+	},
 
-  // Auto Clean Function
-  filterValidThreads: async function (list, api) {
-    const valid = [];
-    for (const thread of list) {
-      try {
-        await api.getThreadInfo(thread.threadID);
-        valid.push(thread);
-      } catch (e) {
-        console.log("[AUTO-CLEAN] Removed invalid thread:", thread.threadID);
-      }
-    }
-    return valid;
-  },
+	langs: {
+		en: {
+			header: "Pending requests: %1",
+			item: "%1. [%2] %3\n    %4",
+			group: "group",
+			user: "user",
+			noMessage: "(no message)",
+			footer: "Reply with a number to accept, or d<number> to decline.\n%1%2 all to accept all, %1%2 clear to decline all.",
+			none: "No pending message requests.",
+			loadFailed: "Could not load pending requests: Facebook returned a bad response. Your login/cookie is likely expired or flagged - re-login with fresh cookies and try again.",
+			sessionFailed: "Could not load pending requests: the Facebook session is not valid (checkpoint or logged out). Re-login with fresh cookies and try again.",
+			invalid: "Reply with a number between 1 and %1 (or d<number> to decline).",
+			accepted: "Accepted.",
+			declined: "Declined.",
+			allDone: "Accepted %1 request(s).",
+			clearDone: "Declined %1 request(s).",
+			error: "Something went wrong: %1"
+		}
+	},
 
-  fetchPendingList: async function(api, usersData, type) {
-    let list = await api.getThreadList(200, null, ["PENDING"]) || [];
-    list = await this.filterValidThreads(list, api);
+	onStart: async function ({ api, args, message, event, prefix, commandName, getLang }) {
+		const action = (args[0] || "").toLowerCase();
 
-    let filteredList = [];
-    if (type.startsWith("u")) filteredList = list.filter(t => !t.isGroup);
-    if (type.startsWith("t")) filteredList = list.filter(t => t.isGroup);
-    if (type === "all") filteredList = list;
+		if (action === "all" || action === "clear") {
+			const messageID = event.messageID;
+			const threadID = event.threadID;
+			react(api, REACT_WORKING, messageID, threadID);
+			try {
+				const threads = await loadPending(api);
+				if (!threads.length) {
+					react(api, REACT_FAIL, messageID, threadID);
+					return message.reply(getLang("none"));
+				}
+				const accept = action === "all";
+				await api.handleMessageRequest(threads.map(t => t.threadID), accept);
+				react(api, REACT_DONE, messageID, threadID);
+				return message.reply(getLang(accept ? "allDone" : "clearDone", threads.length));
+			}
+			catch (err) {
+				react(api, REACT_FAIL, messageID, threadID);
+				const info = explainError(err);
+				return message.reply(getLang(info.key, ...info.values));
+			}
+		}
 
-    return filteredList;
-  },
+		try {
+			const threads = await loadPending(api);
+			if (!threads.length)
+				return message.reply(getLang("none"));
+			return buildList({ api, message, threads, prefix, commandName, event, getLang });
+		}
+		catch (err) {
+			const info = explainError(err);
+			return message.reply(getLang(info.key, ...info.values));
+		}
+	},
 
-  onReply: async function ({ api, event, Reply }) {
-    const { author, pending, messageID } = Reply;
-    if (String(event.senderID) !== String(author)) return;
+	onReply: async function ({ api, event, message, Reply, getLang }) {
+		global.GoatBot.onReply.delete(Reply.messageID);
+		const { threads, author } = Reply;
+		if (event.senderID !== author)
+			return;
 
-    const input = event.body.trim().toLowerCase();
+		const body = (event.body || "").trim().toLowerCase();
+		const decline = body.startsWith("d");
+		const number = parseInt(decline ? body.slice(1) : body);
 
-    // Cancel operation
-    if (input === "c") {
-      try {
-        await api.unsendMessage(messageID);
-        return api.sendMessage("❌ Operation canceled.", event.threadID);
-      } catch {
-        return;
-      }
-    }
+		if (isNaN(number) || number < 1 || number > threads.length)
+			return message.reply(getLang("invalid", threads.length));
 
-    const indexes = input.split(/\s+/).map(Number);
-    if (isNaN(indexes[0])) {
-      return api.sendMessage("⚠ Invalid input! Use numbers only.", event.threadID);
-    }
-
-    let count = 0;
-    for (const idx of indexes) {
-      if (idx <= 0 || idx > pending.length) continue;
-      const group = pending[idx - 1];
-
-      try {
-        await api.sendMessage(
-          "🎉 Group Approved!\nUse " + global.GoatBot.config.prefix + "help to view commands.",
-          group.threadID
-        );
-        await api.changeNickname(
-          global.GoatBot.config.nickNameBot || "🌬️ Raven Ai ✨",
-          group.threadID,
-          api.getCurrentUserID()
-        );
-        count++;
-      } catch {
-        count++;
-      }
-    }
-
-    for (const idx of indexes.sort((a,b)=>b-a)) {
-      if (idx > 0 && idx <= pending.length) pending.splice(idx-1,1);
-    }
-
-    return api.sendMessage(`✅ Approved ${count} group(s).`, event.threadID);
-  },
-
-  onStart: async function ({ api, event, args, usersData }) {
-    const { threadID, messageID } = event;
-
-    if (!global.GoatBot.config.adminBot.includes(event.senderID)) {
-      return api.sendMessage("❌ You do not have permission to use this command.", threadID);
-    }
-
-    const type = args[0]?.toLowerCase();
-    if (!type) {
-      return api.sendMessage(
-        "📌 Usage: pending [user / thread / all]\nTry: pending thread",
-        threadID
-      );
-    }
-
-    try {
-      let filteredList = await this.fetchPendingList(api, usersData, type);
-
-      // Retry mechanism if no pending found
-      if (filteredList.length === 0) {
-        console.log("[RETRY] No pending found. Retrying in 5 seconds...");
-        await new Promise(r => setTimeout(r, 5000));
-        filteredList = await this.fetchPendingList(api, usersData, type);
-      }
-
-      if (filteredList.length === 0) {
-        return api.sendMessage("✨ No new pending requests found.", threadID);
-      }
-
-      let msg = `╭─ ⭕ Pending ${type.charAt(0).toUpperCase() + type.slice(1)} List ⭕ ─╮\n`;
-      let index = 1;
-      for (const single of filteredList) {
-        const name = single.name || (await usersData.getName(single.threadID)) || "Unknown";
-        msg += `│ ✨ [${index}] • ${name}\n`;
-        index++;
-      }
-      msg += "╰────────────────╯\n\n";
-      msg += "👉 Reply with number(s) to approve.\n";
-      msg += '❌ Reply "c" to cancel.';
-
-      return api.sendMessage(
-        msg,
-        threadID,
-        (error, info) => {
-          global.GoatBot.onReply.set(info.messageID, {
-            commandName: this.config.name,
-            messageID: info.messageID,
-            author: event.senderID,
-            pending: filteredList,
-          });
-        },
-        messageID
-      );
-
-    } catch (error) {
-      console.log("ERROR:", error);
-      return api.sendMessage("⚠ Unable to fetch pending list.", threadID);
-    }
-  }
+		const messageID = event.messageID;
+		const threadID = event.threadID;
+		react(api, REACT_WORKING, messageID, threadID);
+		try {
+			await api.handleMessageRequest(threads[number - 1].threadID, !decline);
+			react(api, REACT_DONE, messageID, threadID);
+		}
+		catch (err) {
+			react(api, REACT_FAIL, messageID, threadID);
+			return message.reply(getLang("error", err.message || String(err)));
+		}
+	}
 };
