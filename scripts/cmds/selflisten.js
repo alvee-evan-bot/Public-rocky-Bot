@@ -1,1 +1,48 @@
-Y29uc3QgZnMgPSByZXF1aXJlKCJmcy1leHRyYSIpOwoKbW9kdWxlLmV4cG9ydHMgPSB7Cgljb25maWc6IHsKCQluYW1lOiAic2VsZmxpc3RlbiIsCgkJYWxpYXNlczogWyJzbCIsICJzZWxmbGlzdGVubW9kZSJdLAoJCXZlcnNpb246ICIxLjAiLAoJCWF1dGhvcjogIk5lb2F6IPCfkIoiLAoJCWNvdW50RG93bjogNSwKCQlyb2xlOiAyLAoJCWRlc2NyaXB0aW9uOiB7CgkJCWVuOiAidHVybiBvbi9vZmYgc2VsZkxpc3RlbiBzbyB0aGUgYm90IGFsc28gcmVjZWl2ZXMgbWVzc2FnZXMgc2VudCBieSBpdHNlbGYiCgkJfSwKCQljYXRlZ29yeTogIm93bmVyIiwKCQlndWlkZTogewoJCQllbjogIiAgIHtwbn0gW29uIHwgb2ZmXTogdHVybiBvbi9vZmYgc2VsZkxpc3RlbiIKCQkJCSsgIlxuICAge3BufSBzdGF0dXM6IHNob3cgdGhlIGN1cnJlbnQgc2VsZkxpc3RlbiB2YWx1ZSIKCQkJCSsgIlxuICAgc2VsZkxpc3RlbiBpcyByZWFkIHdoZW4gdGhlIGJvdCBjb25uZWN0cyB0byBGYWNlYm9vaywgc28gcmVzdGFydCB0aGUgYm90IGFmdGVyIGNoYW5naW5nIGl0IgoJCX0KCX0sCgoJbGFuZ3M6IHsKCQllbjogewoJCQl0dXJuZWRPbjogIuKchSBUdXJuZWQgb24gc2VsZkxpc3Rlbi4gUmVzdGFydCB0aGUgYm90IGZvciBpdCB0byB0YWtlIGVmZmVjdC4iLAoJCQl0dXJuZWRPZmY6ICLinIUgVHVybmVkIG9mZiBzZWxmTGlzdGVuLiBSZXN0YXJ0IHRoZSBib3QgZm9yIGl0IHRvIHRha2UgZWZmZWN0LiIsCgkJCXN0YXR1czogIvCfk4wgc2VsZkxpc3RlbiBpcyBjdXJyZW50bHkgJTEiLAoJCQlvbjogIm9uIiwKCQkJb2ZmOiAib2ZmIgoJCX0KCX0sCgoJb25TdGFydDogYXN5bmMgZnVuY3Rpb24gKHsgYXJncywgbWVzc2FnZSwgZ2V0TGFuZyB9KSB7CgkJY29uc3Qgb3B0aW9uID0gYXJnc1swXSA/IGFyZ3NbMF0udG9Mb3dlckNhc2UoKSA6ICIiOwoJCWNvbnN0IG9wdGlvbnNGY2EgPSBnbG9iYWwuR29hdEJvdC5jb25maWcub3B0aW9uc0ZjYSB8fCAoZ2xvYmFsLkdvYXRCb3QuY29uZmlnLm9wdGlvbnNGY2EgPSB7fSk7CgoJCWlmICghb3B0aW9uIHx8IG9wdGlvbiA9PT0gInN0YXR1cyIgfHwgb3B0aW9uID09PSAiY2hlY2siKQoJCQlyZXR1cm4gbWVzc2FnZS5yZXBseShnZXRMYW5nKCJzdGF0dXMiLCBvcHRpb25zRmNhLnNlbGZMaXN0ZW4gPT09IHRydWUgPyBnZXRMYW5nKCJvbiIpIDogZ2V0TGFuZygib2ZmIikpKTsKCgkJaWYgKG9wdGlvbiAhPT0gIm9uIiAmJiBvcHRpb24gIT09ICJvZmYiKQoJCQlyZXR1cm4gbWVzc2FnZS5TeW50YXhFcnJvcigpOwoKCQljb25zdCB2YWx1ZSA9IG9wdGlvbiA9PT0gIm9uIjsKCQlvcHRpb25zRmNhLnNlbGZMaXN0ZW4gPSB2YWx1ZTsKCQlnbG9iYWwuR29hdEJvdC5jb25maWcub3B0aW9uc0ZjYS5zZWxmTGlzdGVuID0gdmFsdWU7CgkJZnMud3JpdGVGaWxlU3luYyhnbG9iYWwuY2xpZW50LmRpckNvbmZpZywgSlNPTi5zdHJpbmdpZnkoZ2xvYmFsLkdvYXRCb3QuY29uZmlnLCBudWxsLCAyKSk7CgkJcmV0dXJuIG1lc3NhZ2UucmVwbHkoZ2V0TGFuZyh2YWx1ZSA/ICJ0dXJuZWRPbiIgOiAidHVybmVkT2ZmIikpOwoJfQp9Owo=
+const fs = require("fs-extra");
+
+module.exports = {
+	config: {
+		name: "selflisten",
+		aliases: ["sl", "selflistenmode"],
+		version: "1.0",
+		author: "Neoaz 🐊",
+		countDown: 5,
+		role: 2,
+		description: {
+			en: "turn on/off selfListen so the bot also receives messages sent by itself"
+		},
+		category: "owner",
+		guide: {
+			en: "   {pn} [on | off]: turn on/off selfListen"
+				+ "\n   {pn} status: show the current selfListen value"
+				+ "\n   selfListen is read when the bot connects to Facebook, so restart the bot after changing it"
+		}
+	},
+
+	langs: {
+		en: {
+			turnedOn: "✅ Turned on selfListen. Restart the bot for it to take effect.",
+			turnedOff: "✅ Turned off selfListen. Restart the bot for it to take effect.",
+			status: "📌 selfListen is currently %1",
+			on: "on",
+			off: "off"
+		}
+	},
+
+	onStart: async function ({ args, message, getLang }) {
+		const option = args[0] ? args[0].toLowerCase() : "";
+		const optionsFca = global.GoatBot.config.optionsFca || (global.GoatBot.config.optionsFca = {});
+
+		if (!option || option === "status" || option === "check")
+			return message.reply(getLang("status", optionsFca.selfListen === true ? getLang("on") : getLang("off")));
+
+		if (option !== "on" && option !== "off")
+			return message.SyntaxError();
+
+		const value = option === "on";
+		optionsFca.selfListen = value;
+		global.GoatBot.config.optionsFca.selfListen = value;
+		fs.writeFileSync(global.client.dirConfig, JSON.stringify(global.GoatBot.config, null, 2));
+		return message.reply(getLang(value ? "turnedOn" : "turnedOff"));
+	}
+};

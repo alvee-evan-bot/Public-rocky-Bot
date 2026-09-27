@@ -1,1 +1,30 @@
-RlJPTSBub2RlOjIyLWJvb2t3b3JtCgpFTlYgTk9ERV9FTlY9cHJvZHVjdGlvbiBcCiAgICBERUJJQU5fRlJPTlRFTkQ9bm9uaW50ZXJhY3RpdmUKClJVTiBhcHQtZ2V0IHVwZGF0ZSAmJiBhcHQtZ2V0IGluc3RhbGwgLXkgLS1uby1pbnN0YWxsLXJlY29tbWVuZHMgXAogICAgYnVpbGQtZXNzZW50aWFsIFwKICAgIHB5dGhvbjMgXAogICAgcGtnLWNvbmZpZyBcCiAgICBsaWJjYWlybzItZGV2IFwKICAgIGxpYnBhbmdvMS4wLWRldiBcCiAgICBsaWJqcGVnLWRldiBcCiAgICBsaWJnaWYtZGV2IFwKICAgIGxpYnJzdmcyLWRldiBcCiAgICBsaWJwaXhtYW4tMS1kZXYgXAogICAgbGlidXVpZDEgXAogICAgY2EtY2VydGlmaWNhdGVzIFwKICAgICYmIHJtIC1yZiAvdmFyL2xpYi9hcHQvbGlzdHMvKgoKV09SS0RJUiAvYXBwCgpDT1BZIC4gLgoKUlVOIG5wbSBpbnN0YWxsIC0taW5jbHVkZT1vcHRpb25hbCAtLW5vLWF1ZGl0IC0tbm8tZnVuZCBcCiAgICAmJiBucG0gY2FjaGUgY2xlYW4gLS1mb3JjZQoKRU5WIFBPUlQ9MzAwMQpFWFBPU0UgMzAwMQoKQ01EIFsibnBtIiwgInN0YXJ0Il0K
+FROM node:22-bookworm
+
+ENV NODE_ENV=production \
+    DEBIAN_FRONTEND=noninteractive
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    build-essential \
+    python3 \
+    pkg-config \
+    libcairo2-dev \
+    libpango1.0-dev \
+    libjpeg-dev \
+    libgif-dev \
+    librsvg2-dev \
+    libpixman-1-dev \
+    libuuid1 \
+    ca-certificates \
+    && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /app
+
+COPY . .
+
+RUN npm install --include=optional --no-audit --no-fund \
+    && npm cache clean --force
+
+ENV PORT=3001
+EXPOSE 3001
+
+CMD ["npm", "start"]

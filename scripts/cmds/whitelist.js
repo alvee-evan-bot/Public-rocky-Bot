@@ -1,1 +1,188 @@
-Y29uc3QgZnMgPSByZXF1aXJlKCJmcy1leHRyYSIpOwoKbW9kdWxlLmV4cG9ydHMgPSB7Cgljb25maWc6IHsKCQluYW1lOiAid2hpdGVsaXN0IiwKCQlhbGlhc2VzOiBbIndsIiwgIndoaXRlbGlzdG1vZGUiXSwKCQl2ZXJzaW9uOiAiMS4wIiwKCQlhdXRob3I6ICJOZW9heiDwn5CKIiwKCQljb3VudERvd246IDUsCgkJcm9sZTogMiwKCQlkZXNjcmlwdGlvbjogewoJCQllbjogIm1hbmFnZSB0aGUgdXNlciBhbmQgdGhyZWFkIHdoaXRlbGlzdCBhbmQgdHVybiB3aGl0ZWxpc3QtbW9kZSBvbi9vZmYiCgkJfSwKCQljYXRlZ29yeTogIm93bmVyIiwKCQlndWlkZTogewoJCQllbjogIiAgIHtwbn0gW29uIHwgb2ZmXTogdHVybiB1c2VyIHdoaXRlbGlzdCBtb2RlIG9uL29mZiIKCQkJCSsgIlxuICAge3BufSB0aHJlYWQgW29uIHwgb2ZmXTogdHVybiB0aHJlYWQgd2hpdGVsaXN0IG1vZGUgb24vb2ZmIgoJCQkJKyAiXG4gICB7cG59IGFkZCA8dWlkIHwgQHRhZyB8IHJlcGx5PjogYWRkIHVzZXIocykgdG8gdGhlIHdoaXRlbGlzdCAoZGVmYXVsdHMgdG8gdGhlIHNlbmRlcikiCgkJCQkrICJcbiAgIHtwbn0gcmVtb3ZlIDx1aWQgfCBAdGFnIHwgcmVwbHk+OiByZW1vdmUgdXNlcihzKSBmcm9tIHRoZSB3aGl0ZWxpc3QiCgkJCQkrICJcbiAgIHtwbn0gYWRkdGhyZWFkIFt0aHJlYWRJRF06IGFkZCBhIHRocmVhZCB0byB0aGUgd2hpdGVsaXN0IChkZWZhdWx0cyB0byB0aGlzIGNoYXQpIgoJCQkJKyAiXG4gICB7cG59IHJlbW92ZXRocmVhZCBbdGhyZWFkSURdOiByZW1vdmUgYSB0aHJlYWQgZnJvbSB0aGUgd2hpdGVsaXN0IgoJCQkJKyAiXG4gICB7cG59IGxpc3Q6IHNob3cgdGhlIHVzZXIgd2hpdGVsaXN0IgoJCQkJKyAiXG4gICB7cG59IGxpc3R0aHJlYWQ6IHNob3cgdGhlIHRocmVhZCB3aGl0ZWxpc3QiCgkJfQoJfSwKCglsYW5nczogewoJCWVuOiB7CgkJCXR1cm5lZE9uOiAi4pyFIFR1cm5lZCBvbiB1c2VyIHdoaXRlbGlzdCBtb2RlIiwKCQkJdHVybmVkT2ZmOiAi4pyFIFR1cm5lZCBvZmYgdXNlciB3aGl0ZWxpc3QgbW9kZSIsCgkJCXRocmVhZFR1cm5lZE9uOiAi4pyFIFR1cm5lZCBvbiB0aHJlYWQgd2hpdGVsaXN0IG1vZGUiLAoJCQl0aHJlYWRUdXJuZWRPZmY6ICLinIUgVHVybmVkIG9mZiB0aHJlYWQgd2hpdGVsaXN0IG1vZGUiLAoJCQlhZGRlZDogIuKchSBBZGRlZCAlMSB0byB0aGUgd2hpdGVsaXN0OlxuJTIiLAoJCQlhbHJlYWR5QWRkZWQ6ICJcbuKaoO+4jyAlMSBhbHJlYWR5IGluIHRoZSB3aGl0ZWxpc3Q6XG4lMiIsCgkJCXJlbW92ZWQ6ICLinIUgUmVtb3ZlZCAlMSBmcm9tIHRoZSB3aGl0ZWxpc3Q6XG4lMiIsCgkJCW5vdEluTGlzdDogIlxu4pqg77iPICUxIG5vdCBpbiB0aGUgd2hpdGVsaXN0OlxuJTIiLAoJCQltaXNzaW5nSWRBZGQ6ICLimqDvuI8gUGxlYXNlIGVudGVyIGEgdWlkLCB0YWcgYSB1c2VyLCBvciByZXBseSB0byBhIG1lc3NhZ2UgdG8gYWRkIiwKCQkJbWlzc2luZ0lkUmVtb3ZlOiAi4pqg77iPIFBsZWFzZSBlbnRlciBhIHVpZCwgdGFnIGEgdXNlciwgb3IgcmVwbHkgdG8gYSBtZXNzYWdlIHRvIHJlbW92ZSIsCgkJCWxpc3RVc2VyOiAi8J+TkSBVc2VyIHdoaXRlbGlzdCAoJTEpOlxuJTIiLAoJCQlsaXN0VGhyZWFkOiAi8J+TkSBUaHJlYWQgd2hpdGVsaXN0ICglMSk6XG4lMiIsCgkJCWVtcHR5OiAiICAoZW1wdHkpIiwKCQkJb246ICJvbiIsCgkJCW9mZjogIm9mZiIKCQl9Cgl9LAoKCW9uU3RhcnQ6IGFzeW5jIGZ1bmN0aW9uICh7IGFyZ3MsIG1lc3NhZ2UsIGV2ZW50LCB1c2Vyc0RhdGEsIHRocmVhZHNEYXRhLCBnZXRMYW5nIH0pIHsKCQljb25zdCBjb25maWcgPSBnbG9iYWwuR29hdEJvdC5jb25maWc7CgkJY29uc3QgdXNlck1vZGUgPSBjb25maWcud2hpdGVMaXN0TW9kZSB8fCAoY29uZmlnLndoaXRlTGlzdE1vZGUgPSB7IGVuYWJsZTogZmFsc2UsIHdoaXRlTGlzdElkczogW10gfSk7CgkJY29uc3QgdGhyZWFkTW9kZSA9IGNvbmZpZy53aGl0ZUxpc3RNb2RlVGhyZWFkIHx8IChjb25maWcud2hpdGVMaXN0TW9kZVRocmVhZCA9IHsgZW5hYmxlOiBmYWxzZSwgd2hpdGVMaXN0VGhyZWFkSWRzOiBbXSB9KTsKCQlpZiAoIUFycmF5LmlzQXJyYXkodXNlck1vZGUud2hpdGVMaXN0SWRzKSkKCQkJdXNlck1vZGUud2hpdGVMaXN0SWRzID0gW107CgkJaWYgKCFBcnJheS5pc0FycmF5KHRocmVhZE1vZGUud2hpdGVMaXN0VGhyZWFkSWRzKSkKCQkJdGhyZWFkTW9kZS53aGl0ZUxpc3RUaHJlYWRJZHMgPSBbXTsKCgkJY29uc3QgYWN0aW9uID0gKGFyZ3NbMF0gfHwgIiIpLnRvTG93ZXJDYXNlKCk7CgkJY29uc3QgY29tbWFuZCA9IGFjdGlvbjsKCQljb25zdCByZXN0ID0gYXJncy5zbGljZSgxKTsKCgkJY29uc3Qgc2F2ZSA9ICgpID0+IGZzLndyaXRlRmlsZVN5bmMoZ2xvYmFsLmNsaWVudC5kaXJDb25maWcsIEpTT04uc3RyaW5naWZ5KGNvbmZpZywgbnVsbCwgMikpOwoKCQljb25zdCBjb2xsZWN0VWlkcyA9ICgpID0+IHsKCQkJaWYgKGV2ZW50Lm1lbnRpb25zICYmIE9iamVjdC5rZXlzKGV2ZW50Lm1lbnRpb25zKS5sZW5ndGggPiAwKQoJCQkJcmV0dXJuIE9iamVjdC5rZXlzKGV2ZW50Lm1lbnRpb25zKTsKCQkJaWYgKGV2ZW50Lm1lc3NhZ2VSZXBseSkKCQkJCXJldHVybiBbZXZlbnQubWVzc2FnZVJlcGx5LnNlbmRlcklEXTsKCQkJcmV0dXJuIHJlc3QuZmlsdGVyKGFyZyA9PiAvXlxkKyQvLnRlc3QoYXJnKSk7CgkJfTsKCgkJaWYgKGFjdGlvbiA9PT0gInRocmVhZCIpIHsKCQkJY29uc3Qgc3ViID0gKHJlc3RbMF0gfHwgIiIpLnRvTG93ZXJDYXNlKCk7CgkJCWlmIChzdWIgIT09ICJvbiIgJiYgc3ViICE9PSAib2ZmIikKCQkJCXJldHVybiBtZXNzYWdlLlN5bnRheEVycm9yKCk7CgkJCXRocmVhZE1vZGUuZW5hYmxlID0gc3ViID09PSAib24iOwoJCQlzYXZlKCk7CgkJCXJldHVybiBtZXNzYWdlLnJlcGx5KGdldExhbmcodGhyZWFkTW9kZS5lbmFibGUgPyAidGhyZWFkVHVybmVkT24iIDogInRocmVhZFR1cm5lZE9mZiIpKTsKCQl9CgoJCXN3aXRjaCAoY29tbWFuZCkgewoJCQljYXNlICIiOgoJCQljYXNlICJzdGF0dXMiOgoJCQkJcmV0dXJuIG1lc3NhZ2UucmVwbHkoCgkJCQkJZ2V0TGFuZygibGlzdFVzZXIiLCB1c2VyTW9kZS5lbmFibGUgPyBnZXRMYW5nKCJvbiIpIDogZ2V0TGFuZygib2ZmIiksCgkJCQkJCXVzZXJNb2RlLndoaXRlTGlzdElkcy5sZW5ndGggPyB1c2VyTW9kZS53aGl0ZUxpc3RJZHMubWFwKHVpZCA9PiBg4oCiICR7dWlkfWApLmpvaW4oIlxuIikgOiBnZXRMYW5nKCJlbXB0eSIpKQoJCQkJCSsgIlxuIiArIGdldExhbmcoImxpc3RUaHJlYWQiLCB0aHJlYWRNb2RlLmVuYWJsZSA/IGdldExhbmcoIm9uIikgOiBnZXRMYW5nKCJvZmYiKSwKCQkJCQkJdGhyZWFkTW9kZS53aGl0ZUxpc3RUaHJlYWRJZHMubGVuZ3RoID8gdGhyZWFkTW9kZS53aGl0ZUxpc3RUaHJlYWRJZHMubWFwKHRpZCA9PiBg4oCiICR7dGlkfWApLmpvaW4oIlxuIikgOiBnZXRMYW5nKCJlbXB0eSIpKQoJCQkJKTsKCQkJY2FzZSAib24iOgoJCQkJdXNlck1vZGUuZW5hYmxlID0gdHJ1ZTsKCQkJCXNhdmUoKTsKCQkJCXJldHVybiBtZXNzYWdlLnJlcGx5KGdldExhbmcoInR1cm5lZE9uIikpOwoJCQljYXNlICJvZmYiOgoJCQkJdXNlck1vZGUuZW5hYmxlID0gZmFsc2U7CgkJCQlzYXZlKCk7CgkJCQlyZXR1cm4gbWVzc2FnZS5yZXBseShnZXRMYW5nKCJ0dXJuZWRPZmYiKSk7CgkJCWNhc2UgInRocmVhZCI6IHsKCQkJCXJldHVybiBtZXNzYWdlLlN5bnRheEVycm9yKCk7CgkJCX0KCQkJY2FzZSAiYWRkIjogewoJCQkJY29uc3QgdWlkcyA9IGNvbGxlY3RVaWRzKCk7CgkJCQlpZiAodWlkcy5sZW5ndGggPT09IDApCgkJCQkJcmV0dXJuIG1lc3NhZ2UucmVwbHkoZ2V0TGFuZygibWlzc2luZ0lkQWRkIikpOwoJCQkJY29uc3QgYWRkZWQgPSBbXTsKCQkJCWNvbnN0IGV4aXN0ZWQgPSBbXTsKCQkJCWZvciAoY29uc3QgdWlkIG9mIHVpZHMpIHsKCQkJCQlpZiAodXNlck1vZGUud2hpdGVMaXN0SWRzLmluY2x1ZGVzKHVpZCkpCgkJCQkJCWV4aXN0ZWQucHVzaCh1aWQpOwoJCQkJCWVsc2UgewoJCQkJCQl1c2VyTW9kZS53aGl0ZUxpc3RJZHMucHVzaCh1aWQpOwoJCQkJCQlhZGRlZC5wdXNoKHVpZCk7CgkJCQkJfQoJCQkJfQoJCQkJc2F2ZSgpOwoJCQkJY29uc3QgbmFtZU9mID0gYXN5bmMgdWlkID0+IHsKCQkJCQljb25zdCBuYW1lID0gYXdhaXQgdXNlcnNEYXRhLmdldE5hbWUodWlkKS5jYXRjaCgoKSA9PiB1aWQpOwoJCQkJCXJldHVybiBg4oCiICR7bmFtZX0gKCR7dWlkfSlgOwoJCQkJfTsKCQkJCXJldHVybiBtZXNzYWdlLnJlcGx5KAoJCQkJCShhZGRlZC5sZW5ndGggPyBnZXRMYW5nKCJhZGRlZCIsIGFkZGVkLmxlbmd0aCwgKGF3YWl0IFByb21pc2UuYWxsKGFkZGVkLm1hcChuYW1lT2YpKSkuam9pbigiXG4iKSkgOiAiIikKCQkJCQkrIChleGlzdGVkLmxlbmd0aCA/IGdldExhbmcoImFscmVhZHlBZGRlZCIsIGV4aXN0ZWQubGVuZ3RoLCAoYXdhaXQgUHJvbWlzZS5hbGwoZXhpc3RlZC5tYXAobmFtZU9mKSkpLmpvaW4oIlxuIikpIDogIiIpCgkJCQkpOwoJCQl9CgkJCWNhc2UgInJlbW92ZSI6CgkJCWNhc2UgInJtIjoKCQkJY2FzZSAiZGVsIjogewoJCQkJY29uc3QgdWlkcyA9IGNvbGxlY3RVaWRzKCk7CgkJCQlpZiAodWlkcy5sZW5ndGggPT09IDApCgkJCQkJcmV0dXJuIG1lc3NhZ2UucmVwbHkoZ2V0TGFuZygibWlzc2luZ0lkUmVtb3ZlIikpOwoJCQkJY29uc3QgcmVtb3ZlZCA9IFtdOwoJCQkJY29uc3QgbWlzc2luZyA9IFtdOwoJCQkJZm9yIChjb25zdCB1aWQgb2YgdWlkcykgewoJCQkJCWlmICh1c2VyTW9kZS53aGl0ZUxpc3RJZHMuaW5jbHVkZXModWlkKSkgewoJCQkJCQl1c2VyTW9kZS53aGl0ZUxpc3RJZHMuc3BsaWNlKHVzZXJNb2RlLndoaXRlTGlzdElkcy5pbmRleE9mKHVpZCksIDEpOwoJCQkJCQlyZW1vdmVkLnB1c2godWlkKTsKCQkJCQl9CgkJCQkJZWxzZQoJCQkJCQltaXNzaW5nLnB1c2godWlkKTsKCQkJCX0KCQkJCXNhdmUoKTsKCQkJCXJldHVybiBtZXNzYWdlLnJlcGx5KAoJCQkJCShyZW1vdmVkLmxlbmd0aCA/IGdldExhbmcoInJlbW92ZWQiLCByZW1vdmVkLmxlbmd0aCwgcmVtb3ZlZC5tYXAodWlkID0+IGDigKIgJHt1aWR9YCkuam9pbigiXG4iKSkgOiAiIikKCQkJCQkrIChtaXNzaW5nLmxlbmd0aCA/IGdldExhbmcoIm5vdEluTGlzdCIsIG1pc3NpbmcubGVuZ3RoLCBtaXNzaW5nLm1hcCh1aWQgPT4gYOKAoiAke3VpZH1gKS5qb2luKCJcbiIpKSA6ICIiKQoJCQkJKTsKCQkJfQoJCQljYXNlICJhZGR0aHJlYWQiOgoJCQljYXNlICJhZGR0IjogewoJCQkJY29uc3QgdGlkID0gcmVzdC5maW5kKGFyZyA9PiAvXlxkKyQvLnRlc3QoYXJnKSkgfHwgZXZlbnQudGhyZWFkSUQ7CgkJCQlpZiAodGhyZWFkTW9kZS53aGl0ZUxpc3RUaHJlYWRJZHMuaW5jbHVkZXModGlkKSkKCQkJCQlyZXR1cm4gbWVzc2FnZS5yZXBseShnZXRMYW5nKCJhbHJlYWR5QWRkZWQiLCAxLCBg4oCiICR7dGlkfWApKTsKCQkJCXRocmVhZE1vZGUud2hpdGVMaXN0VGhyZWFkSWRzLnB1c2godGlkKTsKCQkJCXNhdmUoKTsKCQkJCXJldHVybiBtZXNzYWdlLnJlcGx5KGdldExhbmcoImFkZGVkIiwgMSwgYOKAoiAke3RpZH1gKSk7CgkJCX0KCQkJY2FzZSAicmVtb3ZldGhyZWFkIjoKCQkJY2FzZSAicmVtb3ZldCI6CgkJCWNhc2UgImRlbHRocmVhZCI6IHsKCQkJCWNvbnN0IHRpZCA9IHJlc3QuZmluZChhcmcgPT4gL15cZCskLy50ZXN0KGFyZykpIHx8IGV2ZW50LnRocmVhZElEOwoJCQkJaWYgKCF0aHJlYWRNb2RlLndoaXRlTGlzdFRocmVhZElkcy5pbmNsdWRlcyh0aWQpKQoJCQkJCXJldHVybiBtZXNzYWdlLnJlcGx5KGdldExhbmcoIm5vdEluTGlzdCIsIDEsIGDigKIgJHt0aWR9YCkpOwoJCQkJdGhyZWFkTW9kZS53aGl0ZUxpc3RUaHJlYWRJZHMuc3BsaWNlKHRocmVhZE1vZGUud2hpdGVMaXN0VGhyZWFkSWRzLmluZGV4T2YodGlkKSwgMSk7CgkJCQlzYXZlKCk7CgkJCQlyZXR1cm4gbWVzc2FnZS5yZXBseShnZXRMYW5nKCJyZW1vdmVkIiwgMSwgYOKAoiAke3RpZH1gKSk7CgkJCX0KCQkJY2FzZSAibGlzdCI6CgkJCWNhc2UgIi1sIjogewoJCQkJaWYgKHVzZXJNb2RlLndoaXRlTGlzdElkcy5sZW5ndGggPT09IDApCgkJCQkJcmV0dXJuIG1lc3NhZ2UucmVwbHkoZ2V0TGFuZygibGlzdFVzZXIiLCB1c2VyTW9kZS5lbmFibGUgPyBnZXRMYW5nKCJvbiIpIDogZ2V0TGFuZygib2ZmIiksIGdldExhbmcoImVtcHR5IikpKTsKCQkJCWNvbnN0IG5hbWVzID0gYXdhaXQgUHJvbWlzZS5hbGwodXNlck1vZGUud2hpdGVMaXN0SWRzLm1hcChhc3luYyB1aWQgPT4gewoJCQkJCWNvbnN0IG5hbWUgPSBhd2FpdCB1c2Vyc0RhdGEuZ2V0TmFtZSh1aWQpLmNhdGNoKCgpID0+IHVpZCk7CgkJCQkJcmV0dXJuIGDigKIgJHtuYW1lfSAoJHt1aWR9KWA7CgkJCQl9KSk7CgkJCQlyZXR1cm4gbWVzc2FnZS5yZXBseShnZXRMYW5nKCJsaXN0VXNlciIsIHVzZXJNb2RlLmVuYWJsZSA/IGdldExhbmcoIm9uIikgOiBnZXRMYW5nKCJvZmYiKSwgbmFtZXMuam9pbigiXG4iKSkpOwoJCQl9CgkJCWNhc2UgImxpc3R0aHJlYWQiOgoJCQljYXNlICJsaXN0dCI6IHsKCQkJCWlmICh0aHJlYWRNb2RlLndoaXRlTGlzdFRocmVhZElkcy5sZW5ndGggPT09IDApCgkJCQkJcmV0dXJuIG1lc3NhZ2UucmVwbHkoZ2V0TGFuZygibGlzdFRocmVhZCIsIHRocmVhZE1vZGUuZW5hYmxlID8gZ2V0TGFuZygib24iKSA6IGdldExhbmcoIm9mZiIpLCBnZXRMYW5nKCJlbXB0eSIpKSk7CgkJCQljb25zdCBuYW1lcyA9IGF3YWl0IFByb21pc2UuYWxsKHRocmVhZE1vZGUud2hpdGVMaXN0VGhyZWFkSWRzLm1hcChhc3luYyB0aWQgPT4gewoJCQkJCWNvbnN0IG5hbWUgPSBhd2FpdCB0aHJlYWRzRGF0YS5nZXQodGlkLCAidGhyZWFkTmFtZSIpLmNhdGNoKCgpID0+IG51bGwpOwoJCQkJCXJldHVybiBg4oCiICR7bmFtZSB8fCAiVW5uYW1lZCJ9ICgke3RpZH0pYDsKCQkJCX0pKTsKCQkJCXJldHVybiBtZXNzYWdlLnJlcGx5KGdldExhbmcoImxpc3RUaHJlYWQiLCB0aHJlYWRNb2RlLmVuYWJsZSA/IGdldExhbmcoIm9uIikgOiBnZXRMYW5nKCJvZmYiKSwgbmFtZXMuam9pbigiXG4iKSkpOwoJCQl9CgkJCWRlZmF1bHQ6CgkJCQlyZXR1cm4gbWVzc2FnZS5TeW50YXhFcnJvcigpOwoJCX0KCX0KfTsK
+const fs = require("fs-extra");
+
+module.exports = {
+	config: {
+		name: "whitelist",
+		aliases: ["wl", "whitelistmode"],
+		version: "1.0",
+		author: "Neoaz 🐊",
+		countDown: 5,
+		role: 2,
+		description: {
+			en: "manage the user and thread whitelist and turn whitelist-mode on/off"
+		},
+		category: "owner",
+		guide: {
+			en: "   {pn} [on | off]: turn user whitelist mode on/off"
+				+ "\n   {pn} thread [on | off]: turn thread whitelist mode on/off"
+				+ "\n   {pn} add <uid | @tag | reply>: add user(s) to the whitelist (defaults to the sender)"
+				+ "\n   {pn} remove <uid | @tag | reply>: remove user(s) from the whitelist"
+				+ "\n   {pn} addthread [threadID]: add a thread to the whitelist (defaults to this chat)"
+				+ "\n   {pn} removethread [threadID]: remove a thread from the whitelist"
+				+ "\n   {pn} list: show the user whitelist"
+				+ "\n   {pn} listthread: show the thread whitelist"
+		}
+	},
+
+	langs: {
+		en: {
+			turnedOn: "✅ Turned on user whitelist mode",
+			turnedOff: "✅ Turned off user whitelist mode",
+			threadTurnedOn: "✅ Turned on thread whitelist mode",
+			threadTurnedOff: "✅ Turned off thread whitelist mode",
+			added: "✅ Added %1 to the whitelist:\n%2",
+			alreadyAdded: "\n⚠️ %1 already in the whitelist:\n%2",
+			removed: "✅ Removed %1 from the whitelist:\n%2",
+			notInList: "\n⚠️ %1 not in the whitelist:\n%2",
+			missingIdAdd: "⚠️ Please enter a uid, tag a user, or reply to a message to add",
+			missingIdRemove: "⚠️ Please enter a uid, tag a user, or reply to a message to remove",
+			listUser: "📑 User whitelist (%1):\n%2",
+			listThread: "📑 Thread whitelist (%1):\n%2",
+			empty: "  (empty)",
+			on: "on",
+			off: "off"
+		}
+	},
+
+	onStart: async function ({ args, message, event, usersData, threadsData, getLang }) {
+		const config = global.GoatBot.config;
+		const userMode = config.whiteListMode || (config.whiteListMode = { enable: false, whiteListIds: [] });
+		const threadMode = config.whiteListModeThread || (config.whiteListModeThread = { enable: false, whiteListThreadIds: [] });
+		if (!Array.isArray(userMode.whiteListIds))
+			userMode.whiteListIds = [];
+		if (!Array.isArray(threadMode.whiteListThreadIds))
+			threadMode.whiteListThreadIds = [];
+
+		const action = (args[0] || "").toLowerCase();
+		const command = action;
+		const rest = args.slice(1);
+
+		const save = () => fs.writeFileSync(global.client.dirConfig, JSON.stringify(config, null, 2));
+
+		const collectUids = () => {
+			if (event.mentions && Object.keys(event.mentions).length > 0)
+				return Object.keys(event.mentions);
+			if (event.messageReply)
+				return [event.messageReply.senderID];
+			return rest.filter(arg => /^\d+$/.test(arg));
+		};
+
+		if (action === "thread") {
+			const sub = (rest[0] || "").toLowerCase();
+			if (sub !== "on" && sub !== "off")
+				return message.SyntaxError();
+			threadMode.enable = sub === "on";
+			save();
+			return message.reply(getLang(threadMode.enable ? "threadTurnedOn" : "threadTurnedOff"));
+		}
+
+		switch (command) {
+			case "":
+			case "status":
+				return message.reply(
+					getLang("listUser", userMode.enable ? getLang("on") : getLang("off"),
+						userMode.whiteListIds.length ? userMode.whiteListIds.map(uid => `• ${uid}`).join("\n") : getLang("empty"))
+					+ "\n" + getLang("listThread", threadMode.enable ? getLang("on") : getLang("off"),
+						threadMode.whiteListThreadIds.length ? threadMode.whiteListThreadIds.map(tid => `• ${tid}`).join("\n") : getLang("empty"))
+				);
+			case "on":
+				userMode.enable = true;
+				save();
+				return message.reply(getLang("turnedOn"));
+			case "off":
+				userMode.enable = false;
+				save();
+				return message.reply(getLang("turnedOff"));
+			case "thread": {
+				return message.SyntaxError();
+			}
+			case "add": {
+				const uids = collectUids();
+				if (uids.length === 0)
+					return message.reply(getLang("missingIdAdd"));
+				const added = [];
+				const existed = [];
+				for (const uid of uids) {
+					if (userMode.whiteListIds.includes(uid))
+						existed.push(uid);
+					else {
+						userMode.whiteListIds.push(uid);
+						added.push(uid);
+					}
+				}
+				save();
+				const nameOf = async uid => {
+					const name = await usersData.getName(uid).catch(() => uid);
+					return `• ${name} (${uid})`;
+				};
+				return message.reply(
+					(added.length ? getLang("added", added.length, (await Promise.all(added.map(nameOf))).join("\n")) : "")
+					+ (existed.length ? getLang("alreadyAdded", existed.length, (await Promise.all(existed.map(nameOf))).join("\n")) : "")
+				);
+			}
+			case "remove":
+			case "rm":
+			case "del": {
+				const uids = collectUids();
+				if (uids.length === 0)
+					return message.reply(getLang("missingIdRemove"));
+				const removed = [];
+				const missing = [];
+				for (const uid of uids) {
+					if (userMode.whiteListIds.includes(uid)) {
+						userMode.whiteListIds.splice(userMode.whiteListIds.indexOf(uid), 1);
+						removed.push(uid);
+					}
+					else
+						missing.push(uid);
+				}
+				save();
+				return message.reply(
+					(removed.length ? getLang("removed", removed.length, removed.map(uid => `• ${uid}`).join("\n")) : "")
+					+ (missing.length ? getLang("notInList", missing.length, missing.map(uid => `• ${uid}`).join("\n")) : "")
+				);
+			}
+			case "addthread":
+			case "addt": {
+				const tid = rest.find(arg => /^\d+$/.test(arg)) || event.threadID;
+				if (threadMode.whiteListThreadIds.includes(tid))
+					return message.reply(getLang("alreadyAdded", 1, `• ${tid}`));
+				threadMode.whiteListThreadIds.push(tid);
+				save();
+				return message.reply(getLang("added", 1, `• ${tid}`));
+			}
+			case "removethread":
+			case "removet":
+			case "delthread": {
+				const tid = rest.find(arg => /^\d+$/.test(arg)) || event.threadID;
+				if (!threadMode.whiteListThreadIds.includes(tid))
+					return message.reply(getLang("notInList", 1, `• ${tid}`));
+				threadMode.whiteListThreadIds.splice(threadMode.whiteListThreadIds.indexOf(tid), 1);
+				save();
+				return message.reply(getLang("removed", 1, `• ${tid}`));
+			}
+			case "list":
+			case "-l": {
+				if (userMode.whiteListIds.length === 0)
+					return message.reply(getLang("listUser", userMode.enable ? getLang("on") : getLang("off"), getLang("empty")));
+				const names = await Promise.all(userMode.whiteListIds.map(async uid => {
+					const name = await usersData.getName(uid).catch(() => uid);
+					return `• ${name} (${uid})`;
+				}));
+				return message.reply(getLang("listUser", userMode.enable ? getLang("on") : getLang("off"), names.join("\n")));
+			}
+			case "listthread":
+			case "listt": {
+				if (threadMode.whiteListThreadIds.length === 0)
+					return message.reply(getLang("listThread", threadMode.enable ? getLang("on") : getLang("off"), getLang("empty")));
+				const names = await Promise.all(threadMode.whiteListThreadIds.map(async tid => {
+					const name = await threadsData.get(tid, "threadName").catch(() => null);
+					return `• ${name || "Unnamed"} (${tid})`;
+				}));
+				return message.reply(getLang("listThread", threadMode.enable ? getLang("on") : getLang("off"), names.join("\n")));
+			}
+			default:
+				return message.SyntaxError();
+		}
+	}
+};

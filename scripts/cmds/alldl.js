@@ -1,1 +1,512 @@
-Y29uc3QgYnRjaCA9IHJlcXVpcmUoImJ0Y2gtZG93bmxvYWRlciIpOwpjb25zdCB7IGdldFN0cmVhbUZyb21VUkwgfSA9IGdsb2JhbC51dGlsczsKCmNvbnN0IFVBID0gIk1vemlsbGEvNS4wIChXaW5kb3dzIE5UIDEwLjA7IFdpbjY0OyB4NjQpIEFwcGxlV2ViS2l0LzUzNy4zNiAoS0hUTUwsIGxpa2UgR2Vja28pIENocm9tZS8xMjUuMC4wLjAgU2FmYXJpLzUzNy4zNiI7Cgpjb25zdCBSRUFDVF9XT1JLSU5HID0gIuKPsyI7CmNvbnN0IFJFQUNUX0RPTkUgPSAi4pyFIjsKY29uc3QgUkVBQ1RfRkFJTCA9ICLinYwiOwoKZnVuY3Rpb24gZGVjb2RlSnd0UGF5bG9hZCh0b2tlbikgewoJdHJ5IHsKCQljb25zdCBwYXJ0ID0gU3RyaW5nKHRva2VuKS5zcGxpdCgiLiIpWzFdOwoJCWlmICghcGFydCkKCQkJcmV0dXJuIG51bGw7CgkJY29uc3QgcGFkZGVkID0gcGFydC5yZXBsYWNlKC8tL2csICIrIikucmVwbGFjZSgvXy9nLCAiLyIpICsgIj0iLnJlcGVhdCgoNCAtIHBhcnQubGVuZ3RoICUgNCkgJSA0KTsKCQlyZXR1cm4gSlNPTi5wYXJzZShCdWZmZXIuZnJvbShwYWRkZWQsICJiYXNlNjQiKS50b1N0cmluZygidXRmOCIpKTsKCX0KCWNhdGNoIChlKSB7CgkJcmV0dXJuIG51bGw7Cgl9Cn0KCmZ1bmN0aW9uIHJlc29sdmVNZWRpYVNvdXJjZShyYXdVcmwpIHsKCWlmICghcmF3VXJsIHx8IHR5cGVvZiByYXdVcmwgIT09ICJzdHJpbmciKQoJCXJldHVybiB7IHVybDogbnVsbCwgaXNWaWRlbzogZmFsc2UsIGhlYWRlcnM6IG51bGwgfTsKCWNvbnN0IHRva2VuID0gKHJhd1VybC5tYXRjaCgvWz8mXXRva2VuPShbXiZdKykvKSB8fCBbXSlbMV07CglpZiAodG9rZW4pIHsKCQljb25zdCBwYXlsb2FkID0gZGVjb2RlSnd0UGF5bG9hZChkZWNvZGVVUklDb21wb25lbnQodG9rZW4pKTsKCQlpZiAocGF5bG9hZCAmJiBwYXlsb2FkLnVybCkgewoJCQljb25zdCBpbm5lciA9IHBheWxvYWQudXJsOwoJCQljb25zdCBpc1ZpZGVvID0gL1wuKG1wNHxtb3Z8bTR2fHdlYm0pKD86Wz8jXXwkKS9pLnRlc3QoaW5uZXIpCgkJCQl8fCAvdmlkZW98cmVlbHN8ZGFzaHxwcm9ncmVzc2l2ZXx4cHZ8Y2xpcC9pLnRlc3QoaW5uZXIpOwoJCQlyZXR1cm4geyB1cmw6IGlubmVyLCBpc1ZpZGVvLCBoZWFkZXJzOiBwYXlsb2FkLmhlYWRlcnMgfHwgbnVsbCB9OwoJCX0KCX0KCXJldHVybiB7IHVybDogcmF3VXJsLCBpc1ZpZGVvOiAvXC4obXA0fG1vdnxtNHZ8d2VibSkoPzpbPyNdfCQpL2kudGVzdChyYXdVcmwpLCBoZWFkZXJzOiBudWxsIH07Cn0KCmNvbnN0IFBMQVRGT1JNUyA9IFsKCXsKCQluYW1lOiAiWW91VHViZSIsCgkJbWF0Y2g6IC8oPzp5b3V0dWJlXC5jb21cLyg/OndhdGNoXD8oPzpbXiNdKiYpP3Y9fHNob3J0c1wvfGxpdmVcL3xlbWJlZFwvfHZcLyl8eW91dHVcLmJlXC9bQS1aYS16MC05Xy1dezYsfSkvaSwKCQlyZWZlcmVyOiAiaHR0cHM6Ly93d3cueW91dHViZS5jb20vIiwKCQlydW46IHVybCA9PiBidGNoLnlvdXR1YmUodXJsKSwKCQlleHRyYWN0OiBkYXRhID0+ICh7CgkJCXRpdGxlOiBkYXRhLnRpdGxlLAoJCQl0aHVtYm5haWw6IGRhdGEudGh1bWJuYWlsLAoJCQlhdXRob3I6IGRhdGEuYXV0aG9yLAoJCQl2aWRlbzogZGF0YS5tcDQgfHwgbnVsbCwKCQkJYXVkaW86IGRhdGEubXAzIHx8IG51bGwKCQl9KQoJfSwKCXsKCQluYW1lOiAiVGlrVG9rIiwKCQltYXRjaDogLyg/OnRpa3Rva1wuY29tXC8oPzpAW14vXStcL3ZpZGVvXC9cZCt8dmlkZW9cL1xkK3x0XC9bQS1aYS16MC05XSspfCg/OnZ0fHZtKVwudGlrdG9rXC5jb21cL1tBLVphLXowLTldKykvaSwKCQlydW46IHVybCA9PiBidGNoLnR0ZGwodXJsKSwKCQlleHRyYWN0OiBkYXRhID0+ICh7CgkJCXRpdGxlOiBkYXRhLnRpdGxlLAoJCQl0aHVtYm5haWw6IGRhdGEudGh1bWJuYWlsLAoJCQlhdXRob3I6ICIiLAoJCQl2aWRlbzogKGRhdGEudmlkZW8gfHwgW10pWzBdIHx8IG51bGwsCgkJCWF1ZGlvOiAoZGF0YS5hdWRpbyB8fCBbXSlbMF0gfHwgbnVsbAoJCX0pCgl9LAoJewoJCW5hbWU6ICJUd2l0dGVyIC8gWCIsCgkJbWF0Y2g6IC8oPzp0d2l0dGVyXC5jb218eFwuY29tKVwvW14vXStcL3N0YXR1c1wvXGQrL2ksCgkJcnVuOiB1cmwgPT4gYnRjaC50d2l0dGVyKHVybCksCgkJZXh0cmFjdDogZGF0YSA9PiB7CgkJCWNvbnN0IHJhdyA9IGRhdGEudXJsOwoJCQlsZXQgbGluayA9IG51bGw7CgkJCWlmIChBcnJheS5pc0FycmF5KHJhdykpIHsKCQkJCWZvciAoY29uc3QgaXRlbSBvZiByYXcuc2xpY2UoKS5yZXZlcnNlKCkpIHsKCQkJCQlsaW5rID0gaXRlbS5oZCB8fCBpdGVtLnNkIHx8IE9iamVjdC52YWx1ZXMoaXRlbSlbMF07CgkJCQkJaWYgKGxpbmspCgkJCQkJCWJyZWFrOwoJCQkJfQoJCQl9CgkJCWVsc2UgaWYgKHR5cGVvZiByYXcgPT09ICJzdHJpbmciKQoJCQkJbGluayA9IHJhdzsKCQkJcmV0dXJuIHsgdGl0bGU6IGRhdGEudGl0bGUsIHRodW1ibmFpbDogIiIsIGF1dGhvcjogIiIsIHZpZGVvOiBsaW5rLCBhdWRpbzogbnVsbCB9OwoJCX0KCX0sCgl7CgkJbmFtZTogIkZhY2Vib29rIiwKCQltYXRjaDogLyg/OmZhY2Vib29rXC5jb21cLyg/OlteL10rXC92aWRlb3NcL3x3YXRjaFwvP1w/fHJlZWxcL3x2aWRlb1wucGhwfHNoYXJlXC92XC98c2hhcmVcL3JcL3xbXi9dK1wvcG9zdHNcLyl8ZmJcLndhdGNoXC9bQS1aYS16MC05Xy1dKykvaSwKCQlydW46IHVybCA9PiBidGNoLmZiZG93bih1cmwpLAoJCWV4dHJhY3Q6IGRhdGEgPT4gKHsKCQkJdGl0bGU6ICIiLAoJCQl0aHVtYm5haWw6ICIiLAoJCQlhdXRob3I6ICIiLAoJCQl2aWRlbzogZGF0YS5IRCB8fCBkYXRhLk5vcm1hbF92aWRlbyB8fCBudWxsLAoJCQlhdWRpbzogbnVsbAoJCX0pCgl9LAoJewoJCW5hbWU6ICJJbnN0YWdyYW0iLAoJCW1hdGNoOiAvaW5zdGFncmFtXC5jb21cLyg/OnB8cmVlbHxyZWVsc3x0dnxzaGFyZSlcL1tBLVphLXowLTlfLV0rL2ksCgkJcnVuOiB1cmwgPT4gYnRjaC5pZ2RsKHVybCksCgkJZXh0cmFjdDogZGF0YSA9PiB7CgkJCWNvbnN0IGl0ZW1zID0gQXJyYXkuaXNBcnJheShkYXRhLnJlc3VsdCkgPyBkYXRhLnJlc3VsdCA6IFtdOwoJCQljb25zdCBtZWRpYSA9IGl0ZW1zLmxlbmd0aCA/IHJlc29sdmVNZWRpYVNvdXJjZShpdGVtc1swXS51cmwpIDogeyB1cmw6IG51bGwsIGlzVmlkZW86IGZhbHNlIH07CgkJCXJldHVybiB7CgkJCQl0aXRsZTogIiIsCgkJCQl0aHVtYm5haWw6IGl0ZW1zWzBdPy50aHVtYm5haWwgfHwgIiIsCgkJCQlhdXRob3I6ICIiLAoJCQkJaGVhZGVyczogbWVkaWEuaGVhZGVycywKCQkJCXZpZGVvOiBtZWRpYS5pc1ZpZGVvID8gbWVkaWEudXJsIDogbnVsbCwKCQkJCWF1ZGlvOiBudWxsLAoJCQkJaW1hZ2U6IG1lZGlhLmlzVmlkZW8gPyBudWxsIDogbWVkaWEudXJsCgkJCX07CgkJfQoJfSwKCXsKCQluYW1lOiAiUGludGVyZXN0IiwKCQltYXRjaDogLyg/OnBpbnRlcmVzdFwuW2Etei5dK1wvcGluXC9cZCt8cGluXC5pdFwvW0EtWmEtejAtOV0rKS9pLAoJCXJ1bjogdXJsID0+IGJ0Y2gucGludGVyZXN0KHVybCksCgkJZXh0cmFjdDogZGF0YSA9PiB7CgkJCWNvbnN0IHBpbiA9IGRhdGEucmVzdWx0Py5yZXN1bHQgfHwgZGF0YS5yZXN1bHQgfHwge307CgkJCWxldCB2aWRlbyA9IHBpbi52aWRlb191cmwgfHwgbnVsbDsKCQkJaWYgKCF2aWRlbyAmJiBwaW4udmlkZW9zKQoJCQkJZm9yIChjb25zdCBrZXkgb2YgT2JqZWN0LmtleXMocGluLnZpZGVvcykpCgkJCQkJaWYgKHBpbi52aWRlb3Nba2V5XT8udXJsKSB7CgkJCQkJCXZpZGVvID0gcGluLnZpZGVvc1trZXldLnVybDsKCQkJCQkJYnJlYWs7CgkJCQkJfQoJCQlyZXR1cm4gewoJCQkJdGl0bGU6IHBpbi50aXRsZSB8fCBwaW4uZGVzY3JpcHRpb24gfHwgIiIsCgkJCQl0aHVtYm5haWw6IHBpbi5pbWFnZSB8fCBwaW4uaW1hZ2VfdXJsIHx8ICIiLAoJCQkJYXV0aG9yOiBwaW4udXBsb2FkZXI/LnVzZXJuYW1lIHx8IHBpbi51c2VyPy51c2VybmFtZSB8fCAiIiwKCQkJCXZpZGVvLAoJCQkJYXVkaW86IG51bGwsCgkJCQlpbWFnZTogdmlkZW8gPyBudWxsIDogKHBpbi5pbWFnZSB8fCBwaW4uaW1hZ2VfdXJsIHx8IG51bGwpCgkJCX07CgkJfQoJfSwKCXsKCQluYW1lOiAiQ2FwQ3V0IiwKCQltYXRjaDogL2NhcGN1dFwuY29tXC8oPzp0ZW1wbGF0ZS1kZXRhaWx8dHx2aWRlbylcL1tBLVphLXowLTldKy9pLAoJCXJlZmVyZXI6ICJodHRwczovL3d3dy5jYXBjdXQuY29tLyIsCgkJcnVuOiB1cmwgPT4gYnRjaC5jYXBjdXQodXJsKSwKCQlleHRyYWN0OiBkYXRhID0+ICh7CgkJCXRpdGxlOiBkYXRhLnRpdGxlLAoJCQl0aHVtYm5haWw6IGRhdGEuY292ZXJVcmwsCgkJCWF1dGhvcjogZGF0YS5hdXRob3JOYW1lLAoJCQl2aWRlbzogZGF0YS5vcmlnaW5hbFZpZGVvVXJsIHx8IG51bGwsCgkJCWF1ZGlvOiBudWxsCgkJfSkKCX0sCgl7CgkJbmFtZTogIlNvdW5kQ2xvdWQiLAoJCW1hdGNoOiAvc291bmRjbG91ZFwuY29tXC9bXi9cc10rXC9bXi9ccz8jXSsvaSwKCQlydW46IHVybCA9PiBidGNoLnNvdW5kY2xvdWQodXJsKSwKCQlleHRyYWN0OiBkYXRhID0+IHsKCQkJY29uc3QgaXRlbSA9IGRhdGEucmVzdWx0IHx8IHt9OwoJCQlyZXR1cm4gewoJCQkJdGl0bGU6IGl0ZW0udGl0bGUsCgkJCQl0aHVtYm5haWw6IGl0ZW0udGh1bWJuYWlsLAoJCQkJYXV0aG9yOiAiIiwKCQkJCXZpZGVvOiBudWxsLAoJCQkJYXVkaW86IGl0ZW0uZG93bmxvYWRNcDMgfHwgaXRlbS5hdWRpbyB8fCBudWxsCgkJCX07CgkJfQoJfSwKCXsKCQluYW1lOiAiRG91eWluIiwKCQltYXRjaDogLyg/OmRvdXlpblwuY29tXC8oPzp2aWRlb3xub3RlKVwvXGQrfHZcLmRvdXlpblwuY29tXC9bQS1aYS16MC05XSspL2ksCgkJcnVuOiB1cmwgPT4gYnRjaC5kb3V5aW4odXJsKSwKCQlleHRyYWN0OiBkYXRhID0+IHsKCQkJY29uc3QgaXRlbSA9IGRhdGEucmVzdWx0IHx8IHt9OwoJCQlsZXQgdmlkZW8gPSBudWxsOwoJCQlpZiAoQXJyYXkuaXNBcnJheShpdGVtLmxpbmtzKSkKCQkJCWZvciAoY29uc3QgbGluayBvZiBpdGVtLmxpbmtzKQoJCQkJCWlmIChsaW5rLnVybCkgewoJCQkJCQl2aWRlbyA9IGxpbmsudXJsOwoJCQkJCQlicmVhazsKCQkJCQl9CgkJCXJldHVybiB7CgkJCQl0aXRsZTogaXRlbS50aXRsZSwKCQkJCXRodW1ibmFpbDogaXRlbS50aHVtYm5haWwsCgkJCQlhdXRob3I6ICIiLAoJCQkJdmlkZW86IHZpZGVvIHx8IGl0ZW0udmlkZW8gfHwgbnVsbCwKCQkJCWF1ZGlvOiBudWxsCgkJCX07CgkJfQoJfSwKCXsKCQluYW1lOiAiVGhyZWFkcyIsCgkJbWF0Y2g6IC90aHJlYWRzXC4oPzpuZXR8Y29tKVwvKD86QFteL10rXC8pPyg/OnBvc3R8dClcL1tBLVphLXowLTlfLV0rL2ksCgkJcnVuOiB1cmwgPT4gYnRjaC50aHJlYWRzKHVybCksCgkJZXh0cmFjdDogZGF0YSA9PiB7CgkJCWNvbnN0IGl0ZW0gPSBkYXRhLnJlc3VsdCB8fCB7fTsKCQkJcmV0dXJuIHsKCQkJCXRpdGxlOiAiIiwKCQkJCXRodW1ibmFpbDogaXRlbS5pbWFnZSB8fCAiIiwKCQkJCWF1dGhvcjogIiIsCgkJCQl2aWRlbzogaXRlbS52aWRlbyB8fCBudWxsLAoJCQkJYXVkaW86IG51bGwsCgkJCQlpbWFnZTogaXRlbS52aWRlbyA/IG51bGwgOiAoaXRlbS5pbWFnZSB8fCBudWxsKQoJCQl9OwoJCX0KCX0sCgl7CgkJbmFtZTogIlNuYWNrVmlkZW8iLAoJCW1hdGNoOiAvc25hY2t2aWRlb1wuY29tXC8oPzp2aWRlb3xwfHYpXC9bQS1aYS16MC05Xy1dKy9pLAoJCXJ1bjogdXJsID0+IGJ0Y2guc25hY2t2aWRlbyh1cmwpLAoJCWV4dHJhY3Q6IGRhdGEgPT4gewoJCQljb25zdCBpdGVtID0gZGF0YS5yZXN1bHQgfHwgZGF0YTsKCQkJcmV0dXJuIHsKCQkJCXRpdGxlOiBpdGVtLnRpdGxlLAoJCQkJdGh1bWJuYWlsOiBpdGVtLnRodW1ibmFpbCwKCQkJCWF1dGhvcjogaXRlbS5jcmVhdG9yPy5uYW1lIHx8ICIiLAoJCQkJdmlkZW86IGl0ZW0udmlkZW9VcmwgfHwgaXRlbS51cmwgfHwgbnVsbCwKCQkJCWF1ZGlvOiBudWxsCgkJCX07CgkJfQoJfSwKCXsKCQluYW1lOiAiS3VhaXNob3UiLAoJCW1hdGNoOiAvKD86a3VhaXNob3VcLmNvbVwvKD86c2hvcnQtdmlkZW98ZilcL1tBLVphLXowLTlfLV0rfHZcLmt1YWlzaG91XC5jb21cL1tBLVphLXowLTlfLV0rKS9pLAoJCXJ1bjogdXJsID0+IGJ0Y2gua3VhaXNob3UodXJsKSwKCQlleHRyYWN0OiBkYXRhID0+IHsKCQkJY29uc3QgaXRlbSA9IGRhdGEucmVzdWx0IHx8IGRhdGE7CgkJCXJldHVybiB7CgkJCQl0aXRsZTogaXRlbS50aXRsZSwKCQkJCXRodW1ibmFpbDogaXRlbS50aHVtYm5haWwgfHwgIiIsCgkJCQlhdXRob3I6IGl0ZW0uYXV0aG9yIHx8IGl0ZW0udXNlcm5hbWUgfHwgIiIsCgkJCQl2aWRlbzogaXRlbS52aWRlb1VybCB8fCBudWxsLAoJCQkJYXVkaW86IG51bGwKCQkJfTsKCQl9Cgl9LAoJewoJCW5hbWU6ICJYaWFvaG9uZ3NodSIsCgkJbWF0Y2g6IC94aWFvaG9uZ3NodVwuY29tXC8oPzpleHBsb3JlfGRpc2NvdmVyeVwvaXRlbSlcL1tBLVphLXowLTldKy9pLAoJCXJ1bjogdXJsID0+IGJ0Y2gueGlhb2hvbmdzaHUodXJsKSwKCQlleHRyYWN0OiBkYXRhID0+IHsKCQkJY29uc3QgaXRlbSA9IGRhdGEucmVzdWx0IHx8IHt9OwoJCQljb25zdCB2aWRlb3MgPSBpdGVtLnZpZGVvcyB8fCBpdGVtLnZpZGVvOwoJCQlsZXQgdmlkZW8gPSBudWxsOwoJCQlpZiAoQXJyYXkuaXNBcnJheSh2aWRlb3MpKQoJCQkJdmlkZW8gPSB0eXBlb2YgdmlkZW9zWzBdID09PSAic3RyaW5nIiA/IHZpZGVvc1swXSA6IHZpZGVvc1swXT8udXJsIHx8IG51bGw7CgkJCWVsc2UgaWYgKHR5cGVvZiB2aWRlb3MgPT09ICJzdHJpbmciKQoJCQkJdmlkZW8gPSB2aWRlb3M7CgkJCWNvbnN0IGltYWdlcyA9IGl0ZW0uaW1hZ2VzIHx8IGl0ZW0uaW1hZ2U7CgkJCWxldCBpbWFnZSA9IG51bGw7CgkJCWlmIChBcnJheS5pc0FycmF5KGltYWdlcykpCgkJCQlpbWFnZSA9IHR5cGVvZiBpbWFnZXNbMF0gPT09ICJzdHJpbmciID8gaW1hZ2VzWzBdIDogaW1hZ2VzWzBdPy51cmwgfHwgbnVsbDsKCQkJZWxzZSBpZiAodHlwZW9mIGltYWdlcyA9PT0gInN0cmluZyIpCgkJCQlpbWFnZSA9IGltYWdlczsKCQkJcmV0dXJuIHsKCQkJCXRpdGxlOiBpdGVtLnRpdGxlLAoJCQkJdGh1bWJuYWlsOiBpdGVtLmNvdmVyIHx8IGl0ZW0udGh1bWJuYWlsIHx8ICIiLAoJCQkJYXV0aG9yOiBpdGVtLmF1dGhvcj8ubmlja25hbWUgfHwgIiIsCgkJCQl2aWRlbywKCQkJCWF1ZGlvOiBudWxsLAoJCQkJaW1hZ2U6IHZpZGVvID8gbnVsbCA6IGltYWdlCgkJCX07CgkJfQoJfSwKCXsKCQluYW1lOiAiU3BvdGlmeSIsCgkJbWF0Y2g6IC9vcGVuXC5zcG90aWZ5XC5jb21cLyg/OnRyYWNrfGFsYnVtfHBsYXlsaXN0fGVwaXNvZGUpXC9bQS1aYS16MC05XSsvaSwKCQlydW46IHVybCA9PiBidGNoLnNwb3RpZnkodXJsKSwKCQlleHRyYWN0OiBkYXRhID0+IHsKCQkJY29uc3QgaXRlbSA9IGRhdGEucmVzdWx0IHx8IGRhdGE7CgkJCWNvbnN0IGZvcm1hdHMgPSBpdGVtLmZvcm1hdHMgfHwgaXRlbS5mb3JtYXQgfHwge307CgkJCWxldCBsaW5rID0gbnVsbDsKCQkJZm9yIChjb25zdCBrZXkgb2YgT2JqZWN0LmtleXMoZm9ybWF0cykpCgkJCQlpZiAoZm9ybWF0c1trZXldPy51cmwpIHsKCQkJCQlsaW5rID0gZm9ybWF0c1trZXldLnVybDsKCQkJCQlicmVhazsKCQkJCX0KCQkJcmV0dXJuIHsKCQkJCXRpdGxlOiBpdGVtLnRpdGxlLAoJCQkJdGh1bWJuYWlsOiBpdGVtLnRodW1ibmFpbCwKCQkJCWF1dGhvcjogaXRlbS5hcnRpc3QgfHwgIiIsCgkJCQl2aWRlbzogbnVsbCwKCQkJCWF1ZGlvOiBsaW5rIHx8IGl0ZW0udXJsIHx8IGl0ZW0uZG93bmxvYWQgfHwgaXRlbS5tcDMgfHwgbnVsbAoJCQl9OwoJCX0KCX0sCgl7CgkJbmFtZTogIkdvb2dsZSBEcml2ZSIsCgkJbWF0Y2g6IC9kcml2ZVwuZ29vZ2xlXC5jb21cL2ZpbGVcL2RcL1tBLVphLXowLTlfLV0rL2ksCgkJcnVuOiB1cmwgPT4gYnRjaC5nZHJpdmUodXJsKSwKCQlleHRyYWN0OiBkYXRhID0+IHsKCQkJY29uc3QgaXRlbSA9IGRhdGEucmVzdWx0IHx8IHt9OwoJCQlyZXR1cm4gewoJCQkJdGl0bGU6IGl0ZW0uZmlsZW5hbWUsCgkJCQl0aHVtYm5haWw6ICIiLAoJCQkJYXV0aG9yOiAiIiwKCQkJCXZpZGVvOiAvXC4obXA0fG1rdnxtb3Z8d2VibSkvaS50ZXN0KGl0ZW0uZmlsZW5hbWUgfHwgIiIpID8gaXRlbS5kb3dubG9hZFVybCA6IG51bGwsCgkJCQlhdWRpbzogbnVsbAoJCQl9OwoJCX0KCX0KXTsKCmZ1bmN0aW9uIGRldGVjdFBsYXRmb3JtKHVybCkgewoJcmV0dXJuIFBMQVRGT1JNUy5maW5kKHBsYXRmb3JtID0+IHBsYXRmb3JtLm1hdGNoLnRlc3QodXJsKSkgfHwgbnVsbDsKfQoKZnVuY3Rpb24gZXh0cmFjdFVybCh0ZXh0KSB7Cgljb25zdCBtYXRjaCA9IFN0cmluZyh0ZXh0IHx8ICIiKS5tYXRjaCgvaHR0cHM/OlwvXC9bXlxzXSsvaSk7CglyZXR1cm4gbWF0Y2ggPyBtYXRjaFswXSA6IG51bGw7Cn0KCmNvbnN0IFVSTF9LRVlTID0gWyJ1cmwiLCAic291cmNlIiwgImhyZWYiLCAidGFyZ2V0IiwgImxpbmsiLCAicGxheWFibGVfdXJsIiwgInBsYXlhYmxlVXJsIiwgInVyaSIsICJvcmlnaW5hbFVybCIsICJkZWVwTGluayIsICJkZWVwbGluayIsICJmYmNsaWRfdXJsIl07CmNvbnN0IFRFWFRfS0VZUyA9IFsiZGVzY3JpcHRpb24iLCAidGl0bGUiLCAiY2FwdGlvbiIsICJ0ZXh0IiwgIm5hbWUiLCAiYm9keSJdOwoKZnVuY3Rpb24gZmluZFVybERlZXAodmFsdWUsIGRlcHRoKSB7CglpZiAoZGVwdGggPiA0IHx8IHZhbHVlID09PSBudWxsIHx8IHZhbHVlID09PSB1bmRlZmluZWQpCgkJcmV0dXJuIG51bGw7CglpZiAodHlwZW9mIHZhbHVlID09PSAic3RyaW5nIikKCQlyZXR1cm4gZXh0cmFjdFVybCh2YWx1ZSk7CglpZiAoQXJyYXkuaXNBcnJheSh2YWx1ZSkpIHsKCQlmb3IgKGNvbnN0IGl0ZW0gb2YgdmFsdWUpIHsKCQkJY29uc3QgZm91bmQgPSBmaW5kVXJsRGVlcChpdGVtLCBkZXB0aCArIDEpOwoJCQlpZiAoZm91bmQpCgkJCQlyZXR1cm4gZm91bmQ7CgkJfQoJCXJldHVybiBudWxsOwoJfQoJaWYgKHR5cGVvZiB2YWx1ZSA9PT0gIm9iamVjdCIpIHsKCQlmb3IgKGNvbnN0IGtleSBvZiBVUkxfS0VZUy5jb25jYXQoVEVYVF9LRVlTKSkgewoJCQljb25zdCBmb3VuZCA9IGZpbmRVcmxEZWVwKHZhbHVlW2tleV0sIGRlcHRoICsgMSk7CgkJCWlmIChmb3VuZCkKCQkJCXJldHVybiBmb3VuZDsKCQl9CgkJcmV0dXJuIG51bGw7Cgl9CglyZXR1cm4gbnVsbDsKfQoKZnVuY3Rpb24gZXh0cmFjdFVybEZyb21FdmVudChldmVudCkgewoJY29uc3QgZnJvbUJvZHkgPSBleHRyYWN0VXJsKGV2ZW50Py5ib2R5KTsKCWlmIChmcm9tQm9keSkKCQlyZXR1cm4gZnJvbUJvZHk7CgoJY29uc3QgYXR0YWNobWVudHMgPSBBcnJheS5pc0FycmF5KGV2ZW50Py5hdHRhY2htZW50cykgPyBldmVudC5hdHRhY2htZW50cyA6IFtdOwoJZm9yIChjb25zdCBpdGVtIG9mIGF0dGFjaG1lbnRzKSB7CgkJaWYgKCFpdGVtIHx8IHR5cGVvZiBpdGVtICE9PSAib2JqZWN0IikKCQkJY29udGludWU7CgkJZm9yIChjb25zdCBrZXkgb2YgVVJMX0tFWVMpIHsKCQkJY29uc3QgdmFsdWUgPSBpdGVtW2tleV07CgkJCWlmICh0eXBlb2YgdmFsdWUgPT09ICJzdHJpbmciICYmIC9eaHR0cHM/OlwvXC8vaS50ZXN0KHZhbHVlKSkKCQkJCXJldHVybiB2YWx1ZTsKCQl9CgkJY29uc3QgbmVzdGVkID0gZXh0cmFjdFVybChpdGVtLklEKTsKCQlpZiAobmVzdGVkKQoJCQlyZXR1cm4gbmVzdGVkOwoJCS8vIHNoYXJlIHBvc3RzIGhpZGUgdGhlIGxpbmsgaW4gdGl0bGUvZGVzY3JpcHRpb24vbmVzdGVkIGZpZWxkcywgc28gc2VhcmNoIHRoZSB3aG9sZSBvYmplY3QKCQljb25zdCBkZWVwID0gZmluZFVybERlZXAoaXRlbSwgMCk7CgkJaWYgKGRlZXApCgkJCXJldHVybiBkZWVwOwoJfQoJcmV0dXJuIG51bGw7Cn0KCmZ1bmN0aW9uIGlzVW5zdXBwb3J0ZWRTaGFyZShldmVudCkgewoJY29uc3QgYXR0YWNobWVudHMgPSBBcnJheS5pc0FycmF5KGV2ZW50Py5hdHRhY2htZW50cykgPyBldmVudC5hdHRhY2htZW50cyA6IFtdOwoJcmV0dXJuIGF0dGFjaG1lbnRzLnNvbWUoaXRlbSA9PiBpdGVtICYmIHR5cGVvZiBpdGVtID09PSAib2JqZWN0IgoJCSYmIChpdGVtLnR5cGUgPT09ICJzaGFyZSIgfHwgaXRlbS50eXBlID09PSAic2hhcmVfcG9zdCIgfHwgaXRlbS50eXBlID09PSAic3RvcnlfbWVudGlvbiIpCgkJJiYgIWV4dHJhY3RVcmxGcm9tRXZlbnQoeyBhdHRhY2htZW50czogW2l0ZW1dLCBib2R5OiAiIiB9KSk7Cn0KCmZ1bmN0aW9uIGV4dGVuc2lvbkZvcih1cmwsIHR5cGUpIHsKCWNvbnN0IGNsZWFuID0gdXJsLnNwbGl0KCI/IilbMF07Cgljb25zdCBleHQgPSBjbGVhbi5zcGxpdCgiLiIpLnBvcCgpOwoJaWYgKGV4dCAmJiBleHQubGVuZ3RoIDw9IDUgJiYgL15bYS16MC05XSskL2kudGVzdChleHQpKQoJCXJldHVybiBleHQ7CglpZiAodHlwZSA9PT0gImF1ZGlvIikgcmV0dXJuICJtcDMiOwoJaWYgKHR5cGUgPT09ICJpbWFnZSIpIHJldHVybiAianBnIjsKCXJldHVybiAibXA0IjsKfQoKZnVuY3Rpb24gcmVhY3QoYXBpLCBlbW9qaSwgbWVzc2FnZUlELCB0aHJlYWRJRCkgewoJdHJ5IHsKCQljb25zdCByZXN1bHQgPSBhcGkuc2V0TWVzc2FnZVJlYWN0aW9uKGVtb2ppLCBtZXNzYWdlSUQsIHRocmVhZElEKTsKCQlpZiAocmVzdWx0ICYmIHR5cGVvZiByZXN1bHQuY2F0Y2ggPT09ICJmdW5jdGlvbiIpCgkJCXJlc3VsdC5jYXRjaCgoKSA9PiBudWxsKTsKCQlyZXR1cm4gcmVzdWx0OwoJfQoJY2F0Y2ggKGUpIHsKCQlyZXR1cm4gbnVsbDsKCX0KfQoKYXN5bmMgZnVuY3Rpb24gZG93bmxvYWRBbmRTZW5kKHsgYXBpLCBtZXNzYWdlLCBldmVudCwgdXJsLCB3YW50QXVkaW8gfSkgewoJY29uc3QgcGxhdGZvcm0gPSBkZXRlY3RQbGF0Zm9ybSh1cmwpOwoJaWYgKCFwbGF0Zm9ybSkKCQlyZXR1cm47CgoJY29uc3QgbWVzc2FnZUlEID0gZXZlbnQubWVzc2FnZUlEOwoJY29uc3QgdGhyZWFkSUQgPSBldmVudC50aHJlYWRJRDsKCXJlYWN0KGFwaSwgUkVBQ1RfV09SS0lORywgbWVzc2FnZUlELCB0aHJlYWRJRCk7CgoJdHJ5IHsKCQljb25zdCBkYXRhID0gYXdhaXQgcGxhdGZvcm0ucnVuKHVybCk7CgkJaWYgKCFkYXRhIHx8IGRhdGEuc3RhdHVzID09PSBmYWxzZSB8fCBkYXRhLmVycm9yKSB7CgkJCXJlYWN0KGFwaSwgUkVBQ1RfRkFJTCwgbWVzc2FnZUlELCB0aHJlYWRJRCk7CgkJCXJldHVybjsKCQl9CgoJCWNvbnN0IGluZm8gPSBwbGF0Zm9ybS5leHRyYWN0KGRhdGEpOwoKCQlsZXQgc3RyZWFtVXJsID0gd2FudEF1ZGlvID8gaW5mby5hdWRpbyA6IGluZm8udmlkZW87CgkJbGV0IHR5cGUgPSB3YW50QXVkaW8gPyAiYXVkaW8iIDogInZpZGVvIjsKCQlpZiAoIXN0cmVhbVVybCAmJiB3YW50QXVkaW8gJiYgaW5mby52aWRlbykgewoJCQlzdHJlYW1VcmwgPSBpbmZvLnZpZGVvOwoJCQl0eXBlID0gInZpZGVvIjsKCQl9CgkJaWYgKCFzdHJlYW1VcmwgJiYgIXdhbnRBdWRpbyAmJiBpbmZvLmltYWdlKSB7CgkJCXN0cmVhbVVybCA9IGluZm8uaW1hZ2U7CgkJCXR5cGUgPSAiaW1hZ2UiOwoJCX0KCQlpZiAoIXN0cmVhbVVybCAmJiAhd2FudEF1ZGlvICYmIGluZm8uYXVkaW8pIHsKCQkJc3RyZWFtVXJsID0gaW5mby5hdWRpbzsKCQkJdHlwZSA9ICJhdWRpbyI7CgkJfQoJCWlmICghc3RyZWFtVXJsKSB7CgkJCXJlYWN0KGFwaSwgUkVBQ1RfRkFJTCwgbWVzc2FnZUlELCB0aHJlYWRJRCk7CgkJCXJldHVybjsKCQl9CgoJCWNvbnN0IGhlYWRlcnMgPSB7ICJVc2VyLUFnZW50IjogVUEsIC4uLihwbGF0Zm9ybS5yZWZlcmVyID8geyBSZWZlcmVyOiBwbGF0Zm9ybS5yZWZlcmVyIH0gOiB7fSksIC4uLihpbmZvLmhlYWRlcnMgfHwge30pIH07CgkJY29uc3QgZXh0ID0gZXh0ZW5zaW9uRm9yKHN0cmVhbVVybCwgdHlwZSk7CgkJY29uc3QgbmFtZSA9IGAkeyhpbmZvLnRpdGxlIHx8IHBsYXRmb3JtLm5hbWUpLnJlcGxhY2UoL1teXHcuLV0rL2csICJfIikuc2xpY2UoMCwgNDApIHx8ICJtZWRpYSJ9LiR7ZXh0fWA7CgoJCWNvbnN0IHN0cmVhbSA9IGF3YWl0IGdldFN0cmVhbUZyb21VUkwoc3RyZWFtVXJsLCBuYW1lLCB7IGhlYWRlcnMgfSk7CgkJY29uc3QgdGl0bGUgPSBTdHJpbmcoaW5mby50aXRsZSB8fCAiIikudHJpbSgpOwoJCWNvbnN0IGJvZHkgPSB0aXRsZSB8fCBgJHtwbGF0Zm9ybS5uYW1lfSBtZWRpYWA7CgkJYXdhaXQgbWVzc2FnZS5yZXBseSh7IGJvZHksIGF0dGFjaG1lbnQ6IHN0cmVhbSB9KTsKCQlyZWFjdChhcGksIFJFQUNUX0RPTkUsIG1lc3NhZ2VJRCwgdGhyZWFkSUQpOwoJfQoJY2F0Y2ggKGUpIHsKCQlyZWFjdChhcGksIFJFQUNUX0ZBSUwsIG1lc3NhZ2VJRCwgdGhyZWFkSUQpOwoJfQp9Cgptb2R1bGUuZXhwb3J0cyA9IHsKCWNvbmZpZzogewoJCW5hbWU6ICJhbGxkbCIsCgkJYWxpYXNlczogWyJkbCIsICJkb3dubG9hZCIsICJhbGxkb3dubG9hZCJdLAoJCXZlcnNpb246ICIxLjIiLAoJCWF1dGhvcjogIk5lb2F6IPCfkIoiLAoJCWNvdW50RG93bjogNSwKCQlyb2xlOiAwLAoJCWRlc2NyaXB0aW9uOiB7CgkJCWVuOiAiZG93bmxvYWQgbWVkaWEgZnJvbSBhbG1vc3QgYW55IHBsYXRmb3JtIGJ5IGxpbmsgKGF1dG8tZGV0ZWN0cyBsaW5rcyBpbiBhbnkgbWVzc2FnZSkiCgkJfSwKCQljYXRlZ29yeTogIm1lZGlhIiwKCQlndWlkZTogewoJCQllbjogIntwbn0gPGxpbms+OiBkb3dubG9hZCBhbmQgc2VuZCB0aGUgdmlkZW8gYXQgdGhlIGxpbmsiCgkJCQkrICJcbiAgIHtwbn0gPGxpbms+IC1hOiBkb3dubG9hZCBhbmQgc2VuZCB0aGUgYXVkaW8gaW5zdGVhZCIKCQkJCSsgIlxuICAgc2VuZCBhbnkgc3VwcG9ydGVkIGxpbmsgb24gaXRzIG93biBhbmQgdGhlIGJvdCB3aWxsIGZldGNoIGl0IGF1dG9tYXRpY2FsbHkiCgkJCQkrICJcbiAgIHtwbn0gb24gLyBvZmY6IGVuYWJsZSBvciBkaXNhYmxlIGF1dG8tZG93bmxvYWQgaW4gdGhpcyBjaGF0IgoJCX0KCX0sCgoJb25TdGFydDogYXN5bmMgZnVuY3Rpb24gKHsgYXBpLCBhcmdzLCBtZXNzYWdlLCBldmVudCwgdGhyZWFkc0RhdGEgfSkgewoJCWNvbnN0IGZsYWdzID0gYXJncy5maWx0ZXIoYXJnID0+IGFyZy5zdGFydHNXaXRoKCItIikpLm1hcChhcmcgPT4gYXJnLnRvTG93ZXJDYXNlKCkpOwoJCWNvbnN0IGF1ZGlvRmxhZyA9IGZsYWdzLmluY2x1ZGVzKCItYSIpIHx8IGZsYWdzLmluY2x1ZGVzKCItLWF1ZGlvIik7CgoJCWNvbnN0IHdvcmRzID0gYXJncy5maWx0ZXIoYXJnID0+ICFhcmcuc3RhcnRzV2l0aCgiLSIpKTsKCQljb25zdCBmaXJzdCA9ICh3b3Jkc1swXSB8fCAiIikudG9Mb3dlckNhc2UoKTsKCgkJbGV0IHRocmVhZEVuYWJsZWQgPSBhd2FpdCB0aHJlYWRzRGF0YS5nZXQoZXZlbnQudGhyZWFkSUQsICJkYXRhLmFsbGRsIiwgdHJ1ZSk7CgkJaWYgKHRocmVhZEVuYWJsZWQgPT09IHVuZGVmaW5lZCB8fCB0aHJlYWRFbmFibGVkID09PSBudWxsKQoJCQl0aHJlYWRFbmFibGVkID0gdHJ1ZTsKCgkJaWYgKCFhdWRpb0ZsYWcgJiYgKGZpcnN0ID09PSAib24iIHx8IGZpcnN0ID09PSAib2ZmIikgJiYgd29yZHMubGVuZ3RoID09PSAxKSB7CgkJCWF3YWl0IHRocmVhZHNEYXRhLnNldChldmVudC50aHJlYWRJRCwgZmlyc3QgPT09ICJvbiIsICJkYXRhLmFsbGRsIik7CgkJCXJldHVybjsKCQl9CgoJCWlmICh0aHJlYWRFbmFibGVkID09PSBmYWxzZSkKCQkJcmV0dXJuOwoKCQljb25zdCB1cmwgPSBleHRyYWN0VXJsRnJvbUV2ZW50KGV2ZW50KSB8fCBleHRyYWN0VXJsKHdvcmRzLmpvaW4oIiAiKSk7CgkJaWYgKCF1cmwpCgkJCXJldHVybjsKCgkJcmV0dXJuIGRvd25sb2FkQW5kU2VuZCh7IGFwaSwgbWVzc2FnZSwgZXZlbnQsIHVybCwgd2FudEF1ZGlvOiBhdWRpb0ZsYWcgfSk7Cgl9LAoKCW9uQ2hhdDogYXN5bmMgZnVuY3Rpb24gKHsgYXBpLCBtZXNzYWdlLCBldmVudCwgdGhyZWFkc0RhdGEgfSkgewoJCWlmIChldmVudC5zZW5kZXJJRCA9PT0gYXBpLmdldEN1cnJlbnRVc2VySUQoKSkKCQkJcmV0dXJuOwoKCQljb25zdCB1cmwgPSBleHRyYWN0VXJsRnJvbUV2ZW50KGV2ZW50KTsKCQlpZiAoIXVybCkgewoJCQlpZiAoaXNVbnN1cHBvcnRlZFNoYXJlKGV2ZW50KSkgewoJCQkJY29uc3QgbWVzc2FnZUlEID0gZXZlbnQubWVzc2FnZUlEOwoJCQkJY29uc3QgdGhyZWFkSUQgPSBldmVudC50aHJlYWRJRDsKCQkJCXJlYWN0KGFwaSwgUkVBQ1RfRkFJTCwgbWVzc2FnZUlELCB0aHJlYWRJRCk7CgkJCX0KCQkJcmV0dXJuOwoJCX0KCQlpZiAoIWRldGVjdFBsYXRmb3JtKHVybCkpCgkJCXJldHVybjsKCgkJbGV0IHRocmVhZEVuYWJsZWQgPSBhd2FpdCB0aHJlYWRzRGF0YS5nZXQoZXZlbnQudGhyZWFkSUQsICJkYXRhLmFsbGRsIiwgdHJ1ZSk7CgkJaWYgKHRocmVhZEVuYWJsZWQgPT09IHVuZGVmaW5lZCB8fCB0aHJlYWRFbmFibGVkID09PSBudWxsKQoJCQl0aHJlYWRFbmFibGVkID0gdHJ1ZTsKCQlpZiAodGhyZWFkRW5hYmxlZCA9PT0gZmFsc2UpCgkJCXJldHVybjsKCgkJcmV0dXJuIGRvd25sb2FkQW5kU2VuZCh7IGFwaSwgbWVzc2FnZSwgZXZlbnQsIHVybCwgd2FudEF1ZGlvOiBmYWxzZSB9KTsKCX0KfTsK
+const btch = require("btch-downloader");
+const { getStreamFromURL } = global.utils;
+
+const UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36";
+
+const REACT_WORKING = "⏳";
+const REACT_DONE = "✅";
+const REACT_FAIL = "❌";
+
+function decodeJwtPayload(token) {
+	try {
+		const part = String(token).split(".")[1];
+		if (!part)
+			return null;
+		const padded = part.replace(/-/g, "+").replace(/_/g, "/") + "=".repeat((4 - part.length % 4) % 4);
+		return JSON.parse(Buffer.from(padded, "base64").toString("utf8"));
+	}
+	catch (e) {
+		return null;
+	}
+}
+
+function resolveMediaSource(rawUrl) {
+	if (!rawUrl || typeof rawUrl !== "string")
+		return { url: null, isVideo: false, headers: null };
+	const token = (rawUrl.match(/[?&]token=([^&]+)/) || [])[1];
+	if (token) {
+		const payload = decodeJwtPayload(decodeURIComponent(token));
+		if (payload && payload.url) {
+			const inner = payload.url;
+			const isVideo = /\.(mp4|mov|m4v|webm)(?:[?#]|$)/i.test(inner)
+				|| /video|reels|dash|progressive|xpv|clip/i.test(inner);
+			return { url: inner, isVideo, headers: payload.headers || null };
+		}
+	}
+	return { url: rawUrl, isVideo: /\.(mp4|mov|m4v|webm)(?:[?#]|$)/i.test(rawUrl), headers: null };
+}
+
+const PLATFORMS = [
+	{
+		name: "YouTube",
+		match: /(?:youtube\.com\/(?:watch\?(?:[^#]*&)?v=|shorts\/|live\/|embed\/|v\/)|youtu\.be\/[A-Za-z0-9_-]{6,})/i,
+		referer: "https://www.youtube.com/",
+		run: url => btch.youtube(url),
+		extract: data => ({
+			title: data.title,
+			thumbnail: data.thumbnail,
+			author: data.author,
+			video: data.mp4 || null,
+			audio: data.mp3 || null
+		})
+	},
+	{
+		name: "TikTok",
+		match: /(?:tiktok\.com\/(?:@[^/]+\/video\/\d+|video\/\d+|t\/[A-Za-z0-9]+)|(?:vt|vm)\.tiktok\.com\/[A-Za-z0-9]+)/i,
+		run: url => btch.ttdl(url),
+		extract: data => ({
+			title: data.title,
+			thumbnail: data.thumbnail,
+			author: "",
+			video: (data.video || [])[0] || null,
+			audio: (data.audio || [])[0] || null
+		})
+	},
+	{
+		name: "Twitter / X",
+		match: /(?:twitter\.com|x\.com)\/[^/]+\/status\/\d+/i,
+		run: url => btch.twitter(url),
+		extract: data => {
+			const raw = data.url;
+			let link = null;
+			if (Array.isArray(raw)) {
+				for (const item of raw.slice().reverse()) {
+					link = item.hd || item.sd || Object.values(item)[0];
+					if (link)
+						break;
+				}
+			}
+			else if (typeof raw === "string")
+				link = raw;
+			return { title: data.title, thumbnail: "", author: "", video: link, audio: null };
+		}
+	},
+	{
+		name: "Facebook",
+		match: /(?:facebook\.com\/(?:[^/]+\/videos\/|watch\/?\?|reel\/|video\.php|share\/v\/|share\/r\/|[^/]+\/posts\/)|fb\.watch\/[A-Za-z0-9_-]+)/i,
+		run: url => btch.fbdown(url),
+		extract: data => ({
+			title: "",
+			thumbnail: "",
+			author: "",
+			video: data.HD || data.Normal_video || null,
+			audio: null
+		})
+	},
+	{
+		name: "Instagram",
+		match: /instagram\.com\/(?:p|reel|reels|tv|share)\/[A-Za-z0-9_-]+/i,
+		run: url => btch.igdl(url),
+		extract: data => {
+			const items = Array.isArray(data.result) ? data.result : [];
+			const media = items.length ? resolveMediaSource(items[0].url) : { url: null, isVideo: false };
+			return {
+				title: "",
+				thumbnail: items[0]?.thumbnail || "",
+				author: "",
+				headers: media.headers,
+				video: media.isVideo ? media.url : null,
+				audio: null,
+				image: media.isVideo ? null : media.url
+			};
+		}
+	},
+	{
+		name: "Pinterest",
+		match: /(?:pinterest\.[a-z.]+\/pin\/\d+|pin\.it\/[A-Za-z0-9]+)/i,
+		run: url => btch.pinterest(url),
+		extract: data => {
+			const pin = data.result?.result || data.result || {};
+			let video = pin.video_url || null;
+			if (!video && pin.videos)
+				for (const key of Object.keys(pin.videos))
+					if (pin.videos[key]?.url) {
+						video = pin.videos[key].url;
+						break;
+					}
+			return {
+				title: pin.title || pin.description || "",
+				thumbnail: pin.image || pin.image_url || "",
+				author: pin.uploader?.username || pin.user?.username || "",
+				video,
+				audio: null,
+				image: video ? null : (pin.image || pin.image_url || null)
+			};
+		}
+	},
+	{
+		name: "CapCut",
+		match: /capcut\.com\/(?:template-detail|t|video)\/[A-Za-z0-9]+/i,
+		referer: "https://www.capcut.com/",
+		run: url => btch.capcut(url),
+		extract: data => ({
+			title: data.title,
+			thumbnail: data.coverUrl,
+			author: data.authorName,
+			video: data.originalVideoUrl || null,
+			audio: null
+		})
+	},
+	{
+		name: "SoundCloud",
+		match: /soundcloud\.com\/[^/\s]+\/[^/\s?#]+/i,
+		run: url => btch.soundcloud(url),
+		extract: data => {
+			const item = data.result || {};
+			return {
+				title: item.title,
+				thumbnail: item.thumbnail,
+				author: "",
+				video: null,
+				audio: item.downloadMp3 || item.audio || null
+			};
+		}
+	},
+	{
+		name: "Douyin",
+		match: /(?:douyin\.com\/(?:video|note)\/\d+|v\.douyin\.com\/[A-Za-z0-9]+)/i,
+		run: url => btch.douyin(url),
+		extract: data => {
+			const item = data.result || {};
+			let video = null;
+			if (Array.isArray(item.links))
+				for (const link of item.links)
+					if (link.url) {
+						video = link.url;
+						break;
+					}
+			return {
+				title: item.title,
+				thumbnail: item.thumbnail,
+				author: "",
+				video: video || item.video || null,
+				audio: null
+			};
+		}
+	},
+	{
+		name: "Threads",
+		match: /threads\.(?:net|com)\/(?:@[^/]+\/)?(?:post|t)\/[A-Za-z0-9_-]+/i,
+		run: url => btch.threads(url),
+		extract: data => {
+			const item = data.result || {};
+			return {
+				title: "",
+				thumbnail: item.image || "",
+				author: "",
+				video: item.video || null,
+				audio: null,
+				image: item.video ? null : (item.image || null)
+			};
+		}
+	},
+	{
+		name: "SnackVideo",
+		match: /snackvideo\.com\/(?:video|p|v)\/[A-Za-z0-9_-]+/i,
+		run: url => btch.snackvideo(url),
+		extract: data => {
+			const item = data.result || data;
+			return {
+				title: item.title,
+				thumbnail: item.thumbnail,
+				author: item.creator?.name || "",
+				video: item.videoUrl || item.url || null,
+				audio: null
+			};
+		}
+	},
+	{
+		name: "Kuaishou",
+		match: /(?:kuaishou\.com\/(?:short-video|f)\/[A-Za-z0-9_-]+|v\.kuaishou\.com\/[A-Za-z0-9_-]+)/i,
+		run: url => btch.kuaishou(url),
+		extract: data => {
+			const item = data.result || data;
+			return {
+				title: item.title,
+				thumbnail: item.thumbnail || "",
+				author: item.author || item.username || "",
+				video: item.videoUrl || null,
+				audio: null
+			};
+		}
+	},
+	{
+		name: "Xiaohongshu",
+		match: /xiaohongshu\.com\/(?:explore|discovery\/item)\/[A-Za-z0-9]+/i,
+		run: url => btch.xiaohongshu(url),
+		extract: data => {
+			const item = data.result || {};
+			const videos = item.videos || item.video;
+			let video = null;
+			if (Array.isArray(videos))
+				video = typeof videos[0] === "string" ? videos[0] : videos[0]?.url || null;
+			else if (typeof videos === "string")
+				video = videos;
+			const images = item.images || item.image;
+			let image = null;
+			if (Array.isArray(images))
+				image = typeof images[0] === "string" ? images[0] : images[0]?.url || null;
+			else if (typeof images === "string")
+				image = images;
+			return {
+				title: item.title,
+				thumbnail: item.cover || item.thumbnail || "",
+				author: item.author?.nickname || "",
+				video,
+				audio: null,
+				image: video ? null : image
+			};
+		}
+	},
+	{
+		name: "Spotify",
+		match: /open\.spotify\.com\/(?:track|album|playlist|episode)\/[A-Za-z0-9]+/i,
+		run: url => btch.spotify(url),
+		extract: data => {
+			const item = data.result || data;
+			const formats = item.formats || item.format || {};
+			let link = null;
+			for (const key of Object.keys(formats))
+				if (formats[key]?.url) {
+					link = formats[key].url;
+					break;
+				}
+			return {
+				title: item.title,
+				thumbnail: item.thumbnail,
+				author: item.artist || "",
+				video: null,
+				audio: link || item.url || item.download || item.mp3 || null
+			};
+		}
+	},
+	{
+		name: "Google Drive",
+		match: /drive\.google\.com\/file\/d\/[A-Za-z0-9_-]+/i,
+		run: url => btch.gdrive(url),
+		extract: data => {
+			const item = data.result || {};
+			return {
+				title: item.filename,
+				thumbnail: "",
+				author: "",
+				video: /\.(mp4|mkv|mov|webm)/i.test(item.filename || "") ? item.downloadUrl : null,
+				audio: null
+			};
+		}
+	}
+];
+
+function detectPlatform(url) {
+	return PLATFORMS.find(platform => platform.match.test(url)) || null;
+}
+
+function extractUrl(text) {
+	const match = String(text || "").match(/https?:\/\/[^\s]+/i);
+	return match ? match[0] : null;
+}
+
+const URL_KEYS = ["url", "source", "href", "target", "link", "playable_url", "playableUrl", "uri", "originalUrl", "deepLink", "deeplink", "fbclid_url"];
+const TEXT_KEYS = ["description", "title", "caption", "text", "name", "body"];
+
+function findUrlDeep(value, depth) {
+	if (depth > 4 || value === null || value === undefined)
+		return null;
+	if (typeof value === "string")
+		return extractUrl(value);
+	if (Array.isArray(value)) {
+		for (const item of value) {
+			const found = findUrlDeep(item, depth + 1);
+			if (found)
+				return found;
+		}
+		return null;
+	}
+	if (typeof value === "object") {
+		for (const key of URL_KEYS.concat(TEXT_KEYS)) {
+			const found = findUrlDeep(value[key], depth + 1);
+			if (found)
+				return found;
+		}
+		return null;
+	}
+	return null;
+}
+
+function extractUrlFromEvent(event) {
+	const fromBody = extractUrl(event?.body);
+	if (fromBody)
+		return fromBody;
+
+	const attachments = Array.isArray(event?.attachments) ? event.attachments : [];
+	for (const item of attachments) {
+		if (!item || typeof item !== "object")
+			continue;
+		for (const key of URL_KEYS) {
+			const value = item[key];
+			if (typeof value === "string" && /^https?:\/\//i.test(value))
+				return value;
+		}
+		const nested = extractUrl(item.ID);
+		if (nested)
+			return nested;
+		// share posts hide the link in title/description/nested fields, so search the whole object
+		const deep = findUrlDeep(item, 0);
+		if (deep)
+			return deep;
+	}
+	return null;
+}
+
+function isUnsupportedShare(event) {
+	const attachments = Array.isArray(event?.attachments) ? event.attachments : [];
+	return attachments.some(item => item && typeof item === "object"
+		&& (item.type === "share" || item.type === "share_post" || item.type === "story_mention")
+		&& !extractUrlFromEvent({ attachments: [item], body: "" }));
+}
+
+function extensionFor(url, type) {
+	const clean = url.split("?")[0];
+	const ext = clean.split(".").pop();
+	if (ext && ext.length <= 5 && /^[a-z0-9]+$/i.test(ext))
+		return ext;
+	if (type === "audio") return "mp3";
+	if (type === "image") return "jpg";
+	return "mp4";
+}
+
+function react(api, emoji, messageID, threadID) {
+	try {
+		const result = api.setMessageReaction(emoji, messageID, threadID);
+		if (result && typeof result.catch === "function")
+			result.catch(() => null);
+		return result;
+	}
+	catch (e) {
+		return null;
+	}
+}
+
+async function downloadAndSend({ api, message, event, url, wantAudio }) {
+	const platform = detectPlatform(url);
+	if (!platform)
+		return;
+
+	const messageID = event.messageID;
+	const threadID = event.threadID;
+	react(api, REACT_WORKING, messageID, threadID);
+
+	try {
+		const data = await platform.run(url);
+		if (!data || data.status === false || data.error) {
+			react(api, REACT_FAIL, messageID, threadID);
+			return;
+		}
+
+		const info = platform.extract(data);
+
+		let streamUrl = wantAudio ? info.audio : info.video;
+		let type = wantAudio ? "audio" : "video";
+		if (!streamUrl && wantAudio && info.video) {
+			streamUrl = info.video;
+			type = "video";
+		}
+		if (!streamUrl && !wantAudio && info.image) {
+			streamUrl = info.image;
+			type = "image";
+		}
+		if (!streamUrl && !wantAudio && info.audio) {
+			streamUrl = info.audio;
+			type = "audio";
+		}
+		if (!streamUrl) {
+			react(api, REACT_FAIL, messageID, threadID);
+			return;
+		}
+
+		const headers = { "User-Agent": UA, ...(platform.referer ? { Referer: platform.referer } : {}), ...(info.headers || {}) };
+		const ext = extensionFor(streamUrl, type);
+		const name = `${(info.title || platform.name).replace(/[^\w.-]+/g, "_").slice(0, 40) || "media"}.${ext}`;
+
+		const stream = await getStreamFromURL(streamUrl, name, { headers });
+		const title = String(info.title || "").trim();
+		const body = title || `${platform.name} media`;
+		await message.reply({ body, attachment: stream });
+		react(api, REACT_DONE, messageID, threadID);
+	}
+	catch (e) {
+		react(api, REACT_FAIL, messageID, threadID);
+	}
+}
+
+module.exports = {
+	config: {
+		name: "alldl",
+		aliases: ["dl", "download", "alldownload"],
+		version: "1.2",
+		author: "Neoaz 🐊",
+		countDown: 5,
+		role: 0,
+		description: {
+			en: "download media from almost any platform by link (auto-detects links in any message)"
+		},
+		category: "media",
+		guide: {
+			en: "{pn} <link>: download and send the video at the link"
+				+ "\n   {pn} <link> -a: download and send the audio instead"
+				+ "\n   send any supported link on its own and the bot will fetch it automatically"
+				+ "\n   {pn} on / off: enable or disable auto-download in this chat"
+		}
+	},
+
+	onStart: async function ({ api, args, message, event, threadsData }) {
+		const flags = args.filter(arg => arg.startsWith("-")).map(arg => arg.toLowerCase());
+		const audioFlag = flags.includes("-a") || flags.includes("--audio");
+
+		const words = args.filter(arg => !arg.startsWith("-"));
+		const first = (words[0] || "").toLowerCase();
+
+		let threadEnabled = await threadsData.get(event.threadID, "data.alldl", true);
+		if (threadEnabled === undefined || threadEnabled === null)
+			threadEnabled = true;
+
+		if (!audioFlag && (first === "on" || first === "off") && words.length === 1) {
+			await threadsData.set(event.threadID, first === "on", "data.alldl");
+			return;
+		}
+
+		if (threadEnabled === false)
+			return;
+
+		const url = extractUrlFromEvent(event) || extractUrl(words.join(" "));
+		if (!url)
+			return;
+
+		return downloadAndSend({ api, message, event, url, wantAudio: audioFlag });
+	},
+
+	onChat: async function ({ api, message, event, threadsData }) {
+		if (event.senderID === api.getCurrentUserID())
+			return;
+
+		const url = extractUrlFromEvent(event);
+		if (!url) {
+			if (isUnsupportedShare(event)) {
+				const messageID = event.messageID;
+				const threadID = event.threadID;
+				react(api, REACT_FAIL, messageID, threadID);
+			}
+			return;
+		}
+		if (!detectPlatform(url))
+			return;
+
+		let threadEnabled = await threadsData.get(event.threadID, "data.alldl", true);
+		if (threadEnabled === undefined || threadEnabled === null)
+			threadEnabled = true;
+		if (threadEnabled === false)
+			return;
+
+		return downloadAndSend({ api, message, event, url, wantAudio: false });
+	}
+};

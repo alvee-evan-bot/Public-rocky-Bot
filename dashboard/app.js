@@ -1,1 +1,345 @@
-Y29uc3QgZXhwcmVzcyA9IHJlcXVpcmUoImV4cHJlc3MiKTsKY29uc3QgYXBwID0gZXhwcmVzcygpOwpjb25zdCBmaWxlVXBsb2FkID0gcmVxdWlyZSgiZXhwcmVzcy1maWxldXBsb2FkIik7CmNvbnN0IHJhdGVMaW1pdCA9IHJlcXVpcmUoImV4cHJlc3MtcmF0ZS1saW1pdCIpOwpjb25zdCBmcyA9IHJlcXVpcmUoImZzLWV4dHJhIik7CmNvbnN0IHNlc3Npb24gPSByZXF1aXJlKCJleHByZXNzLXNlc3Npb24iKTsKY29uc3QgZXRhID0gcmVxdWlyZSgiZXRhIik7CmNvbnN0IGJvZHlQYXJzZXIgPSByZXF1aXJlKCJib2R5LXBhcnNlciIpOwpjb25zdCB7IGdvb2dsZSB9ID0gcmVxdWlyZSgiZ29vZ2xlYXBpcyIpOwpjb25zdCBub2RlbWFpbGVyID0gcmVxdWlyZSgibm9kZW1haWxlciIpOwpjb25zdCBjb29raWVQYXJzZXIgPSByZXF1aXJlKCJjb29raWUtcGFyc2VyIik7CmNvbnN0IGZsYXNoID0gcmVxdWlyZSgiY29ubmVjdC1mbGFzaCIpOwpjb25zdCBQYXNzcG9ydCA9IHJlcXVpcmUoInBhc3Nwb3J0Iik7CmNvbnN0IGJjcnlwdCA9IHJlcXVpcmUoImJjcnlwdCIpOwpjb25zdCBGaWxlU3RvcmUgPSByZXF1aXJlKCIuL3NjcmlwdHMvc2Vzc2lvblN0b3JlLmpzIik7CmNvbnN0IGF4aW9zID0gcmVxdWlyZSgiYXhpb3MiKTsKY29uc3QgbWltZURCID0gcmVxdWlyZSgibWltZS1kYiIpOwpjb25zdCBodHRwID0gcmVxdWlyZSgiaHR0cCIpOwpjb25zdCBzZXJ2ZXIgPSBodHRwLmNyZWF0ZVNlcnZlcihhcHApOwoKY29uc3QgaW1hZ2VFeHQgPSBbInBuZyIsICJnaWYiLCAid2VicCIsICJqcGVnIiwgImpwZyJdOwpjb25zdCB2aWRlb0V4dCA9IFsid2VibSIsICJta3YiLCAiZmx2IiwgInZvYiIsICJvZ3YiLCAib2dnIiwgInJyYyIsICJnaWZ2IiwKCSJtbmciLCAibW92IiwgImF2aSIsICJxdCIsICJ3bXYiLCAieXV2IiwgInJtIiwgImFzZiIsICJhbXYiLCAibXA0IiwKCSJtNHAiLCAibTR2IiwgIm1wZyIsICJtcDIiLCAibXBlZyIsICJtcGUiLCAibXB2IiwgIm00diIsICJzdmkiLCAiM2dwIiwKCSIzZzIiLCAibXhmIiwgInJvcSIsICJuc3YiLCAiZmx2IiwgImY0diIsICJmNHAiLCAiZjRhIiwgImY0YiIsICJtb2QiCl07CmNvbnN0IGF1ZGlvRXh0ID0gWyIzZ3AiLCAiYWEiLCAiYWFjIiwgImFheCIsICJhY3QiLCAiYWlmZiIsICJhbGFjIiwgImFtciIsCgkiYXBlIiwgImF1IiwgImF3YiIsICJkc3MiLCAiZHZmIiwgImZsYWMiLCAiZ3NtIiwgImlrbGF4IiwgIml2cyIsCgkibTRhIiwgIm00YiIsICJtNHAiLCAibW1mIiwgIm1wMyIsICJtcGMiLCAibXN2IiwgIm5tZiIsCgkib2dnIiwgIm9nYSIsICJtb2dnIiwgIm9wdXMiLCAicmEiLCAicm0iLCAicmF3IiwgInJmNjQiLCAic2xuIiwgInR0YSIsCgkidm9jIiwgInZveCIsICJ3YXYiLCAid21hIiwgInd2IiwgIndlYm0iLCAiOHN2eCIsICJjZCIKXTsKCgptb2R1bGUuZXhwb3J0cyA9IGFzeW5jIChhcGkpID0+IHsKCWlmICghYXBpKQoJCWF3YWl0IHJlcXVpcmUoIi4vY29ubmVjdERCLmpzIikoKTsKCgljb25zdCB7IHV0aWxzLCB1dGlsczogeyBkcml2ZSB9IH0gPSBnbG9iYWw7Cgljb25zdCB7IGNvbmZpZyB9ID0gZ2xvYmFsLkdvYXRCb3Q7Cgljb25zdCB7IGV4cGlyZVZlcmlmeUNvZGUgfSA9IGNvbmZpZy5kYXNoQm9hcmQ7Cgljb25zdCB7IGdtYWlsQWNjb3VudCwgZ1JlY2FwdGNoYSB9ID0gY29uZmlnLmNyZWRlbnRpYWxzOwoKCWNvbnN0IGdldFRleHQgPSBnbG9iYWwudXRpbHMuZ2V0VGV4dDsKCgljb25zdCB7CgkJZW1haWwsCgkJY2xpZW50SWQsCgkJY2xpZW50U2VjcmV0LAoJCXJlZnJlc2hUb2tlbgoJfSA9IGdtYWlsQWNjb3VudDsKCgljb25zdCBPQXV0aDIgPSBnb29nbGUuYXV0aC5PQXV0aDI7CglsZXQgdHJhbnNwb3J0ZXI7CglpZiAoY2xpZW50SWQgJiYgY2xpZW50U2VjcmV0ICYmIHJlZnJlc2hUb2tlbikgewoJCWNvbnN0IE9BdXRoMl9jbGllbnQgPSBuZXcgT0F1dGgyKGNsaWVudElkLCBjbGllbnRTZWNyZXQpOwoJCU9BdXRoMl9jbGllbnQuc2V0Q3JlZGVudGlhbHMoeyByZWZyZXNoX3Rva2VuOiByZWZyZXNoVG9rZW4gfSk7CgkJbGV0IGFjY2Vzc1Rva2VuOwoJCXRyeSB7CgkJCWFjY2Vzc1Rva2VuID0gYXdhaXQgT0F1dGgyX2NsaWVudC5nZXRBY2Nlc3NUb2tlbigpOwoJCX0KCQljYXRjaCAoZXJyKSB7CgkJCXRocm93IG5ldyBFcnJvcihnZXRUZXh0KCJHb2F0IiwgImdvb2dsZUFwaVJlZnJlc2hUb2tlbkV4cGlyZWQiKSk7CgkJfQoKCQl0cmFuc3BvcnRlciA9IG5vZGVtYWlsZXIuY3JlYXRlVHJhbnNwb3J0KHsKCQkJaG9zdDogInNtdHAuZ21haWwuY29tIiwKCQkJc2VydmljZTogIkdtYWlsIiwKCQkJYXV0aDogewoJCQkJdHlwZTogIk9BdXRoMiIsCgkJCQl1c2VyOiBlbWFpbCwKCQkJCWNsaWVudElkLAoJCQkJY2xpZW50U2VjcmV0LAoJCQkJcmVmcmVzaFRva2VuLAoJCQkJYWNjZXNzVG9rZW4KCQkJfQoJCX0pOwoJfQoJZWxzZSB7CgkJcmVxdWlyZSgiLi4vbG9nZ2VyL2xvZy5qcyIpLndhcm4oIkRBU0hCT0FSRCIsICJHb29nbGUgY3JlZGVudGlhbHMgYXJlIG5vdCBmdWxseSBjb25maWd1cmVkOyBlbWFpbCB2ZXJpZmljYXRpb24gKHJlZ2lzdGVyL2ZvcmdvdCBwYXNzd29yZCkgaXMgZGlzYWJsZWQuIik7CgkJdHJhbnNwb3J0ZXIgPSB7CgkJCXNlbmRNYWlsOiBhc3luYyAoKSA9PiB7CgkJCQl0aHJvdyBuZXcgRXJyb3IoIkVtYWlsIGlzIG5vdCBjb25maWd1cmVkLiBTZXQgY3JlZGVudGlhbHMuZ21haWxBY2NvdW50IGluIGNvbmZpZy5qc29uLiIpOwoJCQl9CgkJfTsKCX0KCgoJY29uc3QgewoJCXRocmVhZE1vZGVsLAoJCXVzZXJNb2RlbCwKCQlkYXNoQm9hcmRNb2RlbCwKCQl0aHJlYWRzRGF0YSwKCQl1c2Vyc0RhdGEsCgkJZGFzaEJvYXJkRGF0YQoJfSA9IGdsb2JhbC5kYjsKCgoJLy8gY29uc3QgdmVyaWZ5Q29kZXMgPSB7CgkvLyAgICAgZmJpZDogW10sCgkvLyAgICAgcmVnaXN0ZXI6IFtdLAoJLy8gICAgIGZvcmdldFBhc3M6IFtdCgkvLyB9OwoKCWV0YS5jb25maWd1cmUoewoJCXVzZVdpdGg6IHRydWUKCX0pOwoKCWFwcC5zZXQoInZpZXdzIiwgYCR7X19kaXJuYW1lfS92aWV3c2ApOwoJYXBwLmVuZ2luZSgiZXRhIiwgZXRhLnJlbmRlckZpbGUpOwoJYXBwLnNldCgidmlldyBlbmdpbmUiLCAiZXRhIik7CgoJYXBwLnVzZShib2R5UGFyc2VyLmpzb24oKSk7CglhcHAudXNlKGJvZHlQYXJzZXIudXJsZW5jb2RlZCh7IGV4dGVuZGVkOiB0cnVlIH0pKTsKCWFwcC51c2UoY29va2llUGFyc2VyKCkpOwoJYXBwLnVzZShzZXNzaW9uKHsKCQlzZWNyZXQ6IGNvbmZpZy5kYXNoQm9hcmQuc2Vzc2lvblNlY3JldCB8fCByYW5kb21TdHJpbmdBcGlrZXkoMTApLAoJCXN0b3JlOiBuZXcgRmlsZVN0b3JlKHsgdHRsOiAxMDAwICogNjAgKiA2MCAqIDI0ICogNyB9KSwKCQlyZXNhdmU6IGZhbHNlLAoJCXNhdmVVbmluaXRpYWxpemVkOiBmYWxzZSwKCQlyb2xsaW5nOiB0cnVlLAoJCWNvb2tpZTogewoJCQlzZWN1cmU6IGZhbHNlLAoJCQlodHRwT25seTogdHJ1ZSwKCQkJbWF4QWdlOiAxMDAwICogNjAgKiA2MCAqIDI0ICogNyAvLyA3IGRheXMKCQl9Cgl9KSk7CgoKCS8vIHB1YmxpYyBmb2xkZXIgCglhcHAudXNlKCIvY3NzIiwgZXhwcmVzcy5zdGF0aWMoYCR7X19kaXJuYW1lfS9jc3NgKSk7CglhcHAudXNlKCIvanMiLCBleHByZXNzLnN0YXRpYyhgJHtfX2Rpcm5hbWV9L2pzYCkpOwoJYXBwLnVzZSgiL2ltYWdlcyIsIGV4cHJlc3Muc3RhdGljKGAke19fZGlybmFtZX0vaW1hZ2VzYCkpOwoKCXJlcXVpcmUoIi4vcGFzc3BvcnQtY29uZmlnLmpzIikoUGFzc3BvcnQsIGRhc2hCb2FyZERhdGEsIGJjcnlwdCk7CglhcHAudXNlKFBhc3Nwb3J0LmluaXRpYWxpemUoKSk7CglhcHAudXNlKFBhc3Nwb3J0LnNlc3Npb24oKSk7CglhcHAudXNlKGZpbGVVcGxvYWQoKSk7CgoJYXBwLnVzZShmbGFzaCgpKTsKCWFwcC51c2UoZnVuY3Rpb24gKHJlcSwgcmVzLCBuZXh0KSB7CgkJcmVzLmxvY2Fscy5nUmVjYXB0Y2hhX3NpdGVLZXkgPSBnUmVjYXB0Y2hhLnNpdGVLZXk7CgkJcmVzLmxvY2Fscy5fX2Rpcm5hbWUgPSBfX2Rpcm5hbWU7CgkJcmVzLmxvY2Fscy5zdWNjZXNzID0gcmVxLmZsYXNoKCJzdWNjZXNzIikgfHwgW107CgkJcmVzLmxvY2Fscy5lcnJvcnMgPSByZXEuZmxhc2goImVycm9ycyIpIHx8IFtdOwoJCXJlcy5sb2NhbHMud2FybmluZ3MgPSByZXEuZmxhc2goIndhcm5pbmdzIikgfHwgW107CgkJcmVzLmxvY2Fscy51c2VyID0gcmVxLnVzZXIgfHwgbnVsbDsKCQluZXh0KCk7Cgl9KTsKCgljb25zdCBnZW5lcmF0ZUVtYWlsVmVyaWZpY2F0aW9uQ29kZSA9IHJlcXVpcmUoIi4vc2NyaXB0cy9nZW5lcmF0ZS1FbWFpbC1WZXJpZmljYXRpb24uanMiKTsKCgkvLyDigJTigJTigJTigJTigJTigJTigJTigJTigJTigJTigJTigJTigJTigJTigJTigJTigJQgTUlERExFV0FSRSDigJTigJTigJTigJTigJTigJTigJTigJTigJTigJTigJTigJTigJTigJTigJTigJTigJQgLy8KCWNvbnN0IGNyZWF0ZUxpbWl0ZXIgPSAobXMsIG1heCkgPT4gcmF0ZUxpbWl0KHsKCQl3aW5kb3dNczogbXMsIC8vIDUgbWludXRlcwoJCW1heCwKCQloYW5kbGVyOiAocmVxLCByZXMpID0+IHsKCQkJcmVzLnN0YXR1cyg0MjkpLnNlbmQoewoJCQkJc3RhdHVzOiAiZXJyb3IiLAoJCQkJbWVzc2FnZTogZ2V0VGV4dCgiYXBwIiwgInRvb01hbnlSZXF1ZXN0cyIpCgkJCX0pOwoJCX0KCX0pOwoKCWNvbnN0IG1pZGRsZVdhcmUgPSByZXF1aXJlKCIuL21pZGRsZXdhcmUvaW5kZXguanMiKShjaGVja0F1dGhDb25maWdEYXNoYm9hcmRPZlRocmVhZCk7CgoJLy8g4oCU4oCU4oCU4oCU4oCU4oCU4oCU4oCU4oCU4oCU4oCU4oCU4oCU4oCU4oCU4oCU4oCU4oCU4oCU4oCU4oCU4oCU4oCU4oCU4oCU4oCU4oCU4oCU4oCU4oCU4oCU4oCU4oCU4oCU4oCU4oCU4oCU4oCU4oCU4oCU4oCU4oCU4oCU4oCU4oCUIC8vCgoJYXN5bmMgZnVuY3Rpb24gY2hlY2tBdXRoQ29uZmlnRGFzaGJvYXJkT2ZUaHJlYWQodGhyZWFkRGF0YSwgdXNlcklEKSB7CgkJaWYgKCFpc05hTih0aHJlYWREYXRhKSkKCQkJdGhyZWFkRGF0YSA9IGF3YWl0IHRocmVhZHNEYXRhLmdldCh0aHJlYWREYXRhKTsKCQlyZXR1cm4gdGhyZWFkRGF0YS5hZG1pbklEcz8uaW5jbHVkZXModXNlcklEKSB8fCB0aHJlYWREYXRhLm1lbWJlcnM/LnNvbWUobSA9PiBtLnVzZXJJRCA9PSB1c2VySUQgJiYgbS5wZXJtaXNzaW9uQ29uZmlnRGFzaGJvYXJkID09IHRydWUpIHx8IGZhbHNlOwoJfQoKCWNvbnN0IGlzVmlkZW9GaWxlID0gKG1pbWVUeXBlKSA9PiB2aWRlb0V4dC5pbmNsdWRlcyhtaW1lREJbbWltZVR5cGVdPy5leHRlbnNpb25zPy5bMF0pOwoKCWFzeW5jIGZ1bmN0aW9uIGlzVmVyaWZ5UmVjYXB0Y2hhKHJlc3BvbnNlQ2FwdGNoYSkgewoJCWNvbnN0IHNlY3JldCA9IGdSZWNhcHRjaGEuc2VjcmV0S2V5OwoJCWNvbnN0IHZlcmlmeVVybCA9IGBodHRwczovL3d3dy5nb29nbGUuY29tL3JlY2FwdGNoYS9hcGkvc2l0ZXZlcmlmeT9zZWNyZXQ9JHtzZWNyZXR9JnJlc3BvbnNlPSR7cmVzcG9uc2VDYXB0Y2hhfWA7CgkJY29uc3QgdmVyaWZ5ID0gYXdhaXQgYXhpb3MuZ2V0KHZlcmlmeVVybCk7CgkJcmV0dXJuIHZlcmlmeS5kYXRhLnN1Y2Nlc3M7Cgl9CgoKCS8vIFJPVVRFUyAmIE1JRERMV0FSRQoJY29uc3QgewoJCXVuQXV0aGVudGljYXRlZCwKCQlpc1dhaXRWZXJpZnlBY2NvdW50LAoJCWlzQXV0aGVudGljYXRlZCwKCQlpc0FkbWluLAoJCWlzVmVyeWZpVXNlcklERmFjZWJvb2ssCgkJY2hlY2tIYXNBbmRJblRocmVhZCwKCQltaWRkbGV3YXJlQ2hlY2tBdXRoQ29uZmlnRGFzaGJvYXJkT2ZUaHJlYWQKCX0gPSBtaWRkbGVXYXJlOwoKCWNvbnN0IHBhcmFtc0ZvclJvdXRlcyA9IHsKCQl1bkF1dGhlbnRpY2F0ZWQsIGlzV2FpdFZlcmlmeUFjY291bnQsIGlzQWRtaW4sIGlzQXV0aGVudGljYXRlZCwKCQlpc1ZlcnlmaVVzZXJJREZhY2Vib29rLCBjaGVja0hhc0FuZEluVGhyZWFkLCBtaWRkbGV3YXJlQ2hlY2tBdXRoQ29uZmlnRGFzaGJvYXJkT2ZUaHJlYWQsCgoJCWlzVmVyaWZ5UmVjYXB0Y2hhLCB2YWxpZGF0ZUVtYWlsLCByYW5kb21OdW1iZXJBcGlrZXksIHRyYW5zcG9ydGVyLAoJCWdlbmVyYXRlRW1haWxWZXJpZmljYXRpb25Db2RlLCBkYXNoQm9hcmREYXRhLCBleHBpcmVWZXJpZnlDb2RlLCBQYXNzcG9ydCwgaXNWaWRlb0ZpbGUsCgoJCXRocmVhZHNEYXRhLCBhcGksIGNyZWF0ZUxpbWl0ZXIsIGNvbmZpZywgY2hlY2tBdXRoQ29uZmlnRGFzaGJvYXJkT2ZUaHJlYWQsCgkJaW1hZ2VFeHQsIHZpZGVvRXh0LCBhdWRpb0V4dCwgY29udmVydFNpemUsIGRyaXZlLCB1c2Vyc0RhdGEKCX07CgoJY29uc3QgcmVnaXN0ZXJSb3V0ZSA9IHJlcXVpcmUoIi4vcm91dGVzL3JlZ2lzdGVyLmpzIikocGFyYW1zRm9yUm91dGVzKTsKCWNvbnN0IGxvZ2luUm91dGUgPSByZXF1aXJlKCIuL3JvdXRlcy9sb2dpbi5qcyIpKHBhcmFtc0ZvclJvdXRlcyk7Cgljb25zdCBmb3Jnb3RQYXNzd29yZFJvdXRlID0gcmVxdWlyZSgiLi9yb3V0ZXMvZm9yZ290UGFzc3dvcmQuanMiKShwYXJhbXNGb3JSb3V0ZXMpOwoJY29uc3QgY2hhbmdlUGFzc3dvcmRSb3V0ZSA9IHJlcXVpcmUoIi4vcm91dGVzL2NoYW5nZVBhc3N3b3JkLmpzIikocGFyYW1zRm9yUm91dGVzKTsKCWNvbnN0IGRhc2hCb2FyZFJvdXRlID0gcmVxdWlyZSgiLi9yb3V0ZXMvZGFzaEJvYXJkLmpzIikocGFyYW1zRm9yUm91dGVzKTsKCWNvbnN0IHZlcmlmeUZiaWRSb3V0ZSA9IHJlcXVpcmUoIi4vcm91dGVzL3ZlcmlmeWZiaWQuanMiKShwYXJhbXNGb3JSb3V0ZXMpOwoJY29uc3QgYXBpUm91dGVyID0gcmVxdWlyZSgiLi9yb3V0ZXMvYXBpLmpzIikocGFyYW1zRm9yUm91dGVzKTsKCglhcHAuZ2V0KFsiLyIsICIvaG9tZSJdLCAocmVxLCByZXMpID0+IHsKCQlyZXMucmVuZGVyKCJob21lIik7Cgl9KTsKCglhcHAuZ2V0KCIvc3RhdHMiLCBhc3luYyAocmVxLCByZXMpID0+IHsKCQlsZXQgZmNhVmVyc2lvbjsKCQl0cnkgewoJCQlmY2FWZXJzaW9uID0gcmVxdWlyZSgieHRyZW1lLWZjYS9wYWNrYWdlLmpzb24iKS52ZXJzaW9uOwoJCX0KCQljYXRjaCAoZSkgewoJCQlmY2FWZXJzaW9uID0gInVua25vd24iOwoJCX0KCgkJY29uc3QgdG90YWxUaHJlYWQgPSAoYXdhaXQgdGhyZWFkc0RhdGEuZ2V0QWxsKCkpLmZpbHRlcih0ID0+IHQudGhyZWFkSUQudG9TdHJpbmcoKS5sZW5ndGggPiAxNSkubGVuZ3RoOwoJCWNvbnN0IHRvdGFsVXNlciA9IChhd2FpdCB1c2Vyc0RhdGEuZ2V0QWxsKCkpLmxlbmd0aDsKCQljb25zdCBwcmVmaXggPSBjb25maWcucHJlZml4OwoJCWNvbnN0IHVwdGltZSA9IHV0aWxzLmNvbnZlcnRUaW1lKHByb2Nlc3MudXB0aW1lKCkgKiAxMDAwKTsKCgkJcmVzLnJlbmRlcigic3RhdHMiLCB7CgkJCWZjYVZlcnNpb24sCgkJCXRvdGFsVGhyZWFkLAoJCQl0b3RhbFVzZXIsCgkJCXByZWZpeCwKCQkJdXB0aW1lLAoJCQl1cHRpbWVTZWNvbmQ6IHByb2Nlc3MudXB0aW1lKCkKCQl9KTsKCX0pOwoKCWFwcC5nZXQoIi9wcm9maWxlIiwgaXNBdXRoZW50aWNhdGVkLCBhc3luYyAocmVxLCByZXMpID0+IHsKCQlyZXMucmVuZGVyKCJwcm9maWxlIiwgewoJCQl1c2VyRGF0YTogYXdhaXQgdXNlcnNEYXRhLmdldChyZXEudXNlci5mYWNlYm9va1VzZXJJRCkgfHwge30KCQl9KTsKCX0pOwoKCWFwcC5nZXQoIi9kb25hdGUiLCAocmVxLCByZXMpID0+IHJlcy5yZW5kZXIoImRvbmF0ZSIpKTsKCglhcHAuZ2V0KCIvbG9nb3V0IiwgKHJlcSwgcmVzLCBuZXh0KSA9PiB7CgkJcmVxLmxvZ291dChmdW5jdGlvbiAoZXJyKSB7CgkJCWlmIChlcnIpCgkJCQlyZXR1cm4gbmV4dChlcnIpOwoJCQlyZXMucmVkaXJlY3QoIi8iKTsKCQl9KTsKCX0pOwoKCWFwcC5wb3N0KCIvY2hhbmdlZmJzdGF0ZSIsIGlzQXV0aGVudGljYXRlZCwgaXNWZXJ5ZmlVc2VySURGYWNlYm9vaywgKHJlcSwgcmVzKSA9PiB7CgkJaWYgKCFnbG9iYWwuR29hdEJvdC5jb25maWcuYWRtaW5Cb3QuaW5jbHVkZXMocmVxLnVzZXIuZmFjZWJvb2tVc2VySUQpKQoJCQlyZXR1cm4gcmVzLnNlbmQoewoJCQkJc3RhdHVzOiAiZXJyb3IiLAoJCQkJbWVzc2FnZTogZ2V0VGV4dCgiYXBwIiwgIm5vdFBlcm1pc3Npb25DaGFuZ2VGYnN0YXRlIikKCQkJfSk7CgkJY29uc3QgeyBmYnN0YXRlIH0gPSByZXEuYm9keTsKCQlpZiAoIWZic3RhdGUpCgkJCXJldHVybiByZXMuc2VuZCh7CgkJCQlzdGF0dXM6ICJlcnJvciIsCgkJCQltZXNzYWdlOiBnZXRUZXh0KCJhcHAiLCAibm90Rm91bmRGYnN0YXRlIikKCQkJfSk7CgoJCWZzLndyaXRlRmlsZVN5bmMocHJvY2Vzcy5jd2QoKSArIChwcm9jZXNzLmVudi5OT0RFX0VOViA9PSAiZGV2ZWxvcG1lbnQiID8gIi9hY2NvdW50LmRldi50eHQiIDogIi9hY2NvdW50LnR4dCIpLCBmYnN0YXRlKTsKCQlyZXMuc2VuZCh7CgkJCXN0YXR1czogInN1Y2Nlc3MiLAoJCQltZXNzYWdlOiBnZXRUZXh0KCJhcHAiLCAiY2hhbmdlZEZic3RhdGVTdWNjZXNzIikKCQl9KTsKCgkJcmVzLm9uKCJmaW5pc2giLCAoKSA9PiB7CgkJCXByb2Nlc3MuZXhpdCgyKTsKCQl9KTsKCX0pOwoJYXBwLmdldCgiL3VwdGltZSIsIGdsb2JhbC5yZXNwb25zZVVwdGltZUN1cnJlbnQpOwoKCWFwcC5nZXQoIi9jaGFuZ2VmYnN0YXRlIiwgaXNBdXRoZW50aWNhdGVkLCBpc1ZlcnlmaVVzZXJJREZhY2Vib29rLCBpc0FkbWluLCAocmVxLCByZXMpID0+IHsKCQlyZXMucmVuZGVyKCJjaGFuZ2VGYnN0YXRlIiwgewoJCQljdXJyZW50RmJzdGF0ZTogZnMucmVhZEZpbGVTeW5jKHByb2Nlc3MuY3dkKCkgKyAocHJvY2Vzcy5lbnYuTk9ERV9FTlYgPT0gImRldmVsb3BtZW50IiA/ICIvYWNjb3VudC5kZXYudHh0IiA6ICIvYWNjb3VudC50eHQiKSwgInV0ZjgiKQoJCX0pOwoJfSk7CgoJYXBwLnVzZSgiL3JlZ2lzdGVyIiwgcmVnaXN0ZXJSb3V0ZSk7CglhcHAudXNlKCIvbG9naW4iLCBsb2dpblJvdXRlKTsKCWFwcC51c2UoIi9mb3Jnb3QtcGFzc3dvcmQiLCBmb3Jnb3RQYXNzd29yZFJvdXRlKTsKCWFwcC51c2UoIi9jaGFuZ2UtcGFzc3dvcmQiLCBjaGFuZ2VQYXNzd29yZFJvdXRlKTsKCWFwcC51c2UoIi9kYXNoYm9hcmQiLCBkYXNoQm9hcmRSb3V0ZSk7CglhcHAudXNlKCIvdmVyaWZ5ZmJpZCIsIHZlcmlmeUZiaWRSb3V0ZSk7CglhcHAudXNlKCIvYXBpIiwgYXBpUm91dGVyKTsKCglhcHAuZ2V0KCIqIiwgKHJlcSwgcmVzKSA9PiB7CgkJcmVzLnN0YXR1cyg0MDQpLnJlbmRlcigiNDA0Iik7Cgl9KTsKCgkvLyBjYXRjaCBnbG9iYWwgZXJyb3IJCglhcHAudXNlKChlcnIsIHJlcSwgcmVzLCBuZXh0KSA9PiB7CgkJaWYgKGVyci5tZXNzYWdlID09ICJMb2dpbiBzZXNzaW9ucyByZXF1aXJlIHNlc3Npb24gc3VwcG9ydC4gRGlkIHlvdSBmb3JnZXQgdG8gdXNlIGBleHByZXNzLXNlc3Npb25gIG1pZGRsZXdhcmU/IikKCQkJcmV0dXJuIHJlcy5zdGF0dXMoNTAwKS5zZW5kKGdldFRleHQoImFwcCIsICJzZXJ2ZXJFcnJvciIpKTsKCX0pOwoKCWNvbnN0IFBPUlQgPSBwcm9jZXNzLmVudi5QT1JUIHx8IGNvbmZpZy5kYXNoQm9hcmQucG9ydCB8fCBjb25maWcuc2VydmVyVXB0aW1lLnBvcnQgfHwgMzAwMTsKCWxldCBkYXNoQm9hcmRVcmwgPSBgaHR0cHM6Ly8ke3Byb2Nlc3MuZW52LlJFUExfT1dORVIKCQk/IGAke3Byb2Nlc3MuZW52LlJFUExfU0xVR30uJHtwcm9jZXNzLmVudi5SRVBMX09XTkVSfS5yZXBsLmNvYAoJCTogcHJvY2Vzcy5lbnYuQVBJX1NFUlZFUl9FWFRFUk5BTCA9PSAiaHR0cHM6Ly9hcGkuZ2xpdGNoLmNvbSIKCQkJPyBgJHtwcm9jZXNzLmVudi5QUk9KRUNUX0RPTUFJTn0uZ2xpdGNoLm1lYAoJCQk6IGBsb2NhbGhvc3Q6JHtQT1JUfWB9YDsKCWRhc2hCb2FyZFVybC5pbmNsdWRlcygibG9jYWxob3N0IikgJiYgKGRhc2hCb2FyZFVybCA9IGRhc2hCb2FyZFVybC5yZXBsYWNlKCJodHRwcyIsICJodHRwIikpOwoJYXdhaXQgc2VydmVyLmxpc3RlbihQT1JUKTsKCXV0aWxzLmxvZy5pbmZvKCJEQVNIQk9BUkQiLCBgRGFzaGJvYXJkIGlzIHJ1bm5pbmc6ICR7ZGFzaEJvYXJkVXJsfWApOwoJaWYgKGNvbmZpZy5zZXJ2ZXJVcHRpbWUuc29ja2V0LmVuYWJsZSA9PSB0cnVlKQoJCXJlcXVpcmUoIi4uL2JvdC9sb2dpbi9zb2NrZXRJTy5qcyIpKHNlcnZlcik7Cn07CgpmdW5jdGlvbiByYW5kb21TdHJpbmdBcGlrZXkobWF4KSB7CglsZXQgdGV4dCA9ICIiOwoJY29uc3QgcG9zc2libGUgPSAiQUJDREVGR0hJSktMTU5PUFFSU1RVVldYWVphYmNkZWZnaGlqa2xtbm9wcXJzdHV2d3h5ejAxMjM0NTY3ODkiOwoJZm9yIChsZXQgaSA9IDA7IGkgPCBtYXg7IGkrKykKCQl0ZXh0ICs9IHBvc3NpYmxlLmNoYXJBdChNYXRoLmZsb29yKE1hdGgucmFuZG9tKCkgKiBwb3NzaWJsZS5sZW5ndGgpKTsKCXJldHVybiB0ZXh0Owp9CgpmdW5jdGlvbiByYW5kb21OdW1iZXJBcGlrZXkobWF4TGVuZ3RoKSB7CglsZXQgdGV4dCA9ICIiOwoJY29uc3QgcG9zc2libGUgPSAiMDEyMzQ1Njc4OSI7Cglmb3IgKGxldCBpID0gMDsgaSA8IG1heExlbmd0aDsgaSsrKQoJCXRleHQgKz0gcG9zc2libGUuY2hhckF0KE1hdGguZmxvb3IoTWF0aC5yYW5kb20oKSAqIHBvc3NpYmxlLmxlbmd0aCkpOwoJcmV0dXJuIHRleHQ7Cn0KCmZ1bmN0aW9uIHZhbGlkYXRlRW1haWwoZW1haWwpIHsKCWNvbnN0IHJlID0gL14oKFtePD4oKVxbXF1cXC4sOzpcc0BcIl0rKFwuW148PigpW1xdXFwuLDs6XHNAXCJdKykqKXwoXCIuK1wiKSlAKChcW1swLTldezEsM31cLlswLTldezEsM31cLlswLTldezEsM31cLlswLTldezEsM31cXSl8KChbYS16QS1aXC0wLTldK1wuKStbYS16QS1aXXsyLH0pKSQvOwoJcmV0dXJuIHJlLnRlc3QoZW1haWwpOwp9CgpmdW5jdGlvbiBjb252ZXJ0U2l6ZShieXRlKSB7CglyZXR1cm4gYnl0ZSA+IDEwMjQgPyBieXRlID4gMTAyNCAqIDEwMjQgPyAoYnl0ZSAvIDEwMjQgLyAxMDI0KS50b0ZpeGVkKDIpICsgIiBNQiIgOiAoYnl0ZSAvIDEwMjQpLnRvRml4ZWQoMikgKyAiIEtCIiA6IGJ5dGUgKyAiIEJ5dGUiOwp9Cgo=
+const express = require("express");
+const app = express();
+const fileUpload = require("express-fileupload");
+const rateLimit = require("express-rate-limit");
+const fs = require("fs-extra");
+const session = require("express-session");
+const eta = require("eta");
+const bodyParser = require("body-parser");
+const { google } = require("googleapis");
+const nodemailer = require("nodemailer");
+const cookieParser = require("cookie-parser");
+const flash = require("connect-flash");
+const Passport = require("passport");
+const bcrypt = require("bcrypt");
+const FileStore = require("./scripts/sessionStore.js");
+const axios = require("axios");
+const mimeDB = require("mime-db");
+const http = require("http");
+const server = http.createServer(app);
+
+const imageExt = ["png", "gif", "webp", "jpeg", "jpg"];
+const videoExt = ["webm", "mkv", "flv", "vob", "ogv", "ogg", "rrc", "gifv",
+	"mng", "mov", "avi", "qt", "wmv", "yuv", "rm", "asf", "amv", "mp4",
+	"m4p", "m4v", "mpg", "mp2", "mpeg", "mpe", "mpv", "m4v", "svi", "3gp",
+	"3g2", "mxf", "roq", "nsv", "flv", "f4v", "f4p", "f4a", "f4b", "mod"
+];
+const audioExt = ["3gp", "aa", "aac", "aax", "act", "aiff", "alac", "amr",
+	"ape", "au", "awb", "dss", "dvf", "flac", "gsm", "iklax", "ivs",
+	"m4a", "m4b", "m4p", "mmf", "mp3", "mpc", "msv", "nmf",
+	"ogg", "oga", "mogg", "opus", "ra", "rm", "raw", "rf64", "sln", "tta",
+	"voc", "vox", "wav", "wma", "wv", "webm", "8svx", "cd"
+];
+
+
+module.exports = async (api) => {
+	if (!api)
+		await require("./connectDB.js")();
+
+	const { utils, utils: { drive } } = global;
+	const { config } = global.GoatBot;
+	const { expireVerifyCode } = config.dashBoard;
+	const { gmailAccount, gRecaptcha } = config.credentials;
+
+	const getText = global.utils.getText;
+
+	const {
+		email,
+		clientId,
+		clientSecret,
+		refreshToken
+	} = gmailAccount;
+
+	const OAuth2 = google.auth.OAuth2;
+	let transporter;
+	if (clientId && clientSecret && refreshToken) {
+		const OAuth2_client = new OAuth2(clientId, clientSecret);
+		OAuth2_client.setCredentials({ refresh_token: refreshToken });
+		let accessToken;
+		try {
+			accessToken = await OAuth2_client.getAccessToken();
+		}
+		catch (err) {
+			throw new Error(getText("Goat", "googleApiRefreshTokenExpired"));
+		}
+
+		transporter = nodemailer.createTransport({
+			host: "smtp.gmail.com",
+			service: "Gmail",
+			auth: {
+				type: "OAuth2",
+				user: email,
+				clientId,
+				clientSecret,
+				refreshToken,
+				accessToken
+			}
+		});
+	}
+	else {
+		require("../logger/log.js").warn("DASHBOARD", "Google credentials are not fully configured; email verification (register/forgot password) is disabled.");
+		transporter = {
+			sendMail: async () => {
+				throw new Error("Email is not configured. Set credentials.gmailAccount in config.json.");
+			}
+		};
+	}
+
+
+	const {
+		threadModel,
+		userModel,
+		dashBoardModel,
+		threadsData,
+		usersData,
+		dashBoardData
+	} = global.db;
+
+
+	// const verifyCodes = {
+	//     fbid: [],
+	//     register: [],
+	//     forgetPass: []
+	// };
+
+	eta.configure({
+		useWith: true
+	});
+
+	app.set("views", `${__dirname}/views`);
+	app.engine("eta", eta.renderFile);
+	app.set("view engine", "eta");
+
+	app.use(bodyParser.json());
+	app.use(bodyParser.urlencoded({ extended: true }));
+	app.use(cookieParser());
+	app.use(session({
+		secret: config.dashBoard.sessionSecret || randomStringApikey(10),
+		store: new FileStore({ ttl: 1000 * 60 * 60 * 24 * 7 }),
+		resave: false,
+		saveUninitialized: false,
+		rolling: true,
+		cookie: {
+			secure: false,
+			httpOnly: true,
+			maxAge: 1000 * 60 * 60 * 24 * 7 // 7 days
+		}
+	}));
+
+
+	// public folder 
+	app.use("/css", express.static(`${__dirname}/css`));
+	app.use("/js", express.static(`${__dirname}/js`));
+	app.use("/images", express.static(`${__dirname}/images`));
+
+	require("./passport-config.js")(Passport, dashBoardData, bcrypt);
+	app.use(Passport.initialize());
+	app.use(Passport.session());
+	app.use(fileUpload());
+
+	app.use(flash());
+	app.use(function (req, res, next) {
+		res.locals.gRecaptcha_siteKey = gRecaptcha.siteKey;
+		res.locals.__dirname = __dirname;
+		res.locals.success = req.flash("success") || [];
+		res.locals.errors = req.flash("errors") || [];
+		res.locals.warnings = req.flash("warnings") || [];
+		res.locals.user = req.user || null;
+		next();
+	});
+
+	const generateEmailVerificationCode = require("./scripts/generate-Email-Verification.js");
+
+	// ————————————————— MIDDLEWARE ————————————————— //
+	const createLimiter = (ms, max) => rateLimit({
+		windowMs: ms, // 5 minutes
+		max,
+		handler: (req, res) => {
+			res.status(429).send({
+				status: "error",
+				message: getText("app", "tooManyRequests")
+			});
+		}
+	});
+
+	const middleWare = require("./middleware/index.js")(checkAuthConfigDashboardOfThread);
+
+	// ————————————————————————————————————————————— //
+
+	async function checkAuthConfigDashboardOfThread(threadData, userID) {
+		if (!isNaN(threadData))
+			threadData = await threadsData.get(threadData);
+		return threadData.adminIDs?.includes(userID) || threadData.members?.some(m => m.userID == userID && m.permissionConfigDashboard == true) || false;
+	}
+
+	const isVideoFile = (mimeType) => videoExt.includes(mimeDB[mimeType]?.extensions?.[0]);
+
+	async function isVerifyRecaptcha(responseCaptcha) {
+		const secret = gRecaptcha.secretKey;
+		const verifyUrl = `https://www.google.com/recaptcha/api/siteverify?secret=${secret}&response=${responseCaptcha}`;
+		const verify = await axios.get(verifyUrl);
+		return verify.data.success;
+	}
+
+
+	// ROUTES & MIDDLWARE
+	const {
+		unAuthenticated,
+		isWaitVerifyAccount,
+		isAuthenticated,
+		isAdmin,
+		isVeryfiUserIDFacebook,
+		checkHasAndInThread,
+		middlewareCheckAuthConfigDashboardOfThread
+	} = middleWare;
+
+	const paramsForRoutes = {
+		unAuthenticated, isWaitVerifyAccount, isAdmin, isAuthenticated,
+		isVeryfiUserIDFacebook, checkHasAndInThread, middlewareCheckAuthConfigDashboardOfThread,
+
+		isVerifyRecaptcha, validateEmail, randomNumberApikey, transporter,
+		generateEmailVerificationCode, dashBoardData, expireVerifyCode, Passport, isVideoFile,
+
+		threadsData, api, createLimiter, config, checkAuthConfigDashboardOfThread,
+		imageExt, videoExt, audioExt, convertSize, drive, usersData
+	};
+
+	const registerRoute = require("./routes/register.js")(paramsForRoutes);
+	const loginRoute = require("./routes/login.js")(paramsForRoutes);
+	const forgotPasswordRoute = require("./routes/forgotPassword.js")(paramsForRoutes);
+	const changePasswordRoute = require("./routes/changePassword.js")(paramsForRoutes);
+	const dashBoardRoute = require("./routes/dashBoard.js")(paramsForRoutes);
+	const verifyFbidRoute = require("./routes/verifyfbid.js")(paramsForRoutes);
+	const apiRouter = require("./routes/api.js")(paramsForRoutes);
+
+	app.get(["/", "/home"], (req, res) => {
+		res.render("home");
+	});
+
+	app.get("/stats", async (req, res) => {
+		let fcaVersion;
+		try {
+			fcaVersion = require("xtreme-fca/package.json").version;
+		}
+		catch (e) {
+			fcaVersion = "unknown";
+		}
+
+		const totalThread = (await threadsData.getAll()).filter(t => t.threadID.toString().length > 15).length;
+		const totalUser = (await usersData.getAll()).length;
+		const prefix = config.prefix;
+		const uptime = utils.convertTime(process.uptime() * 1000);
+
+		res.render("stats", {
+			fcaVersion,
+			totalThread,
+			totalUser,
+			prefix,
+			uptime,
+			uptimeSecond: process.uptime()
+		});
+	});
+
+	app.get("/profile", isAuthenticated, async (req, res) => {
+		res.render("profile", {
+			userData: await usersData.get(req.user.facebookUserID) || {}
+		});
+	});
+
+	app.get("/donate", (req, res) => res.render("donate"));
+
+	app.get("/logout", (req, res, next) => {
+		req.logout(function (err) {
+			if (err)
+				return next(err);
+			res.redirect("/");
+		});
+	});
+
+	app.post("/changefbstate", isAuthenticated, isVeryfiUserIDFacebook, (req, res) => {
+		if (!global.GoatBot.config.adminBot.includes(req.user.facebookUserID))
+			return res.send({
+				status: "error",
+				message: getText("app", "notPermissionChangeFbstate")
+			});
+		const { fbstate } = req.body;
+		if (!fbstate)
+			return res.send({
+				status: "error",
+				message: getText("app", "notFoundFbstate")
+			});
+
+		fs.writeFileSync(process.cwd() + (process.env.NODE_ENV == "development" ? "/account.dev.txt" : "/account.txt"), fbstate);
+		res.send({
+			status: "success",
+			message: getText("app", "changedFbstateSuccess")
+		});
+
+		res.on("finish", () => {
+			process.exit(2);
+		});
+	});
+	app.get("/uptime", global.responseUptimeCurrent);
+
+	app.get("/changefbstate", isAuthenticated, isVeryfiUserIDFacebook, isAdmin, (req, res) => {
+		res.render("changeFbstate", {
+			currentFbstate: fs.readFileSync(process.cwd() + (process.env.NODE_ENV == "development" ? "/account.dev.txt" : "/account.txt"), "utf8")
+		});
+	});
+
+	app.use("/register", registerRoute);
+	app.use("/login", loginRoute);
+	app.use("/forgot-password", forgotPasswordRoute);
+	app.use("/change-password", changePasswordRoute);
+	app.use("/dashboard", dashBoardRoute);
+	app.use("/verifyfbid", verifyFbidRoute);
+	app.use("/api", apiRouter);
+
+	app.get("*", (req, res) => {
+		res.status(404).render("404");
+	});
+
+	// catch global error	
+	app.use((err, req, res, next) => {
+		if (err.message == "Login sessions require session support. Did you forget to use `express-session` middleware?")
+			return res.status(500).send(getText("app", "serverError"));
+	});
+
+	const PORT = process.env.PORT || config.dashBoard.port || config.serverUptime.port || 3001;
+	let dashBoardUrl = `https://${process.env.REPL_OWNER
+		? `${process.env.REPL_SLUG}.${process.env.REPL_OWNER}.repl.co`
+		: process.env.API_SERVER_EXTERNAL == "https://api.glitch.com"
+			? `${process.env.PROJECT_DOMAIN}.glitch.me`
+			: `localhost:${PORT}`}`;
+	dashBoardUrl.includes("localhost") && (dashBoardUrl = dashBoardUrl.replace("https", "http"));
+	await server.listen(PORT);
+	utils.log.info("DASHBOARD", `Dashboard is running: ${dashBoardUrl}`);
+	if (config.serverUptime.socket.enable == true)
+		require("../bot/login/socketIO.js")(server);
+};
+
+function randomStringApikey(max) {
+	let text = "";
+	const possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+	for (let i = 0; i < max; i++)
+		text += possible.charAt(Math.floor(Math.random() * possible.length));
+	return text;
+}
+
+function randomNumberApikey(maxLength) {
+	let text = "";
+	const possible = "0123456789";
+	for (let i = 0; i < maxLength; i++)
+		text += possible.charAt(Math.floor(Math.random() * possible.length));
+	return text;
+}
+
+function validateEmail(email) {
+	const re = /^(([^<>()\[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+	return re.test(email);
+}
+
+function convertSize(byte) {
+	return byte > 1024 ? byte > 1024 * 1024 ? (byte / 1024 / 1024).toFixed(2) + " MB" : (byte / 1024).toFixed(2) + " KB" : byte + " Byte";
+}
+

@@ -1,1 +1,324 @@
-LyoqCiAqIEBhdXRob3IgTlRLaGFuZwogKiAhIFRoZSBzb3VyY2UgY29kZSBpcyB3cml0dGVuIGJ5IE5US2hhbmcsIHBsZWFzZSBkb24ndCBjaGFuZ2UgdGhlIGF1dGhvcidzIG5hbWUgZXZlcnl3aGVyZS4gVGhhbmsgeW91IGZvciB1c2luZwogKiAhIE9mZmljaWFsIHNvdXJjZSBjb2RlOiBodHRwczovL2dpdGh1Yi5jb20vbnRraGFuZzAzL0dvYXQtQm90LVYyCiAqICEgSWYgeW91IGRvIG5vdCBkb3dubG9hZCB0aGUgc291cmNlIGNvZGUgZnJvbSB0aGUgYWJvdmUgYWRkcmVzcywgeW91IGFyZSB1c2luZyBhbiB1bmtub3duIHZlcnNpb24gYW5kIGF0IHJpc2sgb2YgaGF2aW5nIHlvdXIgYWNjb3VudCBoYWNrZWQKICoKICogRW5nbGlzaDoKICogISBQbGVhc2UgZG8gbm90IGNoYW5nZSB0aGUgYmVsb3cgY29kZSwgaXQgaXMgdmVyeSBpbXBvcnRhbnQgZm9yIHRoZSBwcm9qZWN0LgogKiBJdCBpcyBteSBtb3RpdmF0aW9uIHRvIG1haW50YWluIGFuZCBkZXZlbG9wIHRoZSBwcm9qZWN0IGZvciBmcmVlLgogKiAhIElmIHlvdSBjaGFuZ2UgaXQsIHlvdSB3aWxsIGJlIGJhbm5lZCBmb3JldmVyCiAqIFRoYW5rIHlvdSBmb3IgdXNpbmcKICoKICogVmlldG5hbWVzZToKICogISBWdWkgbMOybmcga2jDtG5nIHRoYXkgxJHhu5VpIG3DoyBiw6puIGTGsOG7m2ksIG7DsyBy4bqldCBxdWFuIHRy4buNbmcgxJHhu5FpIHbhu5tpIGThu7Egw6FuLgogKiBOw7MgbMOgIMSR4buZbmcgbOG7sWMgxJHhu4MgdMO0aSBkdXkgdHLDrCB2w6AgcGjDoXQgdHJp4buDbiBk4buxIMOhbiBtaeG7hW4gcGjDrS4KICogISBO4bq/dSB0aGF5IMSR4buVaSBuw7MsIGLhuqFuIHPhur0gYuG7iyBj4bqlbSB2xKluaCB2aeG7hW4KICogQ+G6o20gxqFuIGLhuqFuIMSRw6Mgc+G7rSBk4bulbmcKICovCgpwcm9jZXNzLm9uKCd1bmhhbmRsZWRSZWplY3Rpb24nLCBlcnJvciA9PiBjb25zb2xlLmxvZyhlcnJvcikpOwpwcm9jZXNzLm9uKCd1bmNhdWdodEV4Y2VwdGlvbicsIGVycm9yID0+IGNvbnNvbGUubG9nKGVycm9yKSk7Cgpjb25zdCBheGlvcyA9IHJlcXVpcmUoImF4aW9zIik7CmNvbnN0IGZzID0gcmVxdWlyZSgiZnMtZXh0cmEiKTsKY29uc3QgZ29vZ2xlID0gcmVxdWlyZSgiZ29vZ2xlYXBpcyIpLmdvb2dsZTsKY29uc3Qgbm9kZW1haWxlciA9IHJlcXVpcmUoIm5vZGVtYWlsZXIiKTsKY29uc3QgeyBleGVjU3luYyB9ID0gcmVxdWlyZSgnY2hpbGRfcHJvY2VzcycpOwpjb25zdCBsb2cgPSByZXF1aXJlKCcuL2xvZ2dlci9sb2cuanMnKTsKY29uc3QgcGF0aCA9IHJlcXVpcmUoInBhdGgiKTsKCnByb2Nlc3MuZW52LkJMVUVCSVJEX1dfRk9SR09UVEVOX1JFVFVSTiA9IDA7IC8vIERpc2FibGUgd2FybmluZzogIldhcm5pbmc6IGEgcHJvbWlzZSB3YXMgY3JlYXRlZCBpbiBhIGhhbmRsZXIgYnV0IHdhcyBub3QgcmV0dXJuZWQgZnJvbSBpdCIKCmZ1bmN0aW9uIHZhbGlkSlNPTihwYXRoRGlyKSB7Cgl0cnkgewoJCWlmICghZnMuZXhpc3RzU3luYyhwYXRoRGlyKSkKCQkJdGhyb3cgbmV3IEVycm9yKGBGaWxlICIke3BhdGhEaXJ9IiBub3QgZm91bmRgKTsKCQlKU09OLnBhcnNlKGZzLnJlYWRGaWxlU3luYyhwYXRoRGlyLCAndXRmOCcpKTsKCQlyZXR1cm4gdHJ1ZTsKCX0KCWNhdGNoIChlcnIpIHsKCQlsZXQgbXNnRXJyb3IgPSBlcnIubWVzc2FnZTsKCQltc2dFcnJvciA9IG1zZ0Vycm9yLnNwbGl0KCJcbiIpLnNsaWNlKDEpLmpvaW4oIlxuIik7CgkJY29uc3QgaW5kZXhQb3MgPSBtc2dFcnJvci5pbmRleE9mKCIgICAgYXQiKTsKCQltc2dFcnJvciA9IG1zZ0Vycm9yLnNsaWNlKDAsIGluZGV4UG9zICE9IC0xID8gaW5kZXhQb3MgLSAxIDogbXNnRXJyb3IubGVuZ3RoKTsKCQl0aHJvdyBuZXcgRXJyb3IobXNnRXJyb3IpOwoJfQp9Cgpjb25zdCB7IE5PREVfRU5WIH0gPSBwcm9jZXNzLmVudjsKLy8gT25seSAiZGV2ZWxvcG1lbnQiIHVzZXMgdGhlICouZGV2LiogZmlsZXM7ICJwcm9kdWN0aW9uIiAoUmVuZGVyL1JhaWx3YXkgZXRjLikKLy8gdXNlcyB0aGUgbm9ybWFsIGNvbmZpZy5qc29uIC8gY29uZmlnQ29tbWFuZHMuanNvbiAvIGFjY291bnQudHh0Lgpjb25zdCBpc0RldiA9IE5PREVfRU5WID09PSAiZGV2ZWxvcG1lbnQiOwpjb25zdCBkaXJDb25maWcgPSBwYXRoLm5vcm1hbGl6ZShgJHtfX2Rpcm5hbWV9L2NvbmZpZyR7aXNEZXYgPyAnLmRldi5qc29uJyA6ICcuanNvbid9YCk7CmNvbnN0IGRpckNvbmZpZ0NvbW1hbmRzID0gcGF0aC5ub3JtYWxpemUoYCR7X19kaXJuYW1lfS9jb25maWdDb21tYW5kcyR7aXNEZXYgPyAnLmRldi5qc29uJyA6ICcuanNvbid9YCk7CmNvbnN0IGRpckFjY291bnQgPSBwYXRoLm5vcm1hbGl6ZShgJHtfX2Rpcm5hbWV9L2FjY291bnQke2lzRGV2ID8gJy5kZXYudHh0JyA6ICcudHh0J31gKTsKCmZvciAoY29uc3QgcGF0aERpciBvZiBbZGlyQ29uZmlnLCBkaXJDb25maWdDb21tYW5kc10pIHsKCXRyeSB7CgkJdmFsaWRKU09OKHBhdGhEaXIpOwoJfQoJY2F0Y2ggKGVycikgewoJCWxvZy5lcnJvcigiQ09ORklHIiwgYEludmFsaWQgSlNPTiBmaWxlICIke3BhdGhEaXIucmVwbGFjZShfX2Rpcm5hbWUsICIiKX0iOlxuJHtlcnIubWVzc2FnZS5zcGxpdCgiXG4iKS5tYXAobGluZSA9PiBgICAke2xpbmV9YCkuam9pbigiXG4iKX1cblBsZWFzZSBmaXggaXQgYW5kIHJlc3RhcnQgYm90YCk7CgkJcHJvY2Vzcy5leGl0KDApOwoJfQp9CmNvbnN0IGNvbmZpZyA9IHJlcXVpcmUoZGlyQ29uZmlnKTsKaWYgKGNvbmZpZy53aGl0ZUxpc3RNb2RlPy53aGl0ZUxpc3RJZHMgJiYgQXJyYXkuaXNBcnJheShjb25maWcud2hpdGVMaXN0TW9kZS53aGl0ZUxpc3RJZHMpKQoJY29uZmlnLndoaXRlTGlzdE1vZGUud2hpdGVMaXN0SWRzID0gY29uZmlnLndoaXRlTGlzdE1vZGUud2hpdGVMaXN0SWRzLm1hcChpZCA9PiBpZC50b1N0cmluZygpKTsKLy8gRmlsbCBpbiBkZWZhdWx0cyBmb3IgbmV3ZXIgZmVhdHVyZSBzZXR0aW5ncyBzbyBjb25maWdzIGNyZWF0ZWQgYmVmb3JlIHRoZXkKLy8gZXhpc3RlZCBrZWVwIHdvcmtpbmcgd2l0aG91dCBtYW51YWwgZWRpdHMuCmNvbmZpZy5jb21tYW5kU3VnZ2VzdGlvbiA9IHsgZW5hYmxlOiB0cnVlLCAuLi4oY29uZmlnLmNvbW1hbmRTdWdnZXN0aW9uIHx8IHt9KSB9Owpjb25maWcubm9QcmVmaXggPSB7IGVuYWJsZTogZmFsc2UsIG9ubHlBZG1pbkJvdDogZmFsc2UsIGlnbm9yZUNvbW1hbmRzOiBbXSwgLi4uKGNvbmZpZy5ub1ByZWZpeCB8fCB7fSkgfTsKY29uZmlnLnJlYWN0VW5zZW5kID0geyBlbmFibGU6IHRydWUsIGVtb2ppczogWyLwn5ihIiwgIvCfmKAiXSwgb25seUFkbWluOiB0cnVlLCAuLi4oY29uZmlnLnJlYWN0VW5zZW5kIHx8IHt9KSB9Owpjb25maWcucmVhY3RNaXJyb3IgPSB7IGVuYWJsZTogdHJ1ZSwgbWlycm9yQWxsRW1vamlzOiB0cnVlLCBlbW9qaXM6IFtdLCBvbmx5QWRtaW46IHRydWUsIC4uLihjb25maWcucmVhY3RNaXJyb3IgfHwge30pIH07CmlmICghQXJyYXkuaXNBcnJheShjb25maWcucmVhY3RVbnNlbmQuZW1vamlzKSkKCWNvbmZpZy5yZWFjdFVuc2VuZC5lbW9qaXMgPSBbIvCfmKEiLCAi8J+YoCJdOwppZiAoIUFycmF5LmlzQXJyYXkoY29uZmlnLnJlYWN0TWlycm9yLmVtb2ppcykpCgljb25maWcucmVhY3RNaXJyb3IuZW1vamlzID0gW107CmlmICghQXJyYXkuaXNBcnJheShjb25maWcubm9QcmVmaXguaWdub3JlQ29tbWFuZHMpKQoJY29uZmlnLm5vUHJlZml4Lmlnbm9yZUNvbW1hbmRzID0gW107CmNvbnN0IGNvbmZpZ0NvbW1hbmRzID0gcmVxdWlyZShkaXJDb25maWdDb21tYW5kcyk7CgpnbG9iYWwuR29hdEJvdCA9IHsKCXN0YXJ0VGltZTogRGF0ZS5ub3coKSAtIHByb2Nlc3MudXB0aW1lKCkgKiAxMDAwLCAvLyB0aW1lIHN0YXJ0IGJvdCAobXMpCgljb21tYW5kczogbmV3IE1hcCgpLCAvLyBzdG9yZSBhbGwgY29tbWFuZHMKCWV2ZW50Q29tbWFuZHM6IG5ldyBNYXAoKSwgLy8gc3RvcmUgYWxsIGV2ZW50IGNvbW1hbmRzCgljb21tYW5kRmlsZXNQYXRoOiBbXSwgLy8gW3sgZmlsZVBhdGg6ICIiLCBjb21tYW5kTmFtZTogW10gfQoJZXZlbnRDb21tYW5kc0ZpbGVzUGF0aDogW10sIC8vIFt7IGZpbGVQYXRoOiAiIiwgY29tbWFuZE5hbWU6IFtdIH0KCWFsaWFzZXM6IG5ldyBNYXAoKSwgLy8gc3RvcmUgYWxsIGFsaWFzZXMKCW9uRmlyc3RDaGF0OiBbXSwgLy8gc3RvcmUgYWxsIG9uRmlyc3RDaGF0IFt7IGNvbW1hbmROYW1lOiAiIiwgdGhyZWFkSURzQ2hhdHRlZEZpcnN0VGltZTogW10gfX1dCglvbkNoYXQ6IFtdLCAvLyBzdG9yZSBhbGwgb25DaGF0CglvbkV2ZW50OiBbXSwgLy8gc3RvcmUgYWxsIG9uRXZlbnQKCW9uUmVwbHk6IG5ldyBNYXAoKSwgLy8gc3RvcmUgYWxsIG9uUmVwbHkKCW9uUmVhY3Rpb246IG5ldyBNYXAoKSwgLy8gc3RvcmUgYWxsIG9uUmVhY3Rpb24KCW9uQW55RXZlbnQ6IFtdLCAvLyBzdG9yZSBhbGwgb25BbnlFdmVudAoJY29uZmlnLCAvLyBzdG9yZSBjb25maWcKCWNvbmZpZ0NvbW1hbmRzLCAvLyBzdG9yZSBjb25maWcgY29tbWFuZHMKCWVudkNvbW1hbmRzOiB7fSwgLy8gc3RvcmUgZW52IGNvbW1hbmRzCgllbnZFdmVudHM6IHt9LCAvLyBzdG9yZSBlbnYgZXZlbnRzCgllbnZHbG9iYWw6IHt9LCAvLyBzdG9yZSBlbnYgZ2xvYmFsCglyZUxvZ2luQm90OiBmdW5jdGlvbiAoKSB7IH0sIC8vIGZ1bmN0aW9uIHJlbG9naW4gYm90LCB3aWxsIGJlIHNldCBpbiBib3QvbG9naW4vbG9naW4uanMKCUxpc3RlbmluZzogbnVsbCwgLy8gc3RvcmUgY3VycmVudCBsaXN0ZW5pbmcgaGFuZGxlCglvbGRMaXN0ZW5pbmc6IFtdLCAvLyBzdG9yZSBvbGQgbGlzdGVuaW5nIGhhbmRsZQoJY2FsbGJhY2tMaXN0ZW5UaW1lOiB7fSwgLy8gc3RvcmUgY2FsbGJhY2sgbGlzdGVuIAoJc3RvcmFnZTVNZXNzYWdlOiBbXSwgLy8gc3RvcmUgNSBtZXNzYWdlIHRvIGNoZWNrIGxpc3RlbmluZyBsb29wCglmY2FBcGk6IG51bGwsIC8vIHN0b3JlIGZjYSBhcGkKCWJvdElEOiBudWxsIC8vIHN0b3JlIGJvdCBpZAp9OwoKZ2xvYmFsLmRiID0gewoJLy8gYWxsIGRhdGEKCWFsbFRocmVhZERhdGE6IFtdLAoJYWxsVXNlckRhdGE6IFtdLAoJYWxsRGFzaEJvYXJkRGF0YTogW10sCglhbGxHbG9iYWxEYXRhOiBbXSwKCgkvLyBtb2RlbAoJdGhyZWFkTW9kZWw6IG51bGwsCgl1c2VyTW9kZWw6IG51bGwsCglkYXNoYm9hcmRNb2RlbDogbnVsbCwKCWdsb2JhbE1vZGVsOiBudWxsLAoKCS8vIGhhbmRsZSBkYXRhCgl0aHJlYWRzRGF0YTogbnVsbCwKCXVzZXJzRGF0YTogbnVsbCwKCWRhc2hCb2FyZERhdGE6IG51bGwsCglnbG9iYWxEYXRhOiBudWxsLAoKCXJlY2VpdmVkVGhlRmlyc3RNZXNzYWdlOiB7fQoKCS8vIGFsbCB3aWxsIGJlIHNldCBpbiBib3QvbG9naW4vbG9hZERhdGEuanMKfTsKCmdsb2JhbC5jbGllbnQgPSB7CglkaXJDb25maWcsCglkaXJDb25maWdDb21tYW5kcywKCWRpckFjY291bnQsCgljb3VudERvd246IHt9LAoJY2FjaGU6IHt9LAoJZGF0YWJhc2U6IHsKCQljcmVhdGluZ1RocmVhZERhdGE6IFtdLAoJCWNyZWF0aW5nVXNlckRhdGE6IFtdLAoJCWNyZWF0aW5nRGFzaEJvYXJkRGF0YTogW10sCgkJY3JlYXRpbmdHbG9iYWxEYXRhOiBbXQoJfSwKCWNvbW1hbmRCYW5uZWQ6IGNvbmZpZ0NvbW1hbmRzLmNvbW1hbmRCYW5uZWQKfTsKCmNvbnN0IHV0aWxzID0gcmVxdWlyZSgiLi91dGlscy5qcyIpOwpnbG9iYWwudXRpbHMgPSB1dGlsczsKY29uc3QgeyBjb2xvcnMgfSA9IHV0aWxzOwoKZ2xvYmFsLnRlbXAgPSB7CgljcmVhdGVUaHJlYWREYXRhOiBbXSwKCWNyZWF0ZVVzZXJEYXRhOiBbXSwKCWNyZWF0ZVRocmVhZERhdGFFcnJvcjogW10sIC8vIENhbid0IGdldCBpbmZvIG9mIGdyb3VwcyB3aXRoIGluc3RhZ3JhbSBtZW1iZXJzCgltZXNzYWdlc09mQm90OiBuZXcgU2V0KCksIC8vIElEcyBvZiBtZXNzYWdlcyBzZW50IGJ5IHRoZSBib3QgKHVzZWQgYnkgcmVhY3RVbnNlbmQpCglmaWxlc09mR29vZ2xlRHJpdmU6IHsKCQlhcnJheWJ1ZmZlcjoge30sCgkJc3RyZWFtOiB7fSwKCQlmaWxlTmFtZXM6IHt9Cgl9LAoJY29udGVudFNjcmlwdHM6IHsKCQljbWRzOiB7fSwKCQlldmVudHM6IHt9Cgl9Cn07CgovLyB3YXRjaCBkaXJDb25maWdDb21tYW5kcyBmaWxlIGFuZCBkaXJDb25maWcKY29uc3Qgd2F0Y2hBbmRSZWxvYWRDb25maWcgPSAoZGlyLCB0eXBlLCBwcm9wLCBsb2dOYW1lKSA9PiB7CglsZXQgbGFzdE1vZGlmaWVkID0gZnMuc3RhdFN5bmMoZGlyKS5tdGltZU1zOwoJbGV0IGlzRmlyc3RNb2RpZmllZCA9IHRydWU7CgoJZnMud2F0Y2goZGlyLCAoZXZlbnRUeXBlKSA9PiB7CgkJaWYgKGV2ZW50VHlwZSA9PT0gdHlwZSkgewoJCQljb25zdCBvbGRDb25maWcgPSBnbG9iYWwuR29hdEJvdFtwcm9wXTsKCgkJCS8vIHdhaXQgMjAwbXMgdG8gcmVsb2FkIGNvbmZpZwoJCQlzZXRUaW1lb3V0KCgpID0+IHsKCQkJCXRyeSB7CgkJCQkJLy8gaWYgZmlsZSBjaGFuZ2UgZmlyc3QgdGltZSAod2hlbiBzdGFydCBib3QsIG1heWJlIHlvdSBrbm93IGl0J3MgY2FsbGVkIHdoZW4gc3RhcnQgYm90PykgPT4gbm90IHJlbG9hZAoJCQkJCWlmIChpc0ZpcnN0TW9kaWZpZWQpIHsKCQkJCQkJaXNGaXJzdE1vZGlmaWVkID0gZmFsc2U7CgkJCQkJCXJldHVybjsKCQkJCQl9CgkJCQkJLy8gaWYgZmlsZSBub3QgY2hhbmdlID0+IG5vdCByZWxvYWQKCQkJCQlpZiAobGFzdE1vZGlmaWVkID09PSBmcy5zdGF0U3luYyhkaXIpLm10aW1lTXMpIHsKCQkJCQkJcmV0dXJuOwoJCQkJCX0KCQkJCQlnbG9iYWwuR29hdEJvdFtwcm9wXSA9IEpTT04ucGFyc2UoZnMucmVhZEZpbGVTeW5jKGRpciwgJ3V0Zi04JykpOwoJCQkJCWxvZy5zdWNjZXNzKGxvZ05hbWUsIGBSZWxvYWRlZCAke2Rpci5yZXBsYWNlKHByb2Nlc3MuY3dkKCksICIiKX1gKTsKCQkJCX0KCQkJCWNhdGNoIChlcnIpIHsKCQkJCQlsb2cud2Fybihsb2dOYW1lLCBgQ2FuJ3QgcmVsb2FkICR7ZGlyLnJlcGxhY2UocHJvY2Vzcy5jd2QoKSwgIiIpfWApOwoJCQkJCWdsb2JhbC5Hb2F0Qm90W3Byb3BdID0gb2xkQ29uZmlnOwoJCQkJfQoJCQkJZmluYWxseSB7CgkJCQkJbGFzdE1vZGlmaWVkID0gZnMuc3RhdFN5bmMoZGlyKS5tdGltZU1zOwoJCQkJfQoJCQl9LCAyMDApOwoJCX0KCX0pOwp9OwoKd2F0Y2hBbmRSZWxvYWRDb25maWcoZGlyQ29uZmlnQ29tbWFuZHMsICdjaGFuZ2UnLCAnY29uZmlnQ29tbWFuZHMnLCAnQ09ORklHIENPTU1BTkRTJyk7CndhdGNoQW5kUmVsb2FkQ29uZmlnKGRpckNvbmZpZywgJ2NoYW5nZScsICdjb25maWcnLCAnQ09ORklHJyk7CgpnbG9iYWwuR29hdEJvdC5lbnZHbG9iYWwgPSBnbG9iYWwuR29hdEJvdC5jb25maWdDb21tYW5kcy5lbnZHbG9iYWw7Cmdsb2JhbC5Hb2F0Qm90LmVudkNvbW1hbmRzID0gZ2xvYmFsLkdvYXRCb3QuY29uZmlnQ29tbWFuZHMuZW52Q29tbWFuZHM7Cmdsb2JhbC5Hb2F0Qm90LmVudkV2ZW50cyA9IGdsb2JhbC5Hb2F0Qm90LmNvbmZpZ0NvbW1hbmRzLmVudkV2ZW50czsKCi8vIOKAlOKAlOKAlOKAlOKAlOKAlOKAlOKAlOKAlOKAlOKAlOKAlOKAlOKAlOKAlOKAlCBMT0FEIExBTkdVQUdFIOKAlOKAlOKAlOKAlOKAlOKAlOKAlOKAlOKAlOKAlOKAlOKAlOKAlOKAlOKAlOKAlCAvLwpjb25zdCBnZXRUZXh0ID0gZ2xvYmFsLnV0aWxzLmdldFRleHQ7CgovLyDigJTigJTigJTigJTigJTigJTigJTigJTigJTigJTigJTigJTigJTigJTigJTigJQgQVVUTyBSRVNUQVJUIOKAlOKAlOKAlOKAlOKAlOKAlOKAlOKAlOKAlOKAlOKAlOKAlOKAlOKAlOKAlOKAlCAvLwppZiAoY29uZmlnLmF1dG9SZXN0YXJ0KSB7Cgljb25zdCB0aW1lID0gY29uZmlnLmF1dG9SZXN0YXJ0LnRpbWU7CglpZiAoIWlzTmFOKHRpbWUpICYmIHRpbWUgPiAwKSB7CgkJdXRpbHMubG9nLmluZm8oIkFVVE8gUkVTVEFSVCIsIGdldFRleHQoIkdvYXQiLCAiYXV0b1Jlc3RhcnQxIiwgdXRpbHMuY29udmVydFRpbWUodGltZSwgdHJ1ZSkpKTsKCQlzZXRUaW1lb3V0KCgpID0+IHsKCQkJdXRpbHMubG9nLmluZm8oIkFVVE8gUkVTVEFSVCIsICJSZXN0YXJ0aW5nLi4uIik7CgkJCXByb2Nlc3MuZXhpdCgyKTsKCQl9LCB0aW1lKTsKCX0KCWVsc2UgaWYgKHR5cGVvZiB0aW1lID09ICJzdHJpbmciICYmIHRpbWUubWF0Y2goL14oKCgoXGQrLCkrXGQrfChcZCsoXC98LXwjKVxkKyl8XGQrTD98XCooXC9cZCspP3xMKC1cZCspP3xcP3xbQS1aXXszfSgtW0EtWl17M30pPykgPyl7NSw3fSkkL2dtaSkpIHsKCQl1dGlscy5sb2cuaW5mbygiQVVUTyBSRVNUQVJUIiwgZ2V0VGV4dCgiR29hdCIsICJhdXRvUmVzdGFydDIiLCB0aW1lKSk7CgkJY29uc3QgY3JvbiA9IHJlcXVpcmUoIm5vZGUtY3JvbiIpOwoJCWNyb24uc2NoZWR1bGUodGltZSwgKCkgPT4gewoJCQl1dGlscy5sb2cuaW5mbygiQVVUTyBSRVNUQVJUIiwgIlJlc3RhcnRpbmcuLi4iKTsKCQkJcHJvY2Vzcy5leGl0KDIpOwoJCX0pOwoJfQp9CgooYXN5bmMgKCkgPT4gewoJLy8g4oCU4oCU4oCU4oCU4oCU4oCU4oCU4oCU4oCU4oCU4oCU4oCU4oCU4oCU4oCU4oCUIFNFVFVQIE1BSUwg4oCU4oCU4oCU4oCU4oCU4oCU4oCU4oCU4oCU4oCU4oCU4oCU4oCU4oCU4oCU4oCUIC8vCgljb25zdCB7IGdtYWlsQWNjb3VudCB9ID0gY29uZmlnLmNyZWRlbnRpYWxzOwoJY29uc3QgeyBlbWFpbCwgY2xpZW50SWQsIGNsaWVudFNlY3JldCwgcmVmcmVzaFRva2VuIH0gPSBnbWFpbEFjY291bnQ7Cgljb25zdCBPQXV0aDIgPSBnb29nbGUuYXV0aC5PQXV0aDI7CglsZXQgYWNjZXNzVG9rZW47CglsZXQgdHJhbnNwb3J0ZXI7CglpZiAoY2xpZW50SWQgJiYgY2xpZW50U2VjcmV0ICYmIHJlZnJlc2hUb2tlbikgewoJCWNvbnN0IE9BdXRoMl9jbGllbnQgPSBuZXcgT0F1dGgyKGNsaWVudElkLCBjbGllbnRTZWNyZXQpOwoJCU9BdXRoMl9jbGllbnQuc2V0Q3JlZGVudGlhbHMoeyByZWZyZXNoX3Rva2VuOiByZWZyZXNoVG9rZW4gfSk7CgkJdHJ5IHsKCQkJYWNjZXNzVG9rZW4gPSBhd2FpdCBPQXV0aDJfY2xpZW50LmdldEFjY2Vzc1Rva2VuKCk7CgkJfQoJCWNhdGNoIChlcnIpIHsKCQkJdXRpbHMubG9nLndhcm4oIkNSRURFTlRJQUxTIiwgZ2V0VGV4dCgiR29hdCIsICJnb29nbGVBcGlUb2tlbkV4cGlyZWQiKSk7CgkJfQoJfQoJaWYgKGFjY2Vzc1Rva2VuKSB7CgkJdHJhbnNwb3J0ZXIgPSBub2RlbWFpbGVyLmNyZWF0ZVRyYW5zcG9ydCh7CgkJCWhvc3Q6ICdzbXRwLmdtYWlsLmNvbScsCgkJCXNlcnZpY2U6ICdHbWFpbCcsCgkJCWF1dGg6IHsKCQkJCXR5cGU6ICdPQXV0aDInLAoJCQkJdXNlcjogZW1haWwsCgkJCQljbGllbnRJZCwKCQkJCWNsaWVudFNlY3JldCwKCQkJCXJlZnJlc2hUb2tlbiwKCQkJCWFjY2Vzc1Rva2VuCgkJCX0KCQl9KTsKCX0KCglhc3luYyBmdW5jdGlvbiBzZW5kTWFpbCh7IHRvLCBzdWJqZWN0LCB0ZXh0LCBodG1sLCBhdHRhY2htZW50cyB9KSB7CgkJaWYgKCF0cmFuc3BvcnRlcikKCQkJdGhyb3cgbmV3IEVycm9yKCJFbWFpbCBpcyBub3QgY29uZmlndXJlZC4gU2V0IGNyZWRlbnRpYWxzLmdtYWlsQWNjb3VudCBpbiBjb25maWcuanNvbi4iKTsKCQljb25zdCBtYWlsT3B0aW9ucyA9IHsKCQkJZnJvbTogZW1haWwsCgkJCXRvLAoJCQlzdWJqZWN0LAoJCQl0ZXh0LAoJCQlodG1sLAoJCQlhdHRhY2htZW50cwoJCX07CgkJY29uc3QgaW5mbyA9IGF3YWl0IHRyYW5zcG9ydGVyLnNlbmRNYWlsKG1haWxPcHRpb25zKTsKCQlyZXR1cm4gaW5mbzsKCX0KCglnbG9iYWwudXRpbHMuc2VuZE1haWwgPSBzZW5kTWFpbDsKCWdsb2JhbC51dGlscy50cmFuc3BvcnRlciA9IHRyYW5zcG9ydGVyOwoKCS8vIOKAlOKAlOKAlOKAlOKAlOKAlOKAlOKAlOKAlOKAlOKAlOKAlOKAlOKAlOKAlOKAlCBDSEVDSyBWRVJTSU9OIOKAlOKAlOKAlOKAlOKAlOKAlOKAlOKAlOKAlOKAlOKAlOKAlOKAlOKAlOKAlOKAlCAvLwoJdHJ5IHsKCQljb25zdCB7IGRhdGE6IHsgdmVyc2lvbiB9IH0gPSBhd2FpdCBheGlvcy5nZXQoImh0dHBzOi8vcmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbS9udGtoYW5nMDMvR29hdC1Cb3QtVjIvbWFpbi9wYWNrYWdlLmpzb24iKTsKCQljb25zdCBjdXJyZW50VmVyc2lvbiA9IHJlcXVpcmUoIi4vcGFja2FnZS5qc29uIikudmVyc2lvbjsKCQlpZiAoY29tcGFyZVZlcnNpb24odmVyc2lvbiwgY3VycmVudFZlcnNpb24pID09PSAxKQoJCQl1dGlscy5sb2cubWFzdGVyKCJORVcgVkVSU0lPTiIsIGdldFRleHQoCgkJCQkiR29hdCIsCgkJCQkibmV3VmVyc2lvbkRldGVjdGVkIiwKCQkJCWNvbG9ycy5ncmF5KGN1cnJlbnRWZXJzaW9uKSwKCQkJCWNvbG9ycy5oZXgoIiNlYjZhMDciLCB2ZXJzaW9uKSwKCQkJCWNvbG9ycy5oZXgoIiNlYjZhMDciLCAibm9kZSB1cGRhdGUiKQoJCQkpKTsKCX0KCWNhdGNoIChlcnIpIHsKCQl1dGlscy5sb2cud2FybigiQ0hFQ0sgVkVSU0lPTiIsIGVyci5tZXNzYWdlIHx8IGVycik7Cgl9CgkvLyDigJTigJTigJTigJTigJTigJTigJTigJTigJTigJQgQ0hFQ0sgRk9MREVSIEdPT0dMRSBEUklWRSDigJTigJTigJTigJTigJTigJTigJTigJTigJTigJQgLy8KCWxldCBwYXJlbnRJZEdvb2dsZURyaXZlOwoJdHJ5IHsKCQlwYXJlbnRJZEdvb2dsZURyaXZlID0gYXdhaXQgdXRpbHMuZHJpdmUuY2hlY2tBbmRDcmVhdGVQYXJlbnRGb2xkZXIoIkdvYXRCb3QiKTsKCQl1dGlscy5kcml2ZS5wYXJlbnRJRCA9IHBhcmVudElkR29vZ2xlRHJpdmU7Cgl9CgljYXRjaCAoZXJyKSB7CgkJdXRpbHMubG9nLndhcm4oIkdPT0dMRSBEUklWRSIsIGVyci5tZXNzYWdlIHx8IGVycik7Cgl9CgkvLyDigJTigJTigJTigJTigJTigJTigJTigJTigJTigJTigJTigJTigJTigJTigJTigJTigJTigJTigJTigJQgTE9HSU4g4oCU4oCU4oCU4oCU4oCU4oCU4oCU4oCU4oCU4oCU4oCU4oCU4oCU4oCU4oCU4oCU4oCU4oCU4oCU4oCUIC8vCglyZXF1aXJlKGAuL2JvdC9sb2dpbi9sb2dpbiR7Tk9ERV9FTlYgPT09ICdkZXZlbG9wbWVudCcgPyAnLmRldi5qcycgOiAnLmpzJ31gKTsKfSkoKTsKCmZ1bmN0aW9uIGNvbXBhcmVWZXJzaW9uKHZlcnNpb24xLCB2ZXJzaW9uMikgewoJY29uc3QgdjEgPSB2ZXJzaW9uMS5zcGxpdCgiLiIpOwoJY29uc3QgdjIgPSB2ZXJzaW9uMi5zcGxpdCgiLiIpOwoJZm9yIChsZXQgaSA9IDA7IGkgPCAzOyBpKyspIHsKCQlpZiAocGFyc2VJbnQodjFbaV0pID4gcGFyc2VJbnQodjJbaV0pKQoJCQlyZXR1cm4gMTsgLy8gdmVyc2lvbjEgPiB2ZXJzaW9uMgoJCWlmIChwYXJzZUludCh2MVtpXSkgPCBwYXJzZUludCh2MltpXSkpCgkJCXJldHVybiAtMTsgLy8gdmVyc2lvbjEgPCB2ZXJzaW9uMgoJfQoJcmV0dXJuIDA7IC8vIHZlcnNpb24xID0gdmVyc2lvbjIKfQo=
+/**
+ * @author NTKhang
+ * ! The source code is written by NTKhang, please don't change the author's name everywhere. Thank you for using
+ * ! Official source code: https://github.com/ntkhang03/Goat-Bot-V2
+ * ! If you do not download the source code from the above address, you are using an unknown version and at risk of having your account hacked
+ *
+ * English:
+ * ! Please do not change the below code, it is very important for the project.
+ * It is my motivation to maintain and develop the project for free.
+ * ! If you change it, you will be banned forever
+ * Thank you for using
+ *
+ * Vietnamese:
+ * ! Vui lòng không thay đổi mã bên dưới, nó rất quan trọng đối với dự án.
+ * Nó là động lực để tôi duy trì và phát triển dự án miễn phí.
+ * ! Nếu thay đổi nó, bạn sẽ bị cấm vĩnh viễn
+ * Cảm ơn bạn đã sử dụng
+ */
+
+process.on('unhandledRejection', error => console.log(error));
+process.on('uncaughtException', error => console.log(error));
+
+const axios = require("axios");
+const fs = require("fs-extra");
+const google = require("googleapis").google;
+const nodemailer = require("nodemailer");
+const { execSync } = require('child_process');
+const log = require('./logger/log.js');
+const path = require("path");
+
+process.env.BLUEBIRD_W_FORGOTTEN_RETURN = 0; // Disable warning: "Warning: a promise was created in a handler but was not returned from it"
+
+function validJSON(pathDir) {
+	try {
+		if (!fs.existsSync(pathDir))
+			throw new Error(`File "${pathDir}" not found`);
+		JSON.parse(fs.readFileSync(pathDir, 'utf8'));
+		return true;
+	}
+	catch (err) {
+		let msgError = err.message;
+		msgError = msgError.split("\n").slice(1).join("\n");
+		const indexPos = msgError.indexOf("    at");
+		msgError = msgError.slice(0, indexPos != -1 ? indexPos - 1 : msgError.length);
+		throw new Error(msgError);
+	}
+}
+
+const { NODE_ENV } = process.env;
+// Only "development" uses the *.dev.* files; "production" (Render/Railway etc.)
+// uses the normal config.json / configCommands.json / account.txt.
+const isDev = NODE_ENV === "development";
+const dirConfig = path.normalize(`${__dirname}/config${isDev ? '.dev.json' : '.json'}`);
+const dirConfigCommands = path.normalize(`${__dirname}/configCommands${isDev ? '.dev.json' : '.json'}`);
+const dirAccount = path.normalize(`${__dirname}/account${isDev ? '.dev.txt' : '.txt'}`);
+
+for (const pathDir of [dirConfig, dirConfigCommands]) {
+	try {
+		validJSON(pathDir);
+	}
+	catch (err) {
+		log.error("CONFIG", `Invalid JSON file "${pathDir.replace(__dirname, "")}":\n${err.message.split("\n").map(line => `  ${line}`).join("\n")}\nPlease fix it and restart bot`);
+		process.exit(0);
+	}
+}
+const config = require(dirConfig);
+if (config.whiteListMode?.whiteListIds && Array.isArray(config.whiteListMode.whiteListIds))
+	config.whiteListMode.whiteListIds = config.whiteListMode.whiteListIds.map(id => id.toString());
+// Fill in defaults for newer feature settings so configs created before they
+// existed keep working without manual edits.
+config.commandSuggestion = { enable: true, ...(config.commandSuggestion || {}) };
+config.noPrefix = { enable: false, onlyAdminBot: false, ignoreCommands: [], ...(config.noPrefix || {}) };
+config.reactUnsend = { enable: true, emojis: ["😡", "😠"], onlyAdmin: true, ...(config.reactUnsend || {}) };
+config.reactMirror = { enable: true, mirrorAllEmojis: true, emojis: [], onlyAdmin: true, ...(config.reactMirror || {}) };
+if (!Array.isArray(config.reactUnsend.emojis))
+	config.reactUnsend.emojis = ["😡", "😠"];
+if (!Array.isArray(config.reactMirror.emojis))
+	config.reactMirror.emojis = [];
+if (!Array.isArray(config.noPrefix.ignoreCommands))
+	config.noPrefix.ignoreCommands = [];
+const configCommands = require(dirConfigCommands);
+
+global.GoatBot = {
+	startTime: Date.now() - process.uptime() * 1000, // time start bot (ms)
+	commands: new Map(), // store all commands
+	eventCommands: new Map(), // store all event commands
+	commandFilesPath: [], // [{ filePath: "", commandName: [] }
+	eventCommandsFilesPath: [], // [{ filePath: "", commandName: [] }
+	aliases: new Map(), // store all aliases
+	onFirstChat: [], // store all onFirstChat [{ commandName: "", threadIDsChattedFirstTime: [] }}]
+	onChat: [], // store all onChat
+	onEvent: [], // store all onEvent
+	onReply: new Map(), // store all onReply
+	onReaction: new Map(), // store all onReaction
+	onAnyEvent: [], // store all onAnyEvent
+	config, // store config
+	configCommands, // store config commands
+	envCommands: {}, // store env commands
+	envEvents: {}, // store env events
+	envGlobal: {}, // store env global
+	reLoginBot: function () { }, // function relogin bot, will be set in bot/login/login.js
+	Listening: null, // store current listening handle
+	oldListening: [], // store old listening handle
+	callbackListenTime: {}, // store callback listen 
+	storage5Message: [], // store 5 message to check listening loop
+	fcaApi: null, // store fca api
+	botID: null // store bot id
+};
+
+global.db = {
+	// all data
+	allThreadData: [],
+	allUserData: [],
+	allDashBoardData: [],
+	allGlobalData: [],
+
+	// model
+	threadModel: null,
+	userModel: null,
+	dashboardModel: null,
+	globalModel: null,
+
+	// handle data
+	threadsData: null,
+	usersData: null,
+	dashBoardData: null,
+	globalData: null,
+
+	receivedTheFirstMessage: {}
+
+	// all will be set in bot/login/loadData.js
+};
+
+global.client = {
+	dirConfig,
+	dirConfigCommands,
+	dirAccount,
+	countDown: {},
+	cache: {},
+	database: {
+		creatingThreadData: [],
+		creatingUserData: [],
+		creatingDashBoardData: [],
+		creatingGlobalData: []
+	},
+	commandBanned: configCommands.commandBanned
+};
+
+const utils = require("./utils.js");
+global.utils = utils;
+const { colors } = utils;
+
+global.temp = {
+	createThreadData: [],
+	createUserData: [],
+	createThreadDataError: [], // Can't get info of groups with instagram members
+	messagesOfBot: new Set(), // IDs of messages sent by the bot (used by reactUnsend)
+	filesOfGoogleDrive: {
+		arraybuffer: {},
+		stream: {},
+		fileNames: {}
+	},
+	contentScripts: {
+		cmds: {},
+		events: {}
+	}
+};
+
+// watch dirConfigCommands file and dirConfig
+const watchAndReloadConfig = (dir, type, prop, logName) => {
+	let lastModified = fs.statSync(dir).mtimeMs;
+	let isFirstModified = true;
+
+	fs.watch(dir, (eventType) => {
+		if (eventType === type) {
+			const oldConfig = global.GoatBot[prop];
+
+			// wait 200ms to reload config
+			setTimeout(() => {
+				try {
+					// if file change first time (when start bot, maybe you know it's called when start bot?) => not reload
+					if (isFirstModified) {
+						isFirstModified = false;
+						return;
+					}
+					// if file not change => not reload
+					if (lastModified === fs.statSync(dir).mtimeMs) {
+						return;
+					}
+					global.GoatBot[prop] = JSON.parse(fs.readFileSync(dir, 'utf-8'));
+					log.success(logName, `Reloaded ${dir.replace(process.cwd(), "")}`);
+				}
+				catch (err) {
+					log.warn(logName, `Can't reload ${dir.replace(process.cwd(), "")}`);
+					global.GoatBot[prop] = oldConfig;
+				}
+				finally {
+					lastModified = fs.statSync(dir).mtimeMs;
+				}
+			}, 200);
+		}
+	});
+};
+
+watchAndReloadConfig(dirConfigCommands, 'change', 'configCommands', 'CONFIG COMMANDS');
+watchAndReloadConfig(dirConfig, 'change', 'config', 'CONFIG');
+
+global.GoatBot.envGlobal = global.GoatBot.configCommands.envGlobal;
+global.GoatBot.envCommands = global.GoatBot.configCommands.envCommands;
+global.GoatBot.envEvents = global.GoatBot.configCommands.envEvents;
+
+// ———————————————— LOAD LANGUAGE ———————————————— //
+const getText = global.utils.getText;
+
+// ———————————————— AUTO RESTART ———————————————— //
+if (config.autoRestart) {
+	const time = config.autoRestart.time;
+	if (!isNaN(time) && time > 0) {
+		utils.log.info("AUTO RESTART", getText("Goat", "autoRestart1", utils.convertTime(time, true)));
+		setTimeout(() => {
+			utils.log.info("AUTO RESTART", "Restarting...");
+			process.exit(2);
+		}, time);
+	}
+	else if (typeof time == "string" && time.match(/^((((\d+,)+\d+|(\d+(\/|-|#)\d+)|\d+L?|\*(\/\d+)?|L(-\d+)?|\?|[A-Z]{3}(-[A-Z]{3})?) ?){5,7})$/gmi)) {
+		utils.log.info("AUTO RESTART", getText("Goat", "autoRestart2", time));
+		const cron = require("node-cron");
+		cron.schedule(time, () => {
+			utils.log.info("AUTO RESTART", "Restarting...");
+			process.exit(2);
+		});
+	}
+}
+
+(async () => {
+	// ———————————————— SETUP MAIL ———————————————— //
+	const { gmailAccount } = config.credentials;
+	const { email, clientId, clientSecret, refreshToken } = gmailAccount;
+	const OAuth2 = google.auth.OAuth2;
+	let accessToken;
+	let transporter;
+	if (clientId && clientSecret && refreshToken) {
+		const OAuth2_client = new OAuth2(clientId, clientSecret);
+		OAuth2_client.setCredentials({ refresh_token: refreshToken });
+		try {
+			accessToken = await OAuth2_client.getAccessToken();
+		}
+		catch (err) {
+			utils.log.warn("CREDENTIALS", getText("Goat", "googleApiTokenExpired"));
+		}
+	}
+	if (accessToken) {
+		transporter = nodemailer.createTransport({
+			host: 'smtp.gmail.com',
+			service: 'Gmail',
+			auth: {
+				type: 'OAuth2',
+				user: email,
+				clientId,
+				clientSecret,
+				refreshToken,
+				accessToken
+			}
+		});
+	}
+
+	async function sendMail({ to, subject, text, html, attachments }) {
+		if (!transporter)
+			throw new Error("Email is not configured. Set credentials.gmailAccount in config.json.");
+		const mailOptions = {
+			from: email,
+			to,
+			subject,
+			text,
+			html,
+			attachments
+		};
+		const info = await transporter.sendMail(mailOptions);
+		return info;
+	}
+
+	global.utils.sendMail = sendMail;
+	global.utils.transporter = transporter;
+
+	// ———————————————— CHECK VERSION ———————————————— //
+	try {
+		const { data: { version } } = await axios.get("https://raw.githubusercontent.com/ntkhang03/Goat-Bot-V2/main/package.json");
+		const currentVersion = require("./package.json").version;
+		if (compareVersion(version, currentVersion) === 1)
+			utils.log.master("NEW VERSION", getText(
+				"Goat",
+				"newVersionDetected",
+				colors.gray(currentVersion),
+				colors.hex("#eb6a07", version),
+				colors.hex("#eb6a07", "node update")
+			));
+	}
+	catch (err) {
+		utils.log.warn("CHECK VERSION", err.message || err);
+	}
+	// —————————— CHECK FOLDER GOOGLE DRIVE —————————— //
+	let parentIdGoogleDrive;
+	try {
+		parentIdGoogleDrive = await utils.drive.checkAndCreateParentFolder("GoatBot");
+		utils.drive.parentID = parentIdGoogleDrive;
+	}
+	catch (err) {
+		utils.log.warn("GOOGLE DRIVE", err.message || err);
+	}
+	// ———————————————————— LOGIN ———————————————————— //
+	require(`./bot/login/login${NODE_ENV === 'development' ? '.dev.js' : '.js'}`);
+})();
+
+function compareVersion(version1, version2) {
+	const v1 = version1.split(".");
+	const v2 = version2.split(".");
+	for (let i = 0; i < 3; i++) {
+		if (parseInt(v1[i]) > parseInt(v2[i]))
+			return 1; // version1 > version2
+		if (parseInt(v1[i]) < parseInt(v2[i]))
+			return -1; // version1 < version2
+	}
+	return 0; // version1 = version2
+}
