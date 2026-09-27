@@ -11,7 +11,7 @@
 		"undici": "^6.21.0"
 	},
 	"dependencies": {
-		"xtreme-fca": "^1.0.0",
+		"xtreme-fca": "^1.0.1",
 		"axios": "^1.7.9",
 		"bcrypt": "^5.1.1",
 		"btch-downloader": "^6.4.0",
