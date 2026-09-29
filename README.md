@@ -1,363 +1,108 @@
-<img src="https://i.ibb.co/RQ28H2p/banner.png" alt="banner">
-<h1 align="center"><img src="./dashboard/images/logo-non-bg.png" width="22px"> Goat Bot V2 — Enhanced Edition</h1>
+<h1 align="center"><img 
+ <h2><img width="25" src="https://github.com/DalpatRathore/dalpatrathore/blob/main/assets/icons/icon-skills.png" /><i> 𝐑𝐎𝐂𝐊𝐘 𝐂𝐇𝐎𝐖𝐃𝐇𝐔𝐑𝐘 𝗦𝗧𝗔𝗖𝗞 & 𝗗𝗘𝗕 𝗧𝗢𝗢𝗟𝗫 𝗞𝗜𝗡𝗚 𝗢𝗙 𝗩𝗜𝗥𝗧𝗨𝗔𝗟 𝗢𝗞𝗛 𝗕𝗬𝗘:</i></h2>
 
-<p align="center">
-	<em>A feature-rich Facebook Messenger bot framework with a web dashboard, built on an unofficial Messenger API.</em>
+<!-- ─── Front‑End ───────────────────────────────────────────────────────────── -->
+![ONLINE README KING SHANTO OKH BYE](https://img.shields.io/badge/ONLINE!AR!README!KING!ROCKY-E34F26?style=plastic&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=plastic&logo=css3&logoColor=white)
+![Bootstrap](https://img.shields.io/badge/Bootstrap-563D7C?style=plastic&logo=bootstrap&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=plastic&logo=tailwind-css&logoColor=white)
+![Radix UI](https://img.shields.io/badge/Radix_UI-4CC38E?style=plastic)
+![shadcn/ui](https://img.shields.io/badge/shadcn%2Fui-111111?style=plastic)
+![Framer Motion](https://img.shields.io/badge/Framer_Motion-0055FF?style=plastic&logo=framer&logoColor=white)
+![React Hook Form](https://img.shields.io/badge/React_Hook_Form-EC5990?style=plastic&logo=react&logoColor=white)
+![Zod](https://img.shields.io/badge/Zod-3B83F6?style=plastic)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=plastic&logo=javascript&logoColor=black)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=plastic&logo=typescript&logoColor=white)
+![React JS](https://img.shields.io/badge/React_JS-20232A?style=plastic&logo=react&logoColor=61DAFB)
+![React Router](https://img.shields.io/badge/React_Router-CA4245?style=plastic&logo=react-router&logoColor=white)
+![Redux Toolkit](https://img.shields.io/badge/Redux_Toolkit-764ABC?style=plastic&logo=redux&logoColor=white)
+![Next JS](https://img.shields.io/badge/Next.js-000000?style=plastic&logo=next.js&logoColor=white)
+
+<!-- ─── Back‑End & Database ─────────────────────────────────────────────────── -->
+![Node JS](https://img.shields.io/badge/Node_JS-6DA55F?style=plastic&logo=node.js&logoColor=white)
+![Express JS](https://img.shields.io/badge/Express_JS-404d59?style=plastic&logo=express&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=plastic&logo=postgresql&logoColor=white)
+![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=plastic&logo=mongodb&logoColor=white)
+![Mongoose](https://img.shields.io/badge/Mongoose-880000?style=plastic)
+![Prisma](https://img.shields.io/badge/Prisma-2D3748?style=plastic&logo=prisma&logoColor=white)
+![GraphQL](https://img.shields.io/badge/GraphQL-E10098?style=plastic&logo=graphql&logoColor=white)
+![Apollo Client](https://img.shields.io/badge/Apollo_Client-311C87?style=plastic&logo=apollo-graphql&logoColor=white)
+![Firebase](https://img.shields.io/badge/Firebase-039BE5?style=plastic&logo=firebase&logoColor=white)
+![Axios](https://img.shields.io/badge/Axios-5A29E4?style=plastic)
+![Strapi CMS](https://img.shields.io/badge/Strapi_CMS-8E75FF?style=plastic&logo=strapi&logoColor=white)
+
+<!-- ─── Dev Ops / Utilities ─────────────────────────────────────────────────── -->
+![Shanto](https://img.shields.io/badge/Git-F05033?style=plastic&logo=git&logoColor=white)
+![GitHub](https://img.shields.io/badge/GitHub-181717?style=plastic&logo=github&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=plastic&logo=docker&logoColor=white)
+![Nginx](https://img.shields.io/badge/Nginx-009639?style=plastic&logo=nginx&logoColor=white)
+![Vercel](https://img.shields.io/badge/Vercel-000000?style=plastic&logo=vercel&logoColor=white)
+
+<!-- ─── Collaboration & Misc ────────────────────────────────────────────────── -->
+![Figma](https://img.shields.io/badge/Figma-F24E1E?style=plastic&logo=figma&logoColor=white)
+![Postman](https://img.shields.io/badge/Postman-FF6C37?style=plastic&logo=postman&logoColor=white)
+![Markdown](https://img.shields.io/badge/Markdown-000000?style=plastic&logo=markdown&logoColor=white)
+![Canva](https://img.shields.io/badge/Canva-%2300C4CC.svg?style=plastic&logo=Canva&logoColor=white)                    
+>
+<h1 align="center"><img 
+ <h2><img width="25" src="https://github.com/DalpatRathore/dalpatrathore/blob/main/assets/icons/icon-skills.png"-E34F26? /><i> 𝐑𝐎𝐂𝐊𝐘-𝗕𝗢𝗧 - 𝗬𝗢𝗨𝗥 𝐒𝐇𝐈𝐙𝐔𝐊𝐀  𝗠𝗘𝗦𝗦𝗘𝗡𝗚𝗘𝗥 𝗖𝗛𝗔𝗧 𝗕𝗢𝗧</h1>
+<!-- Github README -->
+<img src="https://i.ibb.co/gLfjn2L7/image0.jpg"
+<p align="center"><img src="://img.shields.io/badge/I Am %20httpsBANGLADESHI- NOOB PROGRAMMER-green?colorA=%23ff0000&colorB=%23017e40&style=flat-square">
+
+</i></b></h3>
+<h3 align="center">
+  <img src="https://emoji.discord.st/emojis/768b108d-274f-4f44-a634-8477b16efce7.gif" width="25">
+  &nbsp; 𝚆𝙴𝙻𝙲𝙾𝙼𝙴 𝚃𝙾 𝙼𝚈 𝙿𝚁𝙾𝙵𝙸𝙻𝙴&nbsp;
+  <img src="https://emoji.discord.st/emojis/768b108d-274f-4f44-a634-8477b16efce7.gif" width="25">
+</h3>
+<img align="center" alt="line" src="https://github.com/DalpatRathore/dalpatrathore/blob/main/assets/images/line-1.svg">
+
+
+
+[![Typing SVG](https://readme-typing-svg.herokuapp.com?color=%23F70B10&size=27&lines=𝙸+𝙰𝙼+𝙸𝙽𝙽𝙾𝙲𝙴𝙽𝚃+𝙱𝙾𝚈;+𝙸𝚃'𝚜+𝙽𝙾𝚃+𝙹𝚄𝚂𝚃+𝙰+𝙽𝙰𝙼𝙴+𝙱𝚁𝙾;𝙸𝚃'R+A+𝙱𝚁𝙰𝙽𝙳;𝚃𝙷𝙰𝙽𝙺+𝚈𝙾𝚄+𝙴𝚅𝙴𝚁𝚈𝙾𝙽𝙴;𝙻𝙾𝚅e+𝚄+𝙰𝙻𝙻+𝙵𝚁𝙸𝙴𝙽𝙳𝚂)](https://git.io/typing-svg)
+
+
+<h3><b><i>🏆 Github Statistics :</i></b></h3>
+<a href="https://github.com/rocky-bot-320"><img width=550 src="https://github-profile-trophy.vercel.app/?username=𝐘𝐎𝐔𝐑 𝐑𝐎𝐂𝐊𝐘 &theme=dracula&no-frame=true&title=Followers,Stars,Commit,Repository,Issues"/></a>
+
+</p>
+<p align="center"> 
+ 𝚅𝙸𝚂𝙸𝚃𝙾𝚁𝚂 𝙲𝙾𝚄𝙽𝚃
+ <img src="https://profile-counter.glitch.me/your rocky 320/count.svg" alt="Visitors">
 </p>
 
-<p align="center">
-	<a href="https://nodejs.org/dist/v22.0.0">
-		<img src="https://img.shields.io/badge/Node.js-22.x-brightgreen.svg?style=flat-square" alt="Node.js 22.x">
-	</a>
-	<img alt="code-version" src="https://img.shields.io/badge/dynamic/json?color=brightgreen&label=version&prefix=v&query=%24.version&url=https%3A%2F%2Fraw.githubusercontent.com%2Fntkhang03%2FGoat-Bot-V2%2Fmain%2Fpackage.json&style=flat-square">
-	<img alt="license" src="https://img.shields.io/badge/license-MIT-green?style=flat-square">
-	<img alt="platform" src="https://img.shields.io/badge/platform-Node.js%20%7C%20Docker-informational?style=flat-square">
-</p>
+<img align="center" alt="line" src="https://github.com/DalpatRathore/dalpatrathore/blob/main/assets/images/line-1.svg">
 
-<p align="center">
-	<sub>
-		Maintained fork of <a href="https://github.com/ntkhang03/Goat-Bot-V2">Goat-Bot-V2</a> by <b>NTKhang</b>.<br>
-		<b>Modified and enhanced by <a href="https://github.com/lazyneoaz">Neoaz</a> (<a href="https://github.com/lazyneoaz">@lazyneoaz</a>) 🐊</b>
-	</sub>
-</p>
+<h3 align="center">A Passionate Frontend Developer From Bangladesh ROCKY</h3>
 
----
+<img align="center" alt="line" src="https://github.com/DalpatRathore/dalpatrathore/blob/main/assets/images/line-2.svg">
 
-## 📖 **Overview**
+- ➪ 𝗡𝗔𝗠𝗘      : 𝐑𝐎𝐂𝐊𝐘
 
-**Goat Bot V2 — Enhanced Edition** is a self-hosted Messenger chat-bot framework. It connects through an unofficial Messenger API, exposes a full command/event system, and ships with a MongoDB/SQLite-backed dashboard for managing threads, users and runtime configuration.
+<img align="center" alt="line" src="https://github.com/DalpatRathore/dalpatrathore/blob/main/assets/images/line-2.svg">
 
-This fork focuses on **production readiness**: a modern dependency stack, a hardened login flow, safer database handling, and a set of new quality-of-life features.
+- ➪  𝗥𝗘𝗟𝗜𝗚𝗜𝗢𝗡   : 𝗜𝗦𝗟𝗔𝗠
 
-> **Table of contents**
-> - [✨ Enhanced features in this fork](#-enhanced-features-in-this-fork)
-> - [🚧 Requirements](#-requirements)
-> - [📦 Installation](#-installation)
-> - [⚙️ Configuration](#️-configuration)
-> - [🚀 Running the bot](#-running-the-bot)
-> - [💡 How it works](#-how-it-works)
-> - [🛠️ Creating new commands](#️-creating-new-commands)
-> - [🌐 Supported languages](#-supported-languages)
-> - [📌 Common problems](#-common-problems)
-> - [❌ Do not use unofficial copies](#-do-not-use-unofficial-copies)
-> - [📸 Screenshots](#-screenshots)
-> - [👥 Credits](#-credits)
-> - [📜 License](#-license)
+<img align="center" alt="line" src="https://github.com/DalpatRathore/dalpatrathore/blob/main/assets/images/line-2.svg">
 
----
+- ➪ 𝗘𝗗𝗨𝗖𝗔𝗧𝗜𝗢𝗡 :- 𝗦𝗧𝗨𝗗𝗬
 
-## ✨ **Enhanced features in this fork**
+<img align="center" alt="line" src="https://github.com/DalpatRathore/dalpatrathore/blob/main/assets/images/line-2.svg">
 
-### New bot behaviours
-- **Powered by `xtreme-fca`** — the API layer is [`xtreme-fca`](https://www.npmjs.com/package/xtreme-fca) by [@lazyneoaz](https://github.com/lazyneoaz), a hardened fork of the unofficial Messenger API with built-in auto-reconnect and MQTT recovery.
-- **Music search** — looks up a song by title or artist through the Messenger music catalog and sends the track into the chat, using `searchMusic` from the API layer.
-- **Reaction unsend** — react with a configured emoji (default 😡 / 😠) to delete the bot's own message. Admin-gated by default.
-- **Reaction mirror** — the bot mirrors any (or a configured set of) emoji that an admin reacts to on another user's message.
-- **Command suggestions** — a typo such as `-holp` returns *“Did you mean `-help`?”* using transposition-aware fuzzy matching.
-- **NoPrefix mode** — optionally let commands run without the prefix (`help` == `-help`), with an ignore list and admin-only mode.
-- **User-agent pool** — 11 user agents shipped in config; `randomUserAgent` picks one per login to reduce detection.
+- ➪ 𝗥𝗘𝗟𝗔𝗧𝗜𝗢𝗡𝗦𝗛𝗜𝗣 :- 𝗦𝗜𝗡𝗚𝗟𝗘
 
-### Modernised foundation
-- Uses the [`xtreme-fca`](https://www.npmjs.com/package/xtreme-fca) API layer ([source](https://github.com/lazyneoaz/xtreme-fca)).
-- Updated dependencies to current stable releases; removed unused packages.
-- Uses the native [`canvas`](https://www.npmjs.com/package/canvas) package (v3) for image rendering.
-- Hardened the login flow: non-fatal cookie liveness pre-check, optional Google credentials, and `.dev.*` files used only when `NODE_ENV=development`.
-- Reliable SQLite path override via `GOAT_DB_PATH`, with busy-timeout to avoid lock errors on network filesystems.
-- `npm start` / `npm run dev` / `npm run prod` scripts and a `postinstall` rebuild for native modules.
+<img align="center" alt="line" src="https://github.com/DalpatRathore/dalpatrathore/blob/main/assets/images/line-2.svg">
 
----
+- ➪ 𝗙𝗔𝗖𝗘𝗕𝗢𝗢𝗞 :- [𝐑𝐎𝐂𝐊𝐘 𝐂𝐇𝐎𝐖𝐃𝐇𝐔𝐑𝐘](https://www.facebook.com/owner.mcf.rocky.404)
+<img align="center" alt="line" src="https://github.com/DalpatRathore/dalpatrathore/blob/main/assets/images/line-2.svg">
 
-## 🚧 **Requirements**
+- ➪ 𝗜𝗡𝗦𝗧𝗔𝗚𝗥𝗔𝗠 :- [ROCKY CHOWDHURY ](https://www.instagram.com/rockyvai3733?igsh=b2t5ZTJieDlyYjI1)
 
-- **Node.js** 22.x ([download](https://nodejs.org/en/download/releases/))
-- **Git**
-- Optional: **MongoDB** (otherwise the bot uses SQLite)
-- Basic familiarity with JavaScript / Node.js and the [unofficial Messenger API](https://github.com/ntkhang03/fb-chat-api/blob/master/DOCS.md)
+<img align="center" alt="line" src="https://github.com/DalpatRathore/dalpatrathore/blob/main/assets/images/line-2.svg">
 
----
-
-## 📦 **Installation**
-
-```bash
-# 1. Clone the repository
-git clone https://github.com/lazyneoaz/Goat-Bot-V2.git
-cd Goat-Bot-V2
-
-# 2. Install dependencies
-npm install
-
-# 3. Start the bot
-npm start
-```
-
-On first run the bot prompts for an account. You can supply one of the following in `account.txt`:
-- a cookie string / Netscape cookie file,
-- a JSON app-state / cookie array,
-- an `EAAAA…` access token,
-- or an `email`, `password` pair (in `config.json`) for password login.
-
-A step-by-step guide is available in [`STEP_INSTALL.md`](./STEP_INSTALL.md).
-
----
-
-## ⚙️ **Configuration**
-
-All settings live in **`config.json`** at the project root. Commonly edited keys:
-
-| Key | Purpose |
-| --- | --- |
-| `prefix` | Command prefix (default `-`). |
-| `language` | Bot language (`en` or `vi`). |
-| `nickNameBot` | Display name used in some replies. |
-| `adminBot` | Array of bot-admin user IDs (`role 2`). |
-| `dashBoard` | Enable/disable the web dashboard, set its port, and (optionally) `sessionSecret`. |
-| `dashBoard.sessionSecret` | Optional fixed secret for dashboard login sessions. Set a long random string to keep logins valid across restarts; leave empty to auto-generate per start. |
-| `serverUptime.socket.verifyToken` | Password clients send to connect to the socket.io uptime server. Set a long random string; when empty a temporary token is generated at startup. |
-| `commandSuggestion` | `{ enable: true }` — suggest the closest command on typos. |
-| `noPrefix` | `{ enable, onlyAdminBot, ignoreCommands }` — prefix-free commands. |
-| `reactUnsend` | `{ enable, emojis, onlyAdmin }` — delete bot messages via reaction. |
-| `reactMirror` | `{ enable, mirrorAllEmojis, emojis, onlyAdmin }` — mirror reactions. |
-| `facebookAccount.userAgents` | Pool of user agents. |
-| `optionsFca.randomUserAgent` | Pick a random user agent per login. |
-| `optionsFca.autoReconnect` | Reconnect MQTT automatically when the connection drops. Keep `true`. |
-
-New keys are merged with safe defaults on startup, so upgrading an old `config.json` will not break the bot.
-
----
-
-## 🚀 **Running the bot**
-
-```bash
-npm start          # production-style run
-npm run dev        # development run (uses .dev.* files)
-npm run prod       # explicit production run
-```
-
-Environment variables:
-
-| Variable | Effect |
-| --- | --- |
-| `NODE_ENV` | `development` enables the `.dev.*` config files. |
-| `GOAT_DB_PATH` | Overrides the SQLite database path (useful on network filesystems). |
-
-When `dashBoard.enable` is `true`, the web dashboard is served on the configured port (default `3001`).
-
-Dashboard login sessions are stored on disk under `database/data/sessions/` (a lightweight file-backed store), so the process no longer uses the in-memory session store that leaks memory and logs a production warning. Session files respect the 7-day cookie lifetime and are cleaned up automatically.
-
----
-
-## 💡 **How it works**
-
-The bot uses the unofficial Messenger API to send and receive messages. On every new event (message, reaction, join/leave, admin change, …) an event is dispatched to `handlerEvents`, which resolves the command and runs it.
-
-- **`onStart`** — a user invoked a command:
-  - check whether a command was actually called (prefix or no-prefix mode),
-  - check bans / admin-only mode,
-  - check the user's permission role,
-  - check the command cooldown,
-  - execute and log.
-
-- **`onChat`** — runs on any message; executes a returned `function`/`async function` after the same ban/permission checks.
-
-- **`onFirstChat`** — runs the first time a thread is seen since startup, otherwise behaves like `onChat`.
-
-- **`onReaction`** — runs when a user reacts to a message registered in `GoatBot.onReaction`:
-	```javascript
-	global.GoatBot.onReaction.set(msg.messageID, {
-		messageID: msg.messageID,
-		commandName,
-		// ...
-	});
-	```
-  A `delete` method is added automatically to remove the entry.
-
-- **`onReply`** — runs when a user replies to a message registered in `GoatBot.onReply` (same pattern as `onReaction`).
-
-- **`onEvent`** — runs for system events (join, leave, admin change, …) registered in `GoatBot.onEvent`.
-
-- **`handlerEvent`** — runs event commands placed in `scripts/events/`, looping over every registered `eventCommands` entry.
-
----
-
-## 🛠️ **Creating new commands**
-
-Commands live in `scripts/cmds/` and are loaded automatically. A minimal command:
-
-```javascript
-module.exports = {
-	config: {
-		name: "hello",
-		version: "1.0",
-		author: "Your Name",
-		countDown: 5,
-		role: 0,
-		description: { en: "say hello" },
-		category: "fun",
-		guide: { en: "{pn} <name>" }
-	},
-	langs: {
-		en: { reply: "Hello, %1!" }
-	},
-	onStart: async function ({ args, message, getLang }) {
-		return message.reply(getLang("reply", args[0] || "world"));
-	}
-};
-```
-
-- `category` is required; `author` should be kept accurate.
-- Use `role: 0` (everyone), `1` (group admins) or `2` (bot admins).
-- Add localised strings under `langs`.
-- Full reference: [`DOCS.md`](./DOCS.md).
-
----
-
-## 🌐 **Supported languages**
-
-- [x] `en` — English
-- [x] `vi` — Vietnamese
-
-Set the language in `config.json`, and customise strings under `languages/`, `languages/cmds/` and `languages/events/`.
-
----
-
-## 📌 **Common problems**
-
-<details>
-	<summary>📌 Error 400: redirect_uri_mismatch</summary>
-	<p><img src="https://i.ibb.co/6Fbjd4r/image.png" width="250px"></p>
-	<p>1. Enable the Google Drive API: <a href="https://youtu.be/nTIT8OQeRnY?t=347">Tutorial</a></p>
-	<p>2. Add <a href="https://developers.google.com/oauthplayground">https://developers.google.com/oauthplayground</a> (no trailing slash) to <b>Authorized redirect URIs</b> in the <b>OAuth consent screen</b>: <a href="https://youtu.be/nTIT8OQeRnY?t=491">Tutorial</a></p>
-	<p>3. Choose <b>https://www.googleapis.com/auth/drive</b> and <b>https://mail.google.com/</b> in the <b>OAuth 2.0 Playground</b>: <a href="https://youtu.be/nTIT8OQeRnY?t=600">Tutorial</a></p>
-</details>
-
-<details>
-	<summary>📌 Error for site owners: Invalid domain for site key</summary>
-	<p><img src="https://i.ibb.co/2gZttY7/image.png" width="250px"></p>
-	<p>1. Go to <a href="https://www.google.com/recaptcha/admin">https://www.google.com/recaptcha/admin</a></p>
-	<p>2. Add the domain <b>repl.co</b> (not <b>repl.com</b>) to <b>Domains</b> in <b>reCAPTCHA v2</b>: <a href="https://youtu.be/nTIT8OQeRnY?t=698">Tutorial</a></p>
-</details>
-
-<details>
-	<summary>📌 GaxiosError: invalid_grant, unauthorized_client</summary>
-	<p><img src="https://i.ibb.co/n7w9TkH/image.png" width="250px"></p>
-	<p><img src="https://i.ibb.co/XFKKY9c/image.png" width="250px"></p>
-	<p><img src="https://i.ibb.co/f4mc5Dp/image.png" width="250px"></p>
-	<p>- If the project is not published in the Google console, the refresh token expires after one week and must be regenerated: <a href="https://youtu.be/nTIT8OQeRnY?t=445">Tutorial</a></p>
-</details>
-
-<details>
-	<summary>📌 GaxiosError: invalid_client</summary>
-	<p><img src="https://i.ibb.co/st3W6v4/Pics-Art-01-01-09-10-49.jpg" width="250px"></p>
-	<p>- Check that the Google project <code>client_id</code> was entered correctly: <a href="https://youtu.be/nTIT8OQeRnY?t=509">Tutorial</a></p>
-</details>
-
-<details>
-	<summary>📌 Error 403: access_denied</summary>
-	<p><img src="https://i.ibb.co/dtrw5x3/image.png" width="250px"></p>
-	<p>- If the project is not published in the Google console, only approved accounts added to the project can use it: <a href="https://youtu.be/nTIT8OQeRnY?t=438">Tutorial</a></p>
-</details>
-
----
-
-## ❌ **Do not use unofficial copies**
-
-- Using unknown source code can expose your device and accounts to malware.
-- The upstream project is published only at <https://github.com/ntkhang03/Goat-Bot-V2>; this enhanced fork lives at <https://github.com/lazyneoaz/Goat-Bot-V2>.
-- Copies hosted elsewhere, or re-uploads that remove author credits, are unsupported and violate the license.
-
----
-
-## 📸 **Screenshots**
-
-### Bot
-
-<details>
-	<summary>Rank system</summary>
-	<p><img src="https://i.ibb.co/d0JDJxF/rank.png" width="399px"></p>
-	<p><img src="https://i.ibb.co/WgZzthH/rankup.png" width="399px"></p>
-	<p><img src="https://i.ibb.co/hLTThLW/customrankcard.png" width="399px"></p>
-</details>
-
-<details>
-	<summary>Weather</summary>
-	<p><img src="https://i.ibb.co/2FwWVLv/weather.png" width="399px"></p>
-</details>
-
-<details>
-	<summary>Join / leave notifications</summary>
-	<p><img src="https://i.ibb.co/Jsb5Jxf/wcgb.png" width="399px"></p>
-</details>
-
-<details>
-	<summary>Openjourney</summary>
-	<p><img src="https://i.ibb.co/XJfwj1X/Screenshot-2023-05-09-22-43-58-630-com-facebook-orca.jpg" width="399px"></p>
-</details>
-
-<details>
-	<summary>GPT</summary>
-	<p><img src="https://i.ibb.co/D4wRbM3/Screenshot-2023-05-09-22-47-48-037-com-facebook-orca.jpg" width="399px"></p>
-	<p><img src="https://i.ibb.co/z8HqPkH/Screenshot-2023-05-09-22-47-53-737-com-facebook-orca.jpg" width="399px"></p>
-	<p><img src="https://i.ibb.co/19mZQpR/Screenshot-2023-05-09-22-48-02-516-com-facebook-orca.jpg" width="399px"></p>
-</details>
-
-### Dashboard
-
-<details>
-	<summary>Home</summary>
-	<p><img src="https://i.postimg.cc/GtwP4Cqm/Screenshot-2023-12-23-105357.png" width="399px"></p>
-	<p><img src="https://i.postimg.cc/MTjbZT0L/Screenshot-2023-12-23-105554.png" width="399px"></p>
-</details>
-
-<details>
-	<summary>Stats</summary>
-	<p><img src="https://i.postimg.cc/QtXt98B7/image.png" width="399px"></p>
-</details>
-
-<details>
-	<summary>Login / Register</summary>
-	<p><img src="https://i.postimg.cc/Jh05gKsM/Screenshot-2023-12-23-105743.png" width="399px"></p>
-	<p><img src="https://i.postimg.cc/j5nM9K8m/Screenshot-2023-12-23-105748.png" width="399px"></p>
-</details>
-
-<details>
-	<summary>Thread management</summary>
-	<p><img src="https://i.postimg.cc/RF237v1Z/Screenshot-2023-12-23-105913.png" width="399px"></p>
-</details>
-
-<details>
-	<summary>Custom on/off</summary>
-	<p><img src="https://i.ibb.co/McDRhmX/image.png" width="399px"></p>
-</details>
-
-<details>
-	<summary>Custom welcome / leave messages</summary>
-	<p><img src="https://i.ibb.co/6ZrQqc1/image.png" width="399px"></p>
-	<p><img src="https://i.ibb.co/G53JsXm/image.png" width="399px"></p>
-</details>
-
----
-
-## 👥 **Credits**
-
-- **Original author:** [NTKhang (ntkhang03)](https://github.com/ntkhang03) — creator of [Goat-Bot-V2](https://github.com/ntkhang03/Goat-Bot-V2).
-- **Modified and enhanced by:** [Neoaz (@lazyneoaz)](https://github.com/lazyneoaz) 🐊 — modernised dependency stack, hardened login, and new features.
-- **Messenger API layer:** [`xtreme-fca`](https://www.npmjs.com/package/xtreme-fca) by [@lazyneoaz](https://github.com/lazyneoaz) ([source](https://github.com/lazyneoaz/xtreme-fca)).
-- **Bot name:** `Neoaz 🐊`.
-
-## 📜 **License**
-
-**VIETNAMESE**
-
-- ***Nếu bạn vi phạm bất kỳ quy tắc nào, bạn sẽ bị cấm sử dụng dự án của tôi***
-- Không bán mã nguồn của tôi
-- Không tự xưng là chủ sở hữu của mã nguồn của tôi
-- Không kiếm tiền từ mã nguồn của tôi (chẳng hạn như: mua bán lệnh, mua bán/cho thuê bot, kêu gọi quyên góp, v.v.)
-- Không xóa/sửa đổi credit (tên tác giả) trong mã nguồn của tôi
-
-**ENGLISH**
-
-- ***If you violate any rules, you will be banned from using my project***
-- Don't sell my source code
-- Don't claim my source code as your own
-- Do not monetize my source code (such as: buy and sell commands, buy and sell bots, call for donations, etc.)
-- Don't remove/edit my credits (author name) in my source code
+<h3><b><i> Contact me in Touch :</i></b></h3>
+<a href="https://github.com/rocky-bot-320"><img align="left" title="Github" alt="Github" width="30px" src="https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/github.svg" /></a>
+<a href="https://www.facebook.com/owner.mcf.rocky.404"><img align="left" title="Facebook" alt="Facebook" width="30px" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/facebook.svg" /></a>
+<a href="https://www.instagram.com/rocky404bot4
+_islam"><img align="left" title="Instagram" alt="Instagram" width="30px" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/instagram.svg" /></a>
