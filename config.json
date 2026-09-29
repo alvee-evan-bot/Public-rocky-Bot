@@ -25,8 +25,8 @@
   "antiInbox": false,
   "language": "en",
   "notesLanguage": "change to your language with ISO 639-1 code, available languages: vi (Vietnamese), en (English)",
-  "nickNameBot": "GoatBot",
-  "prefix": "-",
+  "nickNameBot": "⍣⃝↣SUITEᥫ᭡CANDY꧂",
+  "prefix": ",",
   "commandSuggestion": {
     "enable": true,
     "notes": "when someone types a command name that does not exist, the bot suggests the closest matching command (for example '-holp' => '-help'). Set enable to false to turn it off"
@@ -58,7 +58,7 @@
     "ignoreCommand": []
   },
   "adminBot": [
-    "61588057525081"
+    "100002344705976"
   ],
   "whiteListMode": {
     "enable": false,
